@@ -50,13 +50,15 @@ install:
 	cp -p ${STYLE-PATH}unified-biblatex.sty          styles/
 	cp -p ${STYLE-PATH}unified-biblatex/stmue-langsci-unified.bbx styles/
 	cp -p ${STYLE-PATH}unified-biblatex/stmue-langsci-unified.cbx styles/
+	cp -p ${STYLE-PATH}biblatex-series-number-checks.sty styles/
+	cp -p ${STYLE-PATH}my-xspace.sty                 styles/
 	cp -p ${STYLE-PATH}Ling/article-ex.sty           styles/
 	cp -p ${STYLE-PATH}Ling/merkmalstruktur.sty      styles/
-	cp -p ${STYLE-PATH}Ling/my-xspace.sty            styles/
 	cp -p ${STYLE-PATH}Ling/my-ccg-ohne-colortbl.sty styles/
 	cp -p ${STYLE-PATH}Ling/forest.sty               styles/
 	cp -p ${STYLE-PATH}Ling/my-gb4e-slides.sty       styles/
 	cp -p ${STYLE-PATH}Ling/cgloss.sty               styles/
+	cp -p ${STYLE-PATH}Ling/forest-lib-linguistics.sty styles/
 	cp -p ${LANGSCI-PATH}langsci-forest-setup.sty    .
 	cp -p ~/Documents/Dienstlich/Buecher/GT/English/styles/dalrymple.sty styles/
 

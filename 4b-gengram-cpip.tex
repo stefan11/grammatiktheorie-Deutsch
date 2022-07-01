@@ -1,0 +1,1763 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   $RCSfile: 3-gengram-grundfragen.tex,v $
+%%  $Revision: 1.1 $
+%%      $Date: 2004/04/26 14:10:21 $
+%%    Authors: Stefan Mueller (CL Uni Bremen)
+%%    Purpose: course slides
+%%   Language: LaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Die Struktur des deutschen Satzes}
+
+%\if 0
+
+\iftoggle{gb-intro}{
+
+\frame{
+
+\frametitle{Gliederung}
+
+\begin{itemize}
+%% \item Ziele
+%% \item Wiederholung von Grundbegriffen
+%% \item Grundfragen der Sprachwissenschaft
+\item Grammatikmodelle
+\begin{itemize}
+\item Phrasenstrukturgrammatik
+\item Transformationsgrammatik und deren Nachfolger
+\begin{itemize}
+\item Geschichtliches und Motivation
+\item Das T-Modell im Überblick
+\item Grundbegriffe: Theta-Rollen, Externes Argument, \ldots
+\item Lexikoneinträge
+\item Syntaktische Kategorien
+\item \xbar-Schemata
+\item \blaubf{Die Struktur des deutschen Satzes}
+\item Kasus
+\item NP-Bewegung
+\item Bindungstheorie
+%\item \emph{w}-Bewegung
+\item Inkorporation
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+}
+}%\end{gb-intro}
+
+\subsubsection{Exkurs: CP und IP im Englischen}
+
+\frame[shrink]{
+\frametitle{Die Struktur des deutschen Satzes}
+
+
+\begin{itemize}
+\item In früheren Arbeiten zum Englischen gab es für Sätze Regeln wie: 
+\eal
+\ex S $\to$ NP VP
+\ex S $\to$ NP Infl VP
+\zl
+
+\begin{forest}
+sm edges
+[S
+  [NP
+  	[Ann,roof]]
+  [INFL
+  	[will]]
+  [VP
+  	[V$'$
+		[V$^0$[read]]
+		[NP[the newspaper, roof]]]]]
+\end{forest}
+
+\pause
+\item Diese Regeln entsprechen nicht dem \xbar-Schema.
+
+
+\end{itemize}
+
+}
+
+
+
+\subsubsubsection{C und I}
+
+% \frame{
+% \frametitle{C und I}
+
+% \begin{itemize}
+% \item Anmerkung: Die Benennung der Kategorien C und I ist teilweise nur noch wissenschaftsgeschichtlich motivierbar.
+% \begin{itemize}
+% \item<+-> Älterer Terminus für C$^0$: COMP = englisch \emph{complementizer},\\
+% unterordnende Konjunktion, wie sie prototypisch in Objektnebensätzen (\emph{complement clauses}) auf"|tritt.
+% \item<+-> Neuerer Terminus für I$^0$: T = Tempus (englisch \emph{tense}). 
+% \item<+-> Älterer Terminus für I$^0$: INFL = englisch \emph{inflection};\\
+% gemeint: Flexion des Verbs (Konjugation); \\
+% Vorgänger: AUX = englisch \emph{auxiliary} = Hilfsverb.
+% \end{itemize}
+% \ifthenelse{\boolean{gb-intro}}{
+% \item<+-> Bevor wir uns CP und IP im Deutschen zuwenden\\
+% betrachten wir das Englische.
+% }{}
+% \end{itemize}
+
+
+% }
+
+
+\subsubsubsection{IP und VP im Englischen}
+
+\frame{
+\frametitle{Exkurs: IP und VP im Englischen: Hilfsverben}
+
+\savespace\small\parskip0pt
+
+
+\centerline{
+\begin{forest}
+sm edges
+[IP
+  [NP
+  	[Ann,roof]]
+  [I$'$
+  	[I$^0$
+  		[will]]
+	[VP
+  	[V$'$
+		[V$^0$[read]]
+		[NP[the newspaper, roof]]]]]]
+\end{forest}}
+
+
+\begin{itemize}
+\item Statt dessen INFL als Kopf, der eine VP als Komplement nimmt.
+\item Hilfsverben stehen in \inull (=~Aux).
+\item Satzadverbien können zwischen Hilfsverb und Vollverb stehen.
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{IP und VP im Englischen: Sätze ohne Hilfsverb}
+
+\savespace\small\parskip0pt
+
+\centerline{%
+\begin{forest}
+sm edges
+[IP
+	[NP[Ann,roof]]
+	[I$'$
+		[I$^0$[-s]]
+		[VP
+			[V$'$
+				[V$^0$[read-]]
+				[NP[the newspaper, roof]]]]]]
+\end{forest}
+}
+
+\begin{itemize}
+\item Hilfsverben stehen in \inull (=~Aux).
+\item Position kann leer bleiben.\\
+Wird dann mit der flektierten Form des finiten Verbs verknüpft.
+
+Früher: In \inull stand das Affix \suffix{s}, das Verb bewegt sich in die \inull-Position.
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{Englische Sätze mit Komplementierer}
+
+\psset{xunit=1cm,yunit=5.4mm}
+\psset{nodesep=4pt,linewidth=0.8pt,arrowscale=2}
+
+
+\hfill\scalebox{0.73}{%
+\begin{forest}
+sm edges
+[CP
+[C$'$
+	[C$^0$[that]]
+	[IP
+		[NP[Ann,roof]]
+		[I$'$
+			[I$^0$[will]]
+			[VP
+				[V$'$
+					[V$^0$[read]]
+					[NP[the newspaper, roof]]]]]]]]
+\end{forest}}\hfill\hfill\mbox{}
+
+\begin{itemize}
+\item Der Komplementierer (\emph{that}, \emph{because}, \ldots) verlangt eine IP.
+\end{itemize}
+
+}
+
+\subsubsubsection{CP, IP und VP im Englischen}
+
+\frame[shrink]{
+%\frame{
+\frametitle{CP, IP und VP im Englischen: Fragesätze}
+
+\savespace\small\smallexamples\parskip0pt\itemsep0pt
+
+
+\centerline{%
+\scalebox{.8}{
+\begin{forest}
+sm edges
+[IP
+		[NP[Ann,roof]]
+		[I$'$
+			[I$^0$[\trace$_k$]]
+			[VP
+				[V$'$
+					[V$^0$[read]]
+					[NP[the newspaper,roof]]]]]]
+\end{forest}}}
+
+\begin{itemize}
+\item Ja/nein-Fragen werden durch Voranstellung des Hilfsverbs gebildet:
+\ea
+Will Ann read the newspaper?
+\z
+\pause
+\item \emph{wh}-Fragen werden durch zusätzliche Voranstellung vor das Hilfsverb gebildet:
+\ea
+What will Ann read?
+\z
+\item Umstellung des Hilfsverbs erfolgt in Position, die sonst der Komplementierer innehat.
+\end{itemize}
+
+}
+
+
+\frame[shrink]{
+\frametitle{CP, IP und VP im Englischen: Fragesätze}
+
+\vfill
+
+\hfill
+\scalebox{.9}{
+\begin{forest}
+sm edges
+[CP
+[XP [\trace]]
+[C$'$
+	[C$^0$[will$_k$]]
+	[IP
+		[NP[Ann,roof]]
+		[I$'$
+			[I$^0$[\trace$_k$]]
+			[VP
+				[V$'$
+					[V$^0$[read]]
+					[NP[the newspaper,roof]]]]]]]]
+\end{forest}}
+\hfill
+\only<2->{\scalebox{.9}{
+\begin{forest}
+sm edges
+[CP
+[NP[what$_i$]]
+[C$'$
+	[C$^0$[will$_k$]]
+	[IP
+		[NP[Ann,roof]]
+		[I$'$
+			[I$^0$[\trace$_k$]]
+			[VP
+				[V$'$
+					[V$^0$[read]]
+					[NP[\trace$_i$]]]]]]]]
+\end{forest}}}
+\hfill\mbox{}
+
+\vfill
+
+\pause
+
+}
+
+
+
+\iftoggle{gb-intro}{
+\frame{
+\frametitle{Grundannahmen zu CP, IP und VP im Englischen}
+
+\begin{itemize}
+\item Die \blaubf{D-Struktur} ist die Phrasenstruktur,\\
+die sich aus den \blaubf{Theta-Rastern} der beteiligten \blaubf{lexikalischen Einheiten} ergibt.
+\item Die \blaubf{S-Struktur} berücksichtigt
+zusätzlich die Anforderungen der \blaubf{funktionalen Kategorien}.
+
+Besonders wichtig:\\
+Funktionale Kategorien können \blaubf{Bewegungen} auslösen. 
+\end{itemize}
+
+}
+
+
+
+\subsubsubsection{Strukturelle Regeln für die Satzstruktur des Englischen}
+
+
+\frame{
+\frametitle{Strukturelle Regeln für die Satzstruktur des Englischen (I)}
+
+
+\begin{itemize}
+\item Vollverben stehen immer an Position \vnull.
+\pause
+\item Satzadverbialien stehen am linken Rand der VP (Einzelheiten umstritten).
+\pause
+\item In einfachen affirmativen (nicht verneinten) Sätzen mit einer
+einzigen Verbform ist \inull lexikalisch leer. 
+
+\pause
+\item Für Kongruenz zwischen Subjekt und Verb ist die Kategorie I zuständig 
+(sogenanntes Spec-Head-Agreement, hier Kongruenz zwischen der Subjektposition
+SpecIP und dem Kopf \inull) $\to$ 
+muss eine "`unsichtbare"' Beziehung zwischen \inull und \vnull geben.
+
+\pause 
+Heute geht man von Verkettung von \vnull mit der leeren \inull-Position aus. 
+
+\pause
+Früher: "`Affix-Hopping"':\nocite{Chomsky75a} \inull war nur
+mit grammatischen Merkmalen (insbesondere Tempus und Modus sowie Person und
+Numerus) und allenfalls mit einem Affix (\zb \emph{-s}, \emph{-ed}) besetzt.
+Affix musste aus phonologischen Gründen zum Verb "`hinunterhüpfen"'.
+
+
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Strukturelle Regeln für die Satzstruktur des Englischen (II)}
+
+\begin{itemize}[<+->]
+\item Hilfsverben (Auxiliare) \emph{be}, \emph{have}, \emph{will}, \emph{shall}, \emph{can}, \emph{may}, \emph{must}\\
+haben syntaktische Kategorie I.
+
+\item In verneinten Sätzen tritt das semantisch leere Hilfsverb \emph{do} auf (Kategorie: auch I). 
+\item Die CP-Schicht wird nur bei bestimmten Satzarten gefüllt, und zwar mit \blaubf{Bewegung} von
+Elementen aus IP und VP. 
+
+Dabei gilt das universelle \blaubf{Prinzip der
+Strukturerhaltung}: An eine Phrasenposition (zum Beispiel Spec-Position) kann
+nur eine Phrase bewegt werden, an eine Kopfposition nur ein Kopf.
+
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Regeln: Interrogativ-Hauptsätze (I)}
+
+%\setlength\leftmargini{1em}
+In Interrogativ-Hauptsätzen finden die folgenden Bewegungen statt: 
+\begin{itemize}
+\item Interrogative XP $\to$ SpecCP 
+\item \inull $\to$ \cnull
+\end{itemize}
+
+
+{\footnotesize
+
+\begin{tabular}{|l|l|l|l|l|l|l|}\hline
+SpecCP    & \cnull     & SpecIP & \inull   & Satzadv       & \vnull    & Rest der VP\\\hline\hline
+What$_i$  & will$_k$   & Ann    & t$_k$   & usually       & read      & t$_i$ in the pub?\\
+What$_i$  & does$_k$   & Ann    & t$_k$   & usually       & read      & t$_i$ in the pub?\\\hline
+\end{tabular}
+
+}
+}
+
+\frame{
+\frametitle{Regeln: Interrogativ-Hauptsätze (II)}
+
+Bei Entscheidungsfragen sowie Frage nach dem Subjekt\\
+keine Bewegung nach SpecCP:
+
+
+{\footnotesize
+\begin{tabular}{|l|l|l|l|l|l|l|}\hline
+SpecCP    & \cnull     & SpecIP & \inull   & Satzadv       & \vnull    & Rest der VP\\\hline\hline
+          & Will$_k$   & Ann    & \_$_k$   & usually       & read      & the newspaper in the pub?\\
+          & Did$_k$    & Ann    & \_$_k$   & usually       & read      & the newspaper in the pub?\\
+          & Didn't$_k$ & Ann    & \_$_k$   & usually       & read      & the newspaper in the pub?\\
+          &            & Who    & read$_k$ s  & usually       & \_$_k$ & the newspaper in the pub?\\
+          &            & Who    & will     & usually       & read      & the newspaper in the pub?\\\hline
+\end{tabular}
+}
+
+
+\pause
+\inull $\to$ \cnull (außer bei Frage nach dem Subjekt).\\
+Bewegung von leerem \inull ist ausgeschlossen;\\
+stattdessen wird in \cnull das semantisch leere Hilfsverb \emph{do} eingeführt. 
+
+}
+
+\frame{
+\frametitle{Regeln: Interrogativnebensätze}
+
+
+\begin{itemize}
+\item<+-> In \emph{wh}-Interrogativnebensätzen und in \emph{wh}-Relativsätzen wird nur SpecCP
+besetzt, und zwar mit einer Phrase, die ein \emph{wh}-Wort (\emph{what}, \emph{who}, \emph{which}, \emph{where}, \ldots)
+enthält. 
+\eal
+\ex I wonder whether he will come.
+\ex the man who you saw
+\zl
+Man spricht hier von \emph{wh}-Bewegung.
+\item<+-> (\emph{wh}-Interrogativnebensätze sind nicht die einzige Option für Relativsätze im Englischen!)
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Regeln: Konjunktionalnebensätze}
+
+
+\begin{itemize}
+
+\item<+-> Konjunktionalnebensätze: unterordnende Konjunktion (Complementizer) steht in \cnull. 
+\ea
+He believes that he will win.
+\z
+\item<+-> In älteren Sprachstufen und dialektal noch heute wird \cnull auch bei
+\emph{wh}-Interrogativ-Nebensätzen mit der unterordnenden Konjunktion \emph{that} besetzt
+(vgl.\ die analoge Erscheinung im Frühneuhochdeutschen und in deutschen Dialekten):
+\ea
+Men shal knowe what that I am \citep[S.\,122]{Haegeman94a-u} 
+\z
+\end{itemize}
+
+}
+
+\subsubsubsection{Zwei Arten von Bewegung}
+\frame{
+\frametitle{Zwei Arten von Bewegung}
+
+Fazit: Es treten zwei Arten von Bewegungen auf:
+\begin{itemize}
+\item Bewegung von Phrasen an Spezifikatorpositionen und 
+\item Bewegung von Köpfen an die jeweils unmittelbar übergeordnete Kopfposition
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{\normalsize Übersicht: CP, IP und VP im Englischen}
+%
+\savespace
+{\scriptsize
+\hspace{\leftmargin}\begin{tabular}{|l|l|l|l|l|l|l|}\hline
+SpecCP    & \cnull     & SpecIP & \inull   & Satzadv       & \vnull    & Rest der VP\\\hline\hline
+          &            & Ann    & read$_k$ s   & usually      & \_$_k$ & the newspaper in the pub.\\
+          &            & Ann    & will     & usually       & read      & the newspaper in the pub.\\
+          &            & Ann    & does not & usually       & read      & the newspaper in the pub.\\ 
+          & that       & Ann    & read$_k$ s  & usually       & \_$_k$ & the newspaper in the pub.\\
+          & Will$_k$   & Ann    & t$_k$   & usually       & read      & the newspaper in the pub?\\
+          & Did$_k$    & Ann    & t$_k$   & usually       & read      & the newspaper in the pub?\\
+          & Didn't$_k$ & Ann    & t$_k$   & usually       & read      & the newspaper in the pub?\\
+          &            & Who    & read$_k$ s  & usually       & \_$_k$ & the newspaper in the pub?\\
+          &            & Who    & will     & usually       & read      & the newspaper in the pub?\\
+What$_i$  & will$_k$   & Ann    & t$_k$   & usually       & read      & t$_i$ in the pub?\\
+What$_i$  & does$_k$   & Ann    & t$_k$   & usually       & read      & t$_i$ in the pub?\\\hline\hline
+%
+what$_i$  & [ \_ ]     & Ann    & read$_k$ s   & usually       & \_$_k$      & t$_i$ in the pub.\\
+what$_i$  & [ \_ ]     & Ann    & will     & usually       & read      & t$_i$ in the pub.\\
+which$_i$ & [ \_ ]     & Ann    & read$_k$ s  & usually       & \_$_k$ & t$_i$ in the pub.\\
+which$_i$ & [ \_ ]     & Ann    & will     & usually       & read      & t$_i$ in the pub.\\\hline
+\end{tabular}
+
+\begin{itemize}\itemsep0pt
+\item Leere Köpfe, sofern von Anfang an leer: \_ oder e (englisch empty = leer)
+\item Wegbewegte Köpfe und Phrasen = t (englisch \emph{trace} = Spur)
+\item Die Indexe (i, j, k, \ldots) machen klar, welche Phrase zu welcher leeren Position gehört.
+\end{itemize}
+}
+
+}
+
+}%\end{gb-intro}
+
+\subsubsection{Topologie des deutschen Satzes}
+
+\frame{
+\frametitle{Topologie des deutschen Satzes (I)}
+
+Bevor wir uns dem CP/IP-System für das Deutsche zuwenden, müssen einige deskriptive Begriffe geklärt
+werden:
+
+\begin{itemize}
+\item Die Abfolge der Konstituenten im Deutschen wird unter Bezugnahme auf topologische
+Felder erklärt.
+
+\pause
+\item Wichtige Arbeiten zum Thema topologische Felder sind:\\
+\citew{Drach37},  \citew{Reis80a} und \citew{Hoehle86}.
+
+\pause
+\item Im folgenden werden die Begriffe \emph{Vorfeld}, \emph{linke/rechte Satzklammer},
+\emph{Mittelfeld} und \emph{Nachfeld} eingeführt.
+
+\citew{Bech55a} hat noch weitere Felder für die Beschreibung der Abfolgen innerhalb von Verbalkomplexen
+eingeführt, die hier aber vorerst ignoriert werden.
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Verbstellungstypen und Begriffe}
+
+\savespace
+\begin{itemize}
+\item Verbendstellung
+      \ea
+      Peter hat erzählt, \rot<5->{dass} er das Eis \braun<5->{\gruen<4>{gegessen} \blauit<-4>{hat}}.
+      \z
+\pause
+\item Verberststellung
+        \ea
+      \rot<4->{\blauit<-3>{Hat}} Peter das Eis \braun<5->{\gruen<4>{gegessen}}?
+      \z
+\pause
+\item Verbzweitstellung
+      \ea
+      Peter \rot<4->{\blauit<-3>{hat}} das Eis \braun<5->{\gruen<4>{gegessen}}.
+      \z
+\end{itemize}
+
+\pause
+\begin{itemize}[<+->]
+\item verbale Elemente nur in (\mex{-2}) kontinuierlich
+\item \rot<5->{linke} und \braun<5->{rechte} Satzklammer
+\item Komplementierer (\emph{weil}, \emph{dass}, \emph{ob}) in der linken Satzklammer
+\item Komplementierer und finites Verb sind komplementär verteilt
+\item Bereiche vor, zwischen u.\ nach Klammern: Vorfeld, Mittelfeld, Nachfeld
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Topologie des deutschen Satzes im Überblick}
+
+
+\resizebox{\textwidth}{!}{
+\begin{tabular}{@{}lllll@{}}
+\rowcolor{structure!15}Vorfeld & linke Klammer & Mittelfeld                             & rechte Klammer & Nachfeld                   \\ 
+\\
+\rowcolor{structure!10}Karl    & schläft.      &                                        &                &                            \\
+                       Karl    & hat           &                                        & geschlafen.    &                            \\
+\rowcolor{structure!10}Karl    & erkennt       & Maria.                                 &                &                            \\
+                       Karl    & färbt         & den Mantel                             & um             & den Maria kennt.           \\
+\rowcolor{structure!10}Karl    & hat           & Maria                                  & erkannt.       &                             \\
+                       Karl    & hat           & Maria als sie aus dem Zug stieg sofort & erkannt.       &                             \\
+\rowcolor{structure!10}Karl    & hat           & Maria sofort                           & erkannt        & als sie aus dem Zug stieg. \\
+                       Karl    & hat           & Maria zu erkennen                      & behauptet.     &            \\
+\rowcolor{structure!10}Karl    & hat           &                                        & behauptet      & Maria zu erkennen.         \\ 
+\\
+\rowcolor{structure!10}        & Schläft       & Karl?                                  &                &                            \\
+                               & Schlaf!       &                                        &                &                             \\
+\rowcolor{structure!10}        & Iß            & jetzt dein Eis                         & auf!           &                             \\
+        & Hat           & er doch das ganze Eis alleine          & gegessen.            &      \\  \\
+\rowcolor{structure!10}        & weil          & er das ganze Eis alleine               & gegessen hat   & ohne sich zu schämen.\\
+        & weil          & er das ganze Eis alleine               & essen können will    & ohne gestört zu werden.    \\
+\rowcolor{structure!10}wer     &               & das ganze Eis alleine                  & gegessen hat.  &                             \\
+\end{tabular}
+}
+
+}
+
+% \frame{
+% \frametitle{Der Prädikatskomplex}
+% %
+
+
+% \begin{itemize}
+% \item<+-> mehrere Verben in der rechten Satzklammer: Verbalkomplex
+% \item<+-> manchmal wird auch von diskontinuierlichen Verbalkomplexen
+%       gesprochen (Initialstellung das Finitums)
+% \item<+-> auch prädikative Adjektive (\mex{1}a) und Resultativprädikate (\mex{1}b) werden zum Prädikatskomplex gezählt:
+%       \eal
+%       \ex dass Karl seiner Frau treu ist
+%       \ex dass Karl das Glas leer trinkt
+%       \zl
+% \end{itemize}
+
+% }
+
+\frame{
+\frametitle{Die Rangprobe}
+%
+
+
+\begin{itemize}
+\item<+-> Felder nicht immer besetzt
+      \ea
+      \field{Der Mann}{VF} \field{gibt}{LS} \field{der Frau das Buch,}{MF} \field{die er kennt}{NF}.
+      \z
+\item<+-> Test: Rangprobe \citep[S.\,72]{Bech55a}
+\eal
+\ex[]{
+Der Mann hat der Frau das Buch gegeben, die er kennt.
+}
+\ex[*]{
+Der Mann hat der Frau das Buch, die er kennt, gegeben.
+}
+\zl
+Ersetzung des Finitums durch ein Hilfsverb $\to$\\
+Hauptverb besetzt die rechte Satzklammer.
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{Rekursives Auf"|tauchen der Felder}
+
+\begin{itemize}
+\item \citet*[S.\,82]{Reis80a}: Rekursion\\
+      Vorfeld kann in Felder unterteilt sein:
+\eal
+\ex Die Möglichkeit, etwas zu verändern, ist damit verschüttet
+      für lange lange Zeit.
+\ex {}[Verschüttet für lange lange Zeit] ist damit die Möglichkeit, 
+      etwas zu ver"-ändern.
+\ex Wir haben schon seit langem gewu"st, da"s du kommst.
+\ex {}[Gewu"st, da"s du kommst,] haben wir schon seit langem.
+\zl
+\pause
+\item im Mittelfeld beobachtbare Permutationen auch innerhalb komplexer Vorfelder
+
+\eal
+\ex {}[\gruen{Seiner Tochter} \blau{ein Märchen} erzählen] wird er wohl müssen.
+\ex {}[\blau{Ein Märchen} \gruen{seiner Tochter} erzählen] wird er wohl müssen.
+\zl
+\end{itemize}
+
+}
+
+\iftoggle{gb-intro}{
+\frame{
+\frametitle{Bemerkung zu Interrogativphrasen und Relativpronomina}
+
+\begin{itemize}
+\item Zuordnung zum Vorfeld dadurch motiviert, dass im Bairischen
+      zusätzlich zur w/d-Phrase ein Komplementierer auftreten kann.
+\item außerdem theorieinterne Gründe (Phrasenposition vs.\ Kopfposition)
+\item Diese Zuordnung schafft allerdings empirische Probleme:
+      \begin{itemize}
+      \item Komplementierer kann mit w-Phrase koordiniert werden \citep{Reis85} %S. 301
+      \item w/d-Phrasen verhalten sich in bezug auf Verum-Fokus genauso wie Komplementierer
+      \item w/d-Phrasen können in Dialekten wie Komplementierer flektiert werden
+      \end{itemize}
+\end{itemize}
+
+
+}
+}
+
+\frame{
+\frametitle{Übung}
+
+Bestimmen Sie die topologischen Felder in den Sätzen in (\mex{1}):
+\eal
+\ex Der Mann hat gewonnen, den alle kennen.
+\ex Er gibt ihm das Buch, das Klaus empfohlen hat.
+\ex Maria hat behauptet, dass das nicht stimmt.
+\ex Peter hat das Buch gelesen,\\das Maria dem Schüler empfohlen hat,\\der neu in die Klasse gekommen ist.
+\ex Komm!
+\zl
+
+}
+
+\subsubsection{CP und IP im Deutschen}
+
+\frame{
+\frametitle{Das topologische Modell mit CP, IP, VP (I)}
+
+\vfill
+\centerline{
+\scalebox{.7}{
+\begin{forest}
+    sn edges original,empty nodes
+    [CP
+      [{}
+        [XP,terminus
+          [SpecCP\\prefield, name=p1
+          ]
+        ]
+      ]
+      [C$'$
+            [{}
+              [C$^0$, terminus
+                [C$^0$\\left SB, name=c0
+                ]
+              ]
+            ]
+            [IP
+              [{}
+                [XP, terminus
+                  [{IP (without I$^0$, V$^0$)\\middle field}
+                    [SpecIP\\subject position, set me left, name=specip
+                    ]
+                    [phrases inside\\the VP, name=p3
+                    ]
+                  ]
+                ]
+              ]
+              [I$'$
+                      [VP, name=vp
+                        [V$^0$, name=v0, terminus, no path, anchor=east
+                          [{V$^0$, I$^0$\\right SB}, name=p2, set me left
+                          ]
+                        ]
+                      ]
+                      [{}
+                            [I$^0$, terminus, name=io
+                            ]
+                      ]
+              ]
+            ]
+      ]
+    ]
+    \draw [thick]
+      (p1.north west) rectangle (io.east |- p3.south);
+    \draw
+      ($(c0.north east)!1/2!(specip.west |- c0.north east)$) coordinate (p6) -- (p6 |- p3.south)
+      ($(p1.north east)!1/2!(c0.north west)$) coordinate (p4) -- (p3.south -| p4)
+      ($(specip.north east)!1/2!(p3.north west)$) coordinate (p5) -- (p3.south -| p5)
+      ($(p2.north west)!1/2!(p2.north west -| p3.east)$) coordinate (p7) -- (p3.south -| p7)
+      (p6 |- p2.south) -- (p2.south -| p7)
+      (vp.south) -- (v0.center -| p3.west) -- (v0.west)
+      (v0.east) -- +(4.5pt,0) -- (vp.south)
+      ;
+\end{forest}}}
+
+}
+
+% \frame{
+% \frametitle{Das topologische Modell mit CP, IP, VP (II)}
+
+% \footnotesize
+% \resizebox{0.99\textwidth}{!}{
+% \begin{tabular}{|l|l|l|l|l|}
+% \hline
+% %
+% SpecCP    & \cnull      & \mc{2}{l|}{IP (ohne \inull, \vnull)} & \vnull, \inull\\
+% Vorfeld   & Linke       & \mc{2}{l|}{Mittelfeld}                      & Rechte\\\cline{3-4}
+%           & Satzklammer & SpecIP           & Phrasen innerhalb der VP & Satzklammer\\
+%           &             & Subjektsposition &                          &\\\hline\hline
+%           & dass         & Anna & [das Buch] [auf den Tisch] & legt$_k$ [ \_ ]$_k$\\
+% \pause
+%           & ob  & Anna & [das Buch] [auf den Tisch] & legt$_k$ [ \_ ]$_k$ \\\hline\hline
+% \pause
+% \ifthenelse{\boolean{gb-intro}}{
+% wer$_i$      & [ \_ ] & [ t ]$_i$ & [das Buch] [auf den Tisch] & legt$_k$ [ \_ ]$_k$\\
+% \pause
+% was$_i$      & [ \_ ] & Anna & [ t ]$_i$ [auf den Tisch] & legt$_k$ [ \_ ]$_k$\\\hline\hline
+% \pause
+% }{}
+%           & Legt$_k$ & Anna & [das Buch] [auf den Tisch]? & [ t ]$_k$ [ t ]$_k$\\
+% \pause
+%           & Legt$_k$ & Anna & [das Buch] [auf den Tisch], & [ t ]$_k$ [ t ]$_k$ \\\hline\hline
+% \pause
+% Anna$_i$     & legt$_k$ & [ t ]$_i$ & [das Buch] [auf den Tisch] & [ t ]$_k$ [ t ]$_k$\\
+% \pause
+% Wer$_i$      & legt$_k$ & [ t ]$_i$ & [das Buch] [auf den Tisch]? & [ t ]$_k$ [ t ]$_k$\\
+% \pause
+% {}[Das Buch]$_i$ & legt$_k$ & Anna & [ t ]$_i$ [auf den Tisch] & [ t ]$_k$ [ t ]$_k$\\
+% \pause
+% Was$_i$      & legt$_k$ & Anna & [ t ]$_i$ [auf den Tisch]? & [ t ]$_k$ [ t ]$_k$\\
+% \pause
+% {}[Auf den Tisch]$_i$ & legt$_k$ &Anna & [das Buch] [ t ]$_i$ & [ t ]$_k$ [ t ]$_k$\\\hline
+% \end{tabular}
+% }
+
+% \pause
+% \vfill
+% Achtung: Die Bezeichner SpecCP u.\ SpecIP sind keine Kategoriensymbole. Sie kommen
+% in Grammatiken mit Ersetzungsregeln nicht vor! Sie bezeichnen nur Positionen im Baum.
+
+% }
+
+\subsubsubsection{Deutsch als SOV-Sprache}
+
+\frame{
+\frametitle{Deutsch als SOV-Sprache}
+
+\begin{itemize}
+
+\item Köpfe von VP und IP (\vnull und \inull) stehen im Deutschen rechts und bilden
+zusammen die rechte Satzklammer. 
+
+\pause
+\item Subjekt und alle anderen Satzglieder (Komplemente und Adjunkte) stehen links davon und bilden das
+Mittelfeld. 
+
+\pause
+\item Deutsch ist damit zumindest in der D-Struktur eine sogenannte
+SOV-Sprache (=~Sprache mit Grundabfolge Subjekt--Objekt-- Verb)
+
+\begin{itemize}
+\item SOV Deutsch, \ldots
+\item SVO Englisch, Französisch, \ldots
+\item VSO Walisisch, Arabisch, \ldots 
+\end{itemize}
+Etwa 40\,\% aller Sprachen sind SOV-Sprachen, etwa 25\,\% sind SVO. 
+
+
+\pause
+\item Nebeneffekt der SOV-Struktur: Je enger sich ein Satzglied auf das
+Verb bezieht, desto näher steht es an der rechten Satzklammer und auch dann,
+wenn das Verb wegbewegt wurde.
+\end{itemize}
+
+}
+
+\frame{
+\frametitlefit{Motivation der Verbletztstellung als Grundstellung: Partikeln}
+
+\citew%[S.\,34--36]
+{Bierwisch63a}: Sogenannte Verbzusätze oder Verbpartikel\\
+bilden mit dem Verb eine enge Einheit.
+\eal
+\ex weil er morgen \blau{anfängt}
+\ex Er \blau{fängt} morgen \blau{an}.
+\zl
+Diese Einheit ist nur in der Verbletzstellung zu sehen, was dafür spricht, diese
+Stellung als Grundstellung anzusehen.
+}
+
+% \frame{
+% \frametitle{Stellung der infiniten Verben}
+
+
+% \eal
+% \ex Dieses Buch sollte gelesen werden müssen.
+% \ex This book should have been read.
+% \zl
+
+% }
+
+\frame{
+\frametitle{Stellung in Nebensätzen}
+
+Verben in infiniten Nebensätzen und in durch eine Konjunktion eingeleiteten
+finiten Nebensätzen stehen immer am Ende\\
+(von Ausklammerungen ins Nachfeld abgesehen):
+\eal
+\ex Der Clown versucht, Kurt-Martin die Ware \blaubf{zu geben}.
+\ex dass der Clown Kurt-Martin die Ware \blaubf{gibt}
+\zl
+}
+
+\frame{
+\frametitle{Stellung der Verben in SVO und SOV-Sprachen}
+
+\citet{Oersnes2009b}: 
+\eal
+\ex dass er ihn gesehen$_3$ haben$_2$ muss$_1$
+\ex 
+\gll at han må$_1$ have$_2$ set$_3$ ham\\
+     dass er muss haben gesehen ihn\\
+\zl
+
+
+}
+
+\frame{
+\frametitle{Skopus}
+
+\citew[Abschnitt~2.3]{Netter92}:
+Skopusbeziehungen der Adverbien hängt von ihrerer Reihenfolge ab (Präferenzregel?):\\
+Links stehendes Adverb hat Skopus über folgendes Adverb und Verb.
+
+\eal
+\ex weil er [absichtlich [nicht lacht]]
+\ex weil er [nicht [absichtlich lacht]]
+\zl
+\pause
+Bei Verberststellung ändern sich die Skopusverhältnisse nicht.
+\eal
+\ex Er lacht absichtlich nicht.
+\ex Er lacht nicht absichtlich.
+\zl
+}
+
+
+\subsubsubsection{C -- die linke Satzklammer}
+
+
+\frame{
+\frametitle{\cnull{} -- die linke Satzklammer in Nebensätzen}
+
+\cnull entspricht der linken Satzklammer und wird wie folgt besetzt:
+\begin{itemize}
+\item In Konjunktionalnebensätzen steht die unterordnende Konjunktion\\ (der Complementizer) wie im Englischen in \cnull. 
+
+Das Verb bleibt in der rechten Satzklammer.
+\ea
+Er glaubt, dass sie kommt.
+\z
+\iftoggle{gb-intro}{
+\pause
+\item In Relativ- und \emph{w}-Interrogativnebensätzen bleibt die Position \cnull standardsprachlich leer. 
+(In früheren und regionalen Varietäten des Deutschen konnte/kann \cnull besetzt werden.)
+
+Das Verb bleibt ebenfalls in der rechten Satzklammer. 
+\eal
+\ex der Mann, den wir kennen
+\ex Ich frage mich, wen du überhaupt kennst.
+\zl
+}
+\end{itemize}
+
+}
+\frame{
+\frametitle{\cnull{} -- die linke Satzklammer in Verberst- und -zweitsätzen}
+
+\begin{itemize}
+\item In Verberst- und Verbzweitsätzen wird das finite Verb über die Position \inull nach \cnull bewegt: 
+\vnull $\to$  \inull $\to$ \cnull. 
+\eal
+\ex dass er sie kenn- -t \jambox{(Verb in \vnull)}
+\ex dass er sie \_$_i$ [kenn-$_i$ -t] \jambox{(Verb in \inull)}
+\ex {}[Kenn-$_i$ -t]$_j$ er sie \_$_i$ \_$_j$? \jambox{(Verb in \cnull)}
+\zl
+
+\iftoggle{gb-intro}{
+\pause
+\item Direkte Bewegung von \vnull nach \cnull wird durch eine im Sprachvergleich gut abgesicherte,
+hier aber nicht direkt nachweisbare Beschränkung ausgeschlossen, den sogenannten \emph{Head Movement Constraint}\nocite{Travis84a-u}.
+\item Für das Auftreten von Spuren gibt es allgemeine Beschränkungen,\\
+      die denen der \siehe \hyperlink{bt}{Pronomenbindung} entsprechen.\\
+      Das \emph{Head Movement Constraint} kann aus diesen Beschränkungen abgeleitet werden \citep{Baker88a}.
+}
+\end{itemize}
+
+}
+
+\subsubsubsection{SpecCP - das Vorfeld}
+
+\frame{
+\frametitle{SpecCP -- das Vorfeld in Deklarativsätzen (I)}
+
+Die Position SpecCP entspricht dem Vorfeld und wird wie folgt besetzt:
+\begin{itemize}
+\item Deklarativsätze (Aussage-Hauptsätze): XP wird ins Vorfeld bewegt.
+\ea
+Gibt der Mann dem Kind jetzt den Mantel?
+\z
+\pause
+\eal
+\ex Der Mann gibt dem Kind jetzt den Mantel.
+\pause
+\ex Dem Kind gibt der Mann jetzt den Mantel.
+\pause
+\ex Den Mantel gibt der Mann dem Kind jetzt.
+\pause
+\ex Jetzt gibt der Mann dem Kind den Mantel.
+\zl
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Verbbewegung und Bewegung nach SpecCP}
+
+\vfill
+\centerline{\scalebox{0.8}{
+\begin{forest}
+sm edges
+[CP
+[NP [diesen Mann$_i$, roof]]
+[C$'$
+	[C$^0$[(kenn-$_j$ -t)$_k$]]
+	[IP
+		[NP [jeder,roof]]
+		[I$'$
+			[VP
+				[V$'$
+					[NP[\trace$_i$]]
+					[V$^0$[\trace$_j$]]]]
+			[I$^0$ [\trace$_k$]]]]]]
+\end{forest}}}
+\vfill
+
+
+}
+
+\frame[shrink]{
+\frametitle{SpecCP -- das Vorfeld in Deklarativsätzen (II)}
+
+\begin{itemize}
+\item Ausschlaggebender Faktor für die Auswahl der zu bewegenden Phrase ist die Informationsstruktur des Satzes:\\
+Was an vorangehende oder sonstwie bekannte Information anknüpft, steht innerhalb des Satzes eher
+links ($\to$ vorzugsweise im Vorfeld), und was für den Gesprächspartner neu ist, steht eher rechts. 
+\pause
+\item Bewegung ins Vorfeld von Deklarativsätzen wird auch Topikalisierung genannt.\\
+      Der Fokus kann aber auch im Vorfeld stehen. Auch Expletiva.
+\pause
+\item Achtung:\\
+      Vorfeldbesetzung hat nicht denselben Status wie die Topikalisierung im Englischen!
+\pause
+\item Analyse funktioniert auch für sogenannte Fernabhängigkeiten:
+      \ea
+      {}[Um zwei Millionen Mark]$_i$ soll er versucht haben,\\ {}[eine Versicherung \_$_i$ zu betrügen].
+      \z
+\end{itemize}
+
+}
+
+
+\iftoggle{gb-intro}{
+\frame{
+\frametitle{SpecCP -- das Vorfeld in Nebensätzen}
+
+In Relativ- und \emph{w}-Interrogativsätzen wird eine Phrase mit einem entsprechenden Wort (je nachdem: Determinierer, Pronomen, Adverb) ins Vorfeld gestellt.
+\begin{itemize}
+\item Relativsätze müssen ein Relativpronomen in der vorangestellten Phrase enthalten:
+\eal
+\ex der Mann, [\blauit{der}] das gesagt hat
+\pause
+\ex der Mann, [\blauit{den}] wir kennen
+\pause
+\ex der Mann, [\blauit{dessen} Vorschlag] wir diskutieren
+\pause
+\ex der Mann, [von \blauit{dem}] wir reden
+\pause
+\ex der Mann, [über \blauit{dessen} Vorschlag] wir reden
+\pause
+\ex die Art und Weise, [\blauit{wie}] wir über ihn reden
+\zl
+\end{itemize}
+
+}
+\frame{
+\frametitle{SpecCP -- das Vorfeld in Nebensätzen}
+
+\begin{itemize}
+\item Interrogativsätze müssen ein Interrogativpronomen in der vorangestellten Phrase enthalten:
+\eal
+\ex Ich frage mich, [\blauit{wer}] das gesagt hat.
+\pause
+\ex Ich frage mich, [\blauit{wen}] du überhaupt kennst.
+\pause
+\ex Ich frage mich, [\blauit{wessen} Vorschlag] wir gerade diskutieren.
+\pause
+\ex Ich frage mich, [von \blauit{wem}] wir gerade reden.
+\pause
+\ex Ich frage mich, [über \blauit{wessen} Vorschlag] wir gerade reden.
+\pause
+\ex Ich frage mich, [\blauit{wie}] wir über ihn reden (sollten).
+\pause
+\ex Ich frage mich, [\blauit{ob}] er kommt.
+\zl
+\pause
+\item
+Man spricht hier von \blaubf{\emph{w}-Bewegung} (für Engl.\ \emph{wh}-Bewegung)\\
+(auch im Fall von Relativsätzen mit \emph{der}, \emph{die}, \emph{das}).
+\pause
+%\bigskip
+\item In allen übrigen Sätzen bleibt SpecCP leer.\\
+(Zu "`unsichtbarer"' Besetzung von SpecCP siehe \hyperlink{np-bewegung}{\emph{w}-Bewegung})
+\end{itemize}
+
+}
+
+
+%\fi 
+
+\subsubsubsection{V und I - die rechte Satzklammer}
+
+\frame{
+\frametitle{\vnull und \inull{} -- die rechte Satzklammer (I)}
+
+\savespace
+\begin{itemize}
+\item Deutsch hat keine lexikalischen Einheiten der Kategorie I,\\
+\dash, auch Hilfsverben sind wirkliche Verben (Kategorie V). 
+\pause
+\item VPen können verschachtelt auf"|treten (Rekursion bzw.\ Rekursivität): 
+
+Eine Regel, hier Einfügung einer VP, kann wiederholt angewendet werden.
+
+Eine untergeordnete VP ist jeweils Komplement der
+nächsthöheren.
+\ea
+Bis Anna\\
+{}{\blau<5>[\sub{VP}} {\blau<4>[\sub{VP}} {\blau<3>[\sub{VP}} das Buch auf den Tisch gelegt{\blau<3>]} haben{\blau<4>]} wird{\blau<5>]}, 
+\z
+\end{itemize}
+
+}
+
+\frame[shrink]{
+\frametitle{\vnull und \inull{} -- die rechte Satzklammer (II)}
+
+\setlength\leftmargini{1em}
+\begin{itemize}
+\item Die I-Position ist verantwortlich für:
+\begin{itemize}
+\item Finitheit
+\item die morphosyntaktischen Merkmale Tempus und Modus
+\item die Kongruenz in Person und Numerus zwischen Subjekt und Verb (\emph{Spec-Head-Agreement})
+\end{itemize}
+\pause
+\item Wo steht Verb in Sätzen mit Endstellung des finiten Verbs?% (=~Verbletztsätze):
+\begin{itemize}
+\item Möglichkeit 1:\\ Das Verb bleibt (wie im Englischen) an der \vnull-Stelle stehen. 
+\vnull ist dann mit der leeren \inull-Position verkettet. 
+Bezeichnung: verdeckte Verkettung (oder: \hypertarget{abstrakte Bewegung}{abstrakte Bewegung}, verdeckte Bewegung).
+\pause
+\item Möglichkeit 2:\\ Das Verb wird (wie im Französischen) an die \inull-Stelle angehoben. 
+\end{itemize}
+\pause
+scheint im Dt.\ kein klares Indiz für das eine oder das andere zu geben.
+
+Allg.\ gibt es für Ansatz einer \inull-Position im
+Dt.\ keinen direkten Nachweis. 
+
+%% Dass \inull normalerweise am Satzende
+%% angesetzt wird, ist eher forschungsgeschichtlich motiviert. 
+
+Im Folgenden: Annahme einer verdeckten Verkettung
+\end{itemize}
+
+}
+
+\subsubsubsection{Verbzusätze}
+
+\frame{
+\frametitle{Verbzusätze: Kopfadjunkte}
+
+\begin{itemize}
+\item Verbzusätze sind "`Nebenköpfe"' zu \vnull, \dash Kopfadjunkte:
+
+\begin{center}%
+\begin{tabular}[t]{ccc}
+&\node{v1}{\vnull}\\[4ex]
+\node{p}{\pnull}   &                  & \node{v2}{\vnull}\\[4ex]
+\node{doktor}{an} & & \node{mutter}{lachen}
+\end{tabular}%
+\nodeconnect{v1}{p}\nodeconnect{v1}{v2}
+\nodeconnect{p}{doktor}\nodeconnect{v2}{mutter}
+\end{center}
+
+
+\item Kopfadjunkte stellen eine Erweiterung des \xbar-Schemas dar.\\
+(später mehr: \hyperlink{inkorporation}{\siehe Inkorporation})
+\end{itemize}
+
+
+
+}
+
+\frame{
+\frametitle{Verbzusätze}
+
+\begin{itemize}
+\item In V1- und V2-Sätzen "`strandet"' der Verbzusatz am Satzende, es wird also nur die eigentliche Verbform bewegt.
+\eal
+\ex Als Anna die Tür aufschloss, 
+\ex Anna schloss die Tür auf. 
+\ex Schließ die Tür auf, Anna! 
+\zl
+
+\pause
+\item In Verbletztsätzen bilden Verbzusatz und Verbform in der gesprochenen Sprache eine Einheit, \dash ein prosodisches Wort.
+
+Indiz dafür, dass das Verb in Verbletztsätzen tatsächlich an der Position \vnull steht. 
+
+\pause
+\item Anders verhalten sich Präfixbildungen (\zb \emph{verschließen}) und\\
+"`feste Zusammensetzungen"' (\zb \emph{untersuchen}, \emph{umarmen}).
+\end{itemize}
+
+
+}
+
+%\if 0
+\subsubsubsection{SpecIP}
+
+\frame{
+\frametitlefit{Subjektposition SpecIP im Deutschen: Gibt es immer ein Subjekt?}
+
+\begin{itemize}
+\item \blaubf{Projektionsprinzip}:\\
+Lexikalische Information muss syntaktisch realisiert werden. 
+\item \blaubf{erweitertes Projektionsprinzip (EPP)}:\\
+Lexikalische Information muss syntaktisch realisiert werden. 
+
+Jeder Satz enthält ein Subjekt. 
+
+\pause
+\item Ein Problem für die These der universellen Geltung des EPP sind deutsche Sätze wie: 
+
+\eal
+\ex Heute wird nicht gearbeitet. 
+\ex Mir ist kalt. 
+\ex Ihn schwindelt.
+\ex Ihm graut vor der Prüfung.
+\zl
+\end{itemize}
+
+}
+
+\frame{
+\frametitlefit{Subjektposition SpecIP im Deutschen: Konstituentenstellung (I)}
+
+
+Es gibt Linksversetzungen im Mittelfeld (innerhalb von IP und VP). 
+
+Bezeichnung: \emph{Scrambling} (nach spöttischem Ausspruch des Deutschkenners Mark
+Twain, vgl.\ \emph{scrambled eggs} = Rührei, \siehe auch \citew{Ross67,Ross86a-u}).
+\nocite{Twain1880a}
+
+\pause
+Auslösende Faktoren von Scrambling: 
+\begin{itemize}\itemsep0pt
+%\item Belebtheit (präferierte Abfolge: Belebtes vor Unbelebtem)
+\item Definitheit (präferierte Abfolge: Bestimmtes vor Unbestimmtem)
+\item Informationsgehalt (präferierte Abfolge: Bekanntes vor Neuem)
+\item Konstituentenlänge (kurz vor lang)\nocite{Behaghel09,Behaghel30}
+\end{itemize}
+
+\pause
+Umgestellte Konstituenten können vor dem Subjekt stehen, bzw.\ Subjekt zwischen
+anderen Konstituenten:
+\eal
+\ex dass [im Saal] [drei Paare] tanzen. 
+\ex weil [dieses Buch] [niemand] [auf den Tisch] gelegt hat. 
+\zl
+$\to$ Ansatz einer Subjektposition ist nicht so offensichtlich wie im Englischen.
+
+}
+
+\frame{
+\frametitlefit{Subjektposition SpecIP im Deutschen: Konstituentenstellung (II)}
+
+\eal
+\ex dass [im Saal] [drei Paare] tanzen. 
+\ex weil [dieses Buch] [niemand] [auf den Tisch] gelegt hat. 
+\zl
+
+Vermutung:\\
+Scrambling in (\mex{0}) = Bewegung einer XP an Adjunktposition vor der Subjektposition
+
+Aber das ist nicht sicher nachweisbar: Wenn es stimmt, dass unbetonte Objektpronomen wie \emph{es} am linken
+Rand der VP (an der sogenannten Wackernagelposition) stehen, weisen die
+folgenden Varianten darauf hin, dass die Subjektphrase zwar an der
+Subjektposition vor der Wackernagelposition stehen kann, aber nicht muss: 
+\eal
+\ex[]{
+dass [\sub{Nom} Anna] es sofort entdeckte
+}
+\ex[]{
+dass \_$_i$ es [\sub{Nom} Anna]$_i$ sofort entdeckte 
+}
+%% \ex[*]{
+%% dass [Dativ Anna] es sofort auf"|fiel
+%% }
+%% \ex[]{
+%% dass es [Dativ Anna] sofort auf"|fiel 
+%% }
+\zl
+
+
+}
+
+\frame{
+\frametitlefit{Subjektposition SpecIP im Deutschen: Konstituentenstellung (III)}
+
+
+Deutung: Im Deutschen kann das Subjekt an zwei Positionen stehen.  
+\begin{itemize}
+\item Option 1: Das Subjekt steht «weiter unten» im Satz (am ehesten an der
+Position SpecVP) und ist mit der leeren Subjektposition SpecIP verkettet
+(=~verdeckte Verkettung; andere Fachausdrücke: verdeckte Bewegung, abstrakte
+Bewegung). 
+
+\pause
+{\small (leere Subjektposition kann auch für subjektlose Sätze
+postuliert, wenn auch nicht nachgewiesen werden $\to$ rein theorieinterne
+Rettung für das EPP.
+
+Dann muss man aber sicherstellen, dass solche leeren Subjekte nicht an Stellen
+auf"|treten, an denen nicht-leere Subjekte stehen müssen.)}
+
+\pause
+\item Option 2: Das Subjekt steht an der Subjektposition SpecIP. 
+\end{itemize}
+\pause
+Fazit: Im Deutschen ist zwischen Subjekt (=~Argument im Nominativ) und Subjektposition (=~SpecIP)
+zu unterscheiden.
+
+
+}
+
+\subsubsubsection{Expletiva}
+
+\frame[label=expletivum]{
+\frametitle{Expletiva: Pseudo-Argumente}
+
+\begin{itemize}
+\item Expletivum = "`Füllform"', Obergriff für Pseudo-Argument, Platzhalter und Korrelat 
+\pause
+\item Pronomina: (E: \emph{it}, D: \emph{es}, F: \emph{il}, \emph{le}) als gewöhnliches Subjekt oder Objekt (Stellvertreter) mit Bezug auf eine Nominalphrase:
+\eal
+\ex (I am reading a book.) [It] is interesting. I like [it]. 
+\ex (Ich lese ein Buch.) [Es] ist interessant. Ich mag [es].
+\ex (Je lis un livre.) [Il] est intéressant. Je [l']estime.
+\zl
+\pause
+\item Expletiv I: Pronomen als Pseudo-Argument (unpersönliches Subjekt oder Objekt): 
+\eal
+\ex {}[It] is raining. %Take [it] easy! 
+\ex {}[Es] regnet. Sie bringt [es] bis zur Professorin.
+\ex {}[Il] pleut.
+\zl
+\end{itemize}
+}
+
+\frame{
+\frametitle{Expletiva: Korrelate zu Nebensätzen}
+
+%% \begin{itemize}
+%% \item 
+Expletiv II: Pronomen als Korrelat eines Nebensatzes\\
+(Engl.\ nur von Subjektnebensätzen, Dt.\ auch von Objektnebensätzen)
+%(Index i: jeweiligen Phrasen "`gehören zusammen"'):
+\eal
+\ex {}[It]$_i$ strikes me [that Bill did not come]$_i$
+\ex Mich störte [es]$_i$, [dass Otto ständig gähnte]$_i$ 
+\zl
+\ea
+Anna schätzte [es]$_i$ nicht, [dass Otto ständig gähnte]$_i$
+\z
+
+\pause
+Pronominaladverb als Korrelat (Nebensatz entspricht Präpositionalobjekt): 
+\ea
+Anna fand sich nicht [damit]$_i$ ab, [dass Otto ständig gähnte]$_i$
+\z
+%\end{itemize}
+}
+
+\exewidth{\exnrfont(235)}
+\frame{
+\frametitle{Expletiva: Vorfeldplatzhalter}
+
+
+\begin{itemize}
+\item Expletiv III: Pronomen \emph{es} als Vorfeldplatzhalter ($\neq$ Subjektplatzhalter) (Deutsch!): 
+\eal
+\ex {}[Es] kamen drei Männer.\\(Aber nicht: *Es scheint, dass es drei Männer kamen.) 
+\ex {}[Es] wurde gearbeitet.\\(Aber nicht: *Es scheint, dass es gearbeitet wurde.) 
+\zl
+\pause
+\item Expletiv IV: Adverb \emph{there} als Subjektplatzhalter (Englisch!)   nur in Verbindung mit einer nachgestellten Nominalphrase, mit der das Verb gegebenenfalls kongruiert: 
+\ea
+{}[There]$_i$ were [three men]$_i$ in the room.\\
+(Auch: It seems, that [there]$_i$ were [three men]$_i$ in the room.)
+\z
+\end{itemize}
+}
+
+\frame{
+\frametitle{Expletiva: Subjektplatzhalter}
+
+
+\begin{itemize}
+\item Expletiv V: Pronomen als Subjektplatzhalter (Französisch)   das Verb kongruiert nur mit dem Expletiv:
+\ea
+{}[Il]$_i$ est [arrêté trois hommes]$_i$.\\(Auch: Il semble qu [il]$_i$ est arrêté [trois hommes]$_i$.) 
+\z
+\end{itemize}
+
+
+Anmerkung: Als eine Art
+Expletiv kann man auch das Reflexivpronomen bei echt reflexiven Verben ansehen
+(z.\,B.: \emph{sich beeilen}, \emph{sich etwas vornehmen}).
+
+
+}
+
+\frame{
+\frametitle{Das englische \emph{there}}
+
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|l|l|l|}\hline
+SpecCP & \cnull & SpecIP & \inull & Satzadverbialien & \vnull   & Rest der VP\\\hline\hline
+       &        & There  & arrive$_k$ d &                  & \_$_k$ & three Magi.\\
+       &        & There  & will   &                  & arrive   & three Magi.\\
+       & Will$_k$  & there  & t$_k$ &                  & arrive   & three Magi?\\
+       & that   & there  & will   &                  & arrive   & three Magi.\\\hline
+\end{tabular}}
+
+\bigskip
+
+Frage: Wo genau steht die Phrase \emph{three Magi}?\\
+(\alt<beamer>{\compare{Kasus}{Kasuslehre}}{\siehe Kasuslehre}, 
+Stichwort \hyperlink{unakk}{"`nichtakkusativische Verben"'})
+
+}
+
+\frame{
+\frametitle{Das Vorfeld-\emph{es}}
+
+
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+%
+SpecCP    & \cnull      & \mc{2}{l|}{IP (ohne \inull, \vnull)} & \vnull, \inull\\
+Vorfeld   & Linke       & \mc{2}{l|}{Mittelfeld}                      & Rechte\\\cline{3-4}
+          & Satzklammer & SpecIP           & Phrasen innerhalb der VP & Satzklammer\\
+          &             & Subjektsposition &                          &\\\hline\hline
+Es        & tanzen$_k$     & drei Paare & im Saal.                       & t$_k$ t$_k$ \\
+          & dass         & drei Paare & im Saal                        & tanzen$_k$ \_$_k$\\
+          & dass         & *es        & drei Paare im Saal             & tanzen$_k$ \_$_k$\\
+{}[Drei Paare]$_i$ & tanzen$_k$   & t$_i$     & im Saal                        & t$_k$ t$_k$\\
+{}[Drei Paare]$_i$ & tanzen$_k$   & *es t$_i$ & im Saal                        & t$_k$ t$_k$\\\hline
+\end{tabular}
+}
+
+\bigskip
+Man beachte, dass der Stern bei \emph{es} im
+dritten und fünften Beispiel den Satz als ungrammatisch kennzeichnet.
+
+
+
+}
+
+
+
+
+\subsubsubsection{Spuren und Bewegung}
+
+\frame{
+\frametitle{Gründe für den Ansatz von Spuren bei Bewegung (I)} %: Anforderung von mehreren Positionen}
+%
+
+Auslöser von Bewegung scheint ganz allgemein zu sein, dass eine Konstituente
+ein Merkmal aufweist, das "`eigentlich"' nicht zu der Position paßt, an der sie
+steht, sondern zu einer anderen weiter oben im Baum. 
+
+Besonders typisch sind Phrasen mit Fragewörtern\\
+(interrogative Determinierer, Pronomen und Adverbien):
+\ea
+Ich weiß nicht, [was] Anna erwartet hat.  
+\z
+
+\begin{itemize}\itemsep0pt\topsep0pt\partopsep0pt
+\item {}[was] ist internes Argument (Objekt) von \emph{erwartet}
+ und sollte Bestandteil der VP, genauer Schwester der Verbform \emph{erwartet}, sein.
+%
+\item {}[was] enthält Fragewort, das die Satzart (Satzmodus)
+ "`Fragesatz"' deutlich macht; damit gebildete Phrase sollte in
+Spezifikatorposition SpecCP des Satzkerns \cnull stehen.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Gründe für den Ansatz von Spuren bei Bewegung (II)}
+
+Lösung: Verkettung der beiden Positionen.\\
+Phrase an der oberen Position sichtbar $\to$ Bezeichnung = \emph{Bewegung}
+\ea
+Ich weiß nicht, [was]$_i$ Anna [t]$_i$ erwartet hat.\\
+(Gemeint: Ich nehme an, dass Anna [etwas] erwartet hat. Worum handelt es sich?) 
+\z
+
+}
+
+
+\frame{
+\frametitle{Beschränkungen}
+
+%\savespace\small
+
+Konstituenten können nicht beliebig verkettet bzw.\ bewegt werden. 
+
+Metaphorisch ausgedrückt: Der Weg durch den Strukturbaum muss von der Endposition aus
+bis zur Ausgangsposition überblickt werden.\\
+Diese Beobachtung wird mit dem Konzept der Spur formalisiert: 
+
+\ea[*]{
+Ich weiß nicht, [was]$_i$ dann der Tag kam, an dem Anna [t]$_i$ erwartete.\\
+(Intendiert: Ich nehme an, dass dann der Tag kam, an dem Anna [etwas] erwartet hat. Worum handelt es
+ sich?)
+}
+\z
+I.\,A.\ sind eingebettete CPs (= Nebensätze) Hindernisse für den Blick zurück zur Ausgangsposition,
+\dash aus Nebensätzen kann nichts  herausbewegt (extrahiert) werden.
+ 
+}
+
+%% \frame{
+%% \frametitle{Beschränkungen (II)}
+
+
+%% Abweichungen (hier markiert mit `!') besonders interessant:
+
+%% \eal
+%% \ex ! [Was]$_i$ glaubst du, dass Anna [t]$_i$ liest?
+%% \ex ? [Wer]$_i$ glaubst du, dass [t]$_i$ dieses Buch liest?\\(Beurteilung schwankt!) 
+%% \ex * [Was]$_i$ glaubst du nicht, dass jemand [t]$_i$ liest? 
+%% \zl
+
+%% }
+
+\frame{
+\frametitle{Verschiedene Bewegungsarten: A- und A'-Bewegung}
+
+\savespace
+
+Bewegungen folgen nicht alle denselben Regeln. 
+
+Fachliteratur unterscheidet zwischen A-Bewegung und A'-Bewegung\\
+(lies: Non-A-Bewegung; andere Schreibweise: \abar-Bewegung).
+
+\emph{A} steht für \emph{Argument}, genauer für \emph{Argumentposition}.
+\begin{itemize}\itemsep0pt
+\item A-Bewegung: Bewegung zur Subjektposition (SpecIP), auch als NP-Bewegung bezeichnet.
+Die Subjektposition ist eine Argumentposition.   
+\item A'-Bewegung:
+\begin{itemize}
+\item Bewegung ins Vorfeld (SpecCP), also Topikalisierung und \emph{w}-Bewegung; 
+\item Linksversetzung im Mittelfeld (Scrambling); 
+\item Bewegung schwach betonter Pronomen an die Wackernagel-Position; 
+\item Ausklammerung ins Nachfeld (Rechtsextraposition)\\
+\ldots
+\end{itemize}
+\end{itemize}
+
+\hyperlink{np-bewegung}{NP-Bewegung} und \hyperlink{w-Bewegung}{\emph{w}-Bewegung} werden noch behandelt.
+
+
+}
+
+
+\subsubsubsection{Small Clauses: verblose Satzäquivalente}
+
+\frame[label=sc]{
+\frametitle{Small Clauses: verblose Satzäquivalente (I)}
+
+\smallexamples\small\parskip1pt
+Bestimmte verblose Prädikativkonstruktionen werden auf eine Konfiguration zurückgeführt, 
+in der Prädikativ + Bezugs-NP satzähnliche Einheit bilden.
+
+\pause
+Häufig wird dafür eine besondere funktionale Kategorie Agr (=~\emph{Agreement}; deutsch: Kongruenz,
+Übereinstimmung) angesetzt. 
+
+\pause
+Prädikativ ist Komplement von Agr, die Bezugs-NP dessen Spezifikator.
+
+\pause
+Bezugsphrase = externes Argument des Prädikativs\\
+(oder etwas unpräzise dessen Subjekt)
+
+\pause
+\agrnull ist teils leer (\mex{2}a), teils von einem Element besetzt, das traditionell als Konjunktion ((\mex{2}b) \emph{als}) oder als Präposition
+((\mex{2}c) \emph{für}) bestimmt wird.
+
+\ea
+Der Torwart sagte, [\sub{CP} der Schiedsrichter sei ein Trottel] 
+\z
+\eal
+\ex Der Torwart nannte [\sub{AgrP} den Schiedsrichter einen Trottel].
+\ex Der Torwart betrachtete [\sub{AgrP} den Schiedsrichter als einen Trottel].
+\ex Der Torwart hält [\sub{AgrP} den Schiedsrichter für einen Trottel].
+\zl
+Zum Kasus des Small-Clause-Spezifikators später.
+
+}
+
+\frame{
+\frametitle{Small Clauses: verblose Satzäquivalente (II)}
+
+%\enlargethispage{-\baselineskip}
+%
+\vfill
+\centerline{\scalebox{0.5}{%
+\begin{tabular}{ccccccc}
+\mc{3}{c}{\node{cp}{CP}}\\[5ex]
+\mc{3}{c}{\node{cs}{C'}}\\[6ex]
+\node{c}{C}&             \mc{4}{c}{\node{ip}{IP}}\\[6ex]     
+       & \node{np1}{NP}          &                    & & \mc{3}{c}{\node{is}{I$'$}}\\[5ex]
+       &             & & \mc{3}{c}{\node{vp}{VP}}                                          & \node{i}{I}\\[5ex]
+       &             & & \mc{3}{c}{\node{vs}{V$'$}}\\[5ex]
+       &             & \mc{3}{c}{\node{agrp}{AgrP}}                               & \node{v}{V}\\[5ex]
+       &             & \node{np2}{NP}                 & \mc{2}{c}{\node{agrs}{Agr$'$}}\\[5ex]
+       &             &                    & \node{agr}{Agr} & \node{np3}{NP}\\[6ex]
+\node{weil}{weil}& de\node{dt}{r Torwa}rt & den\node{ds}{ Schiedsrich}ter & \node{fuer}{für}      & ei\node{et}{nen Trott}el & \node{haelt}{hält}   & \node{tr}{\_}\\
+\end{tabular}
+\nodeconnect{cp}{cs}%
+\nodeconnect{cs}{c}\nodeconnect{cs}{ip}%
+\nodeconnect{ip}{np1}\nodeconnect{ip}{is}%
+\nodeconnect{is}{vp}\nodeconnect{is}{i}%
+\nodeconnect{vp}{vs}%
+\nodeconnect{vs}{agrp}\nodeconnect{vs}{v}%
+\nodeconnect{agrp}{np2}\nodeconnect{agrp}{agrs}%
+\nodeconnect{agrs}{agr}\nodeconnect{agrs}{np3}%
+\nodeconnect{c}{weil}\nodeconnect{agr}{fuer}%
+\nodeconnect{v}{haelt}\nodeconnect{i}{tr}%
+\nodetriangle{np1}{dt}\nodetriangle{np2}{ds}\nodetriangle{np3}{et}%
+}}
+%\mbox{}
+\nocite{Abraham93a}
+
+}
+
+\frame[label=sc-probleme]{
+\frametitle{Probleme: Voranstellbarkeit des Small Clause}
+
+Im Deutschen bilden der Small-Clause-Spezifikator und der Rest der Small Clause
+auf der Ebene der S-Struktur keine Konstituente, was noch gesondert zu erklären
+wäre: 
+
+\eal
+\ex[]{
+{}[\sub{CP}\hspace{4mm} Der Schiedsrichter sei ein Trottel], sagte der Torwart. 
+}
+\ex[*]{
+{}[\sub{AgrP} Den Schiedsrichter für einen Trottel] hält der Torwart. 
+}
+\zl
+
+}
+
+\frame{
+\frametitle{Probleme: Kategorie des Small Clause}
+
+\small\smallexamples\parskip0pt
+Außerdem: Manche Verben kommen nur mit Prädikativen
+bestimmter Kategorien vor (\citealt[S.\,70]{Fanselow91a}; \citealt[S.\,63]{Demske94a}; \citealt[S.\,232]{Hoekstra87a}).
+%
+\eal
+\ex[]{
+Herr K.\ ist kein Verbrecher.
+}
+\ex[]{
+Herr K.\ ist unschuldig.
+}
+\ex[]{
+Herr K.\ ist in Berlin.
+}
+\zl
+\eal
+\ex[*]{
+Der Richter macht Herrn K.\ einen Verbrecher.
+}
+\ex[]{
+Das Gericht macht Herrn K.\ müde.
+}
+\ex[]{
+Der Richter macht Herrn K.\ zum Verbrecher.
+}
+\zl
+\eal
+\ex[]{
+Herr K.\ nennt den Richter einen Idioten.
+}
+\ex[]{
+Herr K.\ nennt den Richter voreingenommen.
+}
+\ex[*]{
+Herr K.\ nennt den Richter als/zum Idioten.
+}
+\zl
+Small Clauses wären aber alle Agr-Projektionen $\to$\\
+direkte Selektion der Kategorie unmöglich
+
+}
+
+\frame{
+\frametitle{Konsequenz}
+
+Nicht in allen GB-Varianten werden Small Clauses angenommen,\\
+in HPSG werden die Phänomene anders behandelt.
+\nocite{Bresnan82c,Williams83a,Booij90a,Hoekstra87a,Hoeksema91c,Fanselow91a,NW93a,Neeleman94a,Neeleman95a,ps2,Stiebels96a,Winkler97a}
+
+Siehe \citew{Mueller2002b} und Vorlesung im nächsten Semester.
+
+}
+
+}%\end{gb-intro}
+%\fi
+
+\iftoggle{einfsprachwiss-exclude}{
+
+\iftoggle{gb-intro}{
+
+\subsection{Lokale Umstellung}
+
+\frame{
+\frametitle{Lokale Umstellung}
+
+
+\begin{itemize}
+\item Im \mf können Argumente in nahezu beliebiger Abfolge angeordnet werden.
+\eal
+\ex {}[weil] \rot{der Mann} \gruen{der Frau} \blau{das Buch} gibt
+\ex {}[weil] \rot{der Mann} \blau{das Buch} \gruen{der Frau} gibt
+\ex {}[weil] \blau{das Buch} \rot{der Mann} \gruen{der Frau} gibt
+\ex {}[weil] \blau{das Buch} \gruen{der Frau} \rot{der Mann} gibt
+\ex {}[weil] \gruen{der Frau} \rot{der Mann} \blau{das Buch} gibt
+\ex {}[weil] \gruen{der Frau} \blau{das Buch} \rot{der Mann} gibt
+\zl
+\pause
+\item In (\mex{0}b--f) muss man die Konstituenten anders betonen
+und die Menge der Kontexte, in denen der Satz mit der jeweiligen Abfolge
+geäußert werden kann, ist gegenüber (\mex{0}a) eingeschränkt \citep{Hoehle82a}. 
+
+Abfolge in (\mex{0}a) = \blau{Normalabfolge} bzw.\ die \blau{unmarkierte Abfolge}.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Zwei Möglichkeiten zur Analyse der lokalen Umstellung}
+
+
+Es gibt theoretisch zwei Möglichkeiten (siehe \citew{Fanselow93a}):
+\begin{itemize}[<+->]
+\item Man nimmt eine Grundabfolge an und leitet alle anderen Abfolgen über Move-$\alpha$ daraus ab.
+\Zb \citew{Frey93a}.
+\pause
+\item Man läßt verschiedene Grundstrukturen zu, die für die Analysen der verschiedenen Abfolgen direkt verwendet werden.\\
+Es gibt keine Spuren. \Zb \citew{Fanselow2001a}.
+%% \pause
+%% \item Der Ansatz mit verschiedenen Grundstrukturen ist nicht so schlimm, wie ein reiner
+%% Phrasenstrukturansatz, da
+\item Obwohl mittels Skopusambiguitäten immer für den bewegungsbasierten Ansatz argumentiert wurde,
+sind es gerade Skopusdaten,\\
+die gegen diesen Ansatz sprechen \citep{Kiss2001a,Fanselow2001a}.
+\end{itemize}
+
+
+}
+
+}% not gb-intro
+
+
+}%\end{einfsprachwiss-exclude}
+
