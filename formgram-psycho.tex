@@ -1,0 +1,351 @@
+\section{Inateness und Gramatiktheorie}
+
+
+\frame[shrink=10]{
+\frametitle{Inateness und Gramatiktheorie}
+
+
+\begin{itemize}[<+->]
+\item Chomskys Hypothese: Sprachliche Fähigkeiten sind angeboren.
+\item Spracherwerb: Prinzipien und Parameter\\
+Menschen verfügen über ein vorangelegten Satz grammatischer Kategorien und syntaktischer Strukturen.
+\item In Abhängigkeit vom sprachlichen Input, den Kinder bekommen, setzen sie bestimmte Parameter
+  und je nach Art der Parametersetzung ergibt sich dann die Grammatik des Deutschen, Englischen oder
+  Japanischen.
+\item Beispiel: Kopfposition initial oder final.
+
+\item Inateness wird in der Grammatiktheorie missbraucht:\\
+Man kann von gewissen Dingen einfach annehmen, dass sie Bestandteil der angeborenen Information sind und so ein einfacheres
+  Gesamtsystem enthalten. 
+\item Beispiel: Objektkongruenz im Baskischen.\\
+ Annahme: Die allgemine Fähigkeit, sowas zu erfassen, ist angeboren. $\to$\\
+ Es muss entsprechende Strukturen auch im Deutschen geben.
+\item Zur Erklärung der Fakten braucht man die Annahme sprachspezifischen angeborenen Wissens aber nicht.
+\end{itemize}
+
+}
+
+\frame{
+\frametitlefit{Objektkongruenz im Baskischen motiviert AgrO im Deutschen}
+
+\hfill\scalebox{0.4}{%
+\begin{pspicture}(1.6,0)(17.4,16.3)
+%\psgrid
+\rput[B](3,0){\rnode{die Firma}{die Firma Müller}}
+\rput[B](6,0){\rnode{meinem Onkel}{meinem Onkel}}
+\rput[B](9,0){\rnode{diese Moebel}{diese Möbel}}
+\rput[B](12,0){\rnode{erst gestern}{erst gestern}}
+\rput[B](15,0){\rnode{zugestellt}{zugestellt}}
+\rput[B](17,0){\rnode{hat}{hat}}
+%
+\rput[B](14,2){\rnode{tdo}{t\sub{DO}}}
+\rput[B](15,2){\rnode{v}{V}}
+\rput[B](14.5,3){\rnode{vp1}{VP}}
+%
+\rput[B](13.5,3){\rnode{tio}{t\sub{IO}}}
+\rput[B](14,4){\rnode{vs}{V'}}
+%
+\rput[B](13,4){\rnode{tsu}{t\sub{SU}}}
+\rput[B](13.5,5){\rnode{vp2}{VP}}
+%
+\rput[B](12,5){\rnode{adv}{Adv}}
+\rput[B](13,6){\rnode{vp3}{VP}}
+%
+\rput[B](15,6){\rnode{agro0}{AgrO$^0$}}
+\rput[B](14,7){\rnode{agros}{AgrO'}}
+%
+\rput[B](9,7){\rnode{do}{DO}}
+\rput[B](11.5,9){\rnode{agrop}{AgrOP}}
+%
+\rput[B](13.5,9){\rnode{agrio0}{AgrIO$^0$}}
+\rput[B](12.5,10){\rnode{agrios}{AgrIO'}}
+%
+\rput[B](6,10){\rnode{io}{IO}}
+\rput[B](9.25,12){\rnode{agriop}{AgrIOP}}
+%
+\rput[B](17,12){\rnode{agrs0}{AgrS$^0$}}
+\rput[B](13.125,14){\rnode{agrss}{AgrS'}}
+%
+\rput[B](3,14){\rnode{su}{SU}}
+\rput[B](8.06125,16){\rnode{agrsp}{AgrSP}}
+%
+\psset{angleA=-90,angleB=90,arm=0pt}
+%
+\ncdiag{vp1}{v}
+\ncdiag{vp1}{tdo}
+%
+\ncdiag{vs}{tio}
+\ncdiag{vs}{vp1}
+%
+\ncdiag{vp2}{vs}
+\ncdiag{vp2}{tsu}
+%
+\ncdiag{vp3}{vp2}
+\ncdiag{vp3}{adv}
+%
+\ncdiag{agros}{vp3}
+\ncdiag{agros}{agro0}
+%
+\ncdiag{agrop}{agros}
+\ncdiag{agrop}{do}
+%
+\ncdiag{agrios}{agrop}
+\ncdiag{agrios}{agrio0}
+%
+\ncdiag{agriop}{agrios}
+\ncdiag{agriop}{io}
+%
+\ncdiag{agrss}{agriop}
+\ncdiag{agrss}{agrs0}
+%
+\ncdiag{agrsp}{agrss}
+\ncdiag{agrsp}{su}
+%
+\pstriangle(3,0.4)(2.6,13.5)
+\pstriangle(6,0.4)(2.3,9.5)
+\pstriangle(9,0.4)(1.9,6.5)
+\pstriangle(12,0.4)(1.7,4.5)
+\ncdiag{v}{zugestellt}
+\ncdiag{agrs0}{hat}
+\end{pspicture}}\hfill\hfill\mbox{}
+
+
+
+
+
+}
+
+\frame{
+\frametitle{Argumente für Inateness}
+
+\begin{itemize}[<+->]
+\item Syntaktische Universalien
+\item die Tatsache, dass es eine "`kritische"' Periode für den Spracherwerb gibt
+\item Fast alle Kinder lernen Sprache, aber Primaten nicht.
+\item Kinder regularisieren spontan Pidgin-Sprachen.
+\item Lokalisierung in speziellen Gehirnbereichen
+\item Angebliche Verschiedenheit von Sprache und allgemeiner Kognition
+\item Williams-Syndrom 
+\item KE-Familie mit FoxP2-Mutation 
+\item Poverty of the Stimulus
+\end{itemize}
+
+Siehe hierzu \citew{Pinker94a} und die Kritik von \citew{Tomasello95a}.
+
+}
+
+
+\subsection{Syntaktische Universalien}
+
+
+\frame{
+\frametitle{Syntaktische Universalien}
+
+Behauptung: Folgende Dinge sind universal und sprachspezifisch:
+\begin{itemize}[<+->]
+\item \xbar-Strukturen
+\item Grammatische Funktionen wie Subjekt und Objekt
+\item Eigenschaften von Fernabhängigkeiten
+\item Grammatische Morpheme für Tempus, Modus und Aspekt
+\item Wortarten (Nomen und Verb)
+\item Rekursion \citep*{HCF2002a}
+\end{itemize}
+
+}
+
+\subsubsection{\xbar-Strukturen}
+
+\frame{
+\frametitle{\xbar-Strukturen}
+
+\begin{itemize}[<+->]
+\item Es gibt Sprachen wie Dyirbal (Australien), für die es \zb nicht sinnvoll erscheint, eine VP anzunehmen.
+
+\item Formal ist die Annahme von \xbar-Strukturen keine Einschränkung der möglichen Grammatiken,
+wenn man leere Köpfe zuläßt. \citep{KP90a}
+
+\pause
+ Im Rahmen des Minimalistischen Programms gibt es eine Inflation leerer Köpfe.
+
+\end{itemize}
+
+}
+
+\subsubsection{Grammatische Funktionen wie Subjekt und Objekt}
+
+\frame{
+\frametitle{Grammatische Funktionen wie Subjekt und Objekt}
+
+
+
+}
+
+\subsubsection{Eigenschaften von Fernabhängigkeiten}
+
+\frame{
+\frametitle{Eigenschaften von Fernabhängigkeiten}
+
+Eine Kernbeschränkung für Bewegung gilt schon nicht für das Deutsche,\\
+kann also auch keine universale Beschränkung sein \citep{Mueller2004d}.
+
+}
+
+\subsubsection{Grammatische Morpheme für Tempus, Modus und Aspekt}
+
+\frame{
+\frametitle{Grammatische Morpheme für Tempus, Modus und Aspekt}
+
+
+}
+
+\subsubsection{Wortarten (Nomen und Verb)}
+
+\frame{
+\frametitle{Wortarten (Nomen und Verb)}
+
+
+
+}
+
+\subsubsection{Rekursion}
+
+\frame{
+\frametitle{Rekursion}
+
+\begin{itemize}
+\item \citet*{HCF2002a}: Die einzige domänenspezifische Universalie ist Rekursion.
+\item Eventuell gibt es Sprachen, die keine Rekursion verwenden:
+      \begin{itemize}
+      \item Pirah{\~a} \citep{Everett2005a-u}\\
+      (siehe jedoch auch \citew*{NPR2009a-u})
+      \item Walpiri \citep{Hale76a}
+      \end{itemize}
+\item Rekursion gibt es auch im nichtsprachlichen Bereich:
+      \begin{itemize}
+      \item Planung
+      \item Stammbäume
+      \end{itemize}
+\end{itemize}
+
+}
+
+\subsection{Zusammenfassung}
+
+\frame{
+\frametitle{Zusammenfassung}
+
+Es gibt keine linguistischen Universalien, bei denen man sich einig ist, dass man
+domänenspezifisches angeborenes Wissen braucht.
+
+}
+
+
+\subsection{Kritische Periode für den Spracherwerb}
+
+\frame{
+\frametitle{Kritische Periode für den Spracherwerb}
+
+\begin{itemize}
+\item Bei Enten gibt es eine kritische Phase, in der deren Bezugsverhalten geprägt wird.
+\item Kinder erlernen Sprache besser als Erwachsene.
+\item Es ist jedoch nicht so, dass nach einer bestimmten Zeit der Spracherwerb unmöglich wird.
+\item Kein abrupter Übergang wie bei Enten sondern ein stetiger Abfall.
+\item Das ist jedoch auch in anderen Domänen beobachtbar:
+      \zb ist Autofahren in hohem Alter schwerer erlernbar.
+\item Die geringere Gehirnkapazität von Kindern kann zu einer Vereinfachung der Wahrnehmung der
+  Input-Daten führen und somit den Kindern beim Spracherwerb helfen. ("`Weniger ist mehr"'-Hypothese) 
+\end{itemize}
+
+}
+
+\subsection{Kein Spracherwerb bei Primaten}
+
+\frame{
+\frametitle{Kein Spracherwerb bei nichtmenschlichen Primaten}
+
+\begin{itemize}
+\item Nichtmenschliche Primaten verstehen Zeigegesten nicht.
+\item Menschen imitieren gern.
+\item Nichtmenschlichen Primaten könnten die sozialen/kognitiven Voraussetzungen für Sprache fehlen.
+\end{itemize}
+
+}
+
+
+\subsection{Pidgin-Sprachen}
+
+\frame{
+\frametitle{Pidgin-Sprachen}
+
+\begin{itemize}
+\item Kinder regulasieren Sprache (\zb Pidgin-Sprachen)
+\item Dies kann man jedoch als probability matching erklären,\\
+      das auch in anderen Domänen auftritt.
+\item Beispiel: Zwei Glühlampen, die blinken. Wenn eine in 70\% der Fälle blinkt, können
+  Versuchspersonen das vorhersagen.
+
+Bei drei Glühlampen, von denen eine in 70\% der Fälle blinkt und die anderen in je 15\%, sagen die
+Probanden 80--90\% für die häufiger blinkende voraus.
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Regularisierung}
+
+\begin{itemize}[<+->]
+\item Bringt man Versuchspersonen eine künstliche Sprache bei, in der Determinierer in 60\% der Fälle
+  ausgedrückt werden, produzieren sie ebenfalls in ca. 60\% der Fälle Determinierer. 
+
+\item Bringt man den Probanden eine Sprache bei, in der zu 60\% ein Determinierer ausgedrückt wird und
+  zusätzlich noch weitere Determinierer, die weniger häufig auftreten, dann erzeugen sie den
+  Determinierer in mehr als 80\% der Fälle, \dash sie regularisieren. 
+
+\item Kinder regularisieren stärker als Erwachsene.
+\item Erinnern Sie sich an die "`Weniger ist mehr"'-Hypothese.
+\end{itemize}
+
+}
+
+\subsection{Lokalisierung in speziellen Gehirnbereichen}
+
+\frame{
+\frametitle{Lokalisierung in speziellen Gehirnbereichen}
+
+\begin{itemize}
+\item Sprachvermögen ist in speziellen Gehirnbereichen lokalisiert.
+\item Allerdings können bei Beschädigung auch andere Gehirnbereiche diese Funktion übernehmen.
+\item Beim Lesen wird auch ein bestimmter Gehirnbereich aktiviert.\\
+Man würde allerdings daraus nie schließen,\\
+dass die Fähigkeit zu lesen angeboren ist.
+\end{itemize}
+
+}
+
+\subsection{Verschiedenheit von Sprache und allgemeiner Kognition}
+
+\frame{
+\frametitle{Verschiedenheit von Sprache und allgemeiner Kognition}
+
+}
+
+\subsection{Williams-Syndrom}
+
+\frame{
+\frametitle{Williams-Syndrom}
+
+}
+
+\subsection{KE-Familie mit FoxP2-Mutation}
+
+\frame{
+\frametitle{KE-Familie mit FoxP2-Mutation}
+
+}
+
+\subsection{Poverty of the Stimulus}
+
+\frame{
+\frametitle{Poverty of the Stimulus}
+
+}

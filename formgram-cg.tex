@@ -1,0 +1,477 @@
+\section{Kategorialgrammatik (CG)}
+
+\outline{
+
+\begin{itemize}
+\item Begriffe
+\item Phrasenstrukturgrammatiken
+\item Government \& Binding (GB)
+\item Generalisierte Phrasenstrukturgrammatik (GPSG)
+\item Lexikalisch-Funktionale Grammatik (LFG)
+%\item Lexical Mapping Theory (LMT)
+%\item PATR
+\item \blaubf{Kategorialgrammatik (CG)}
+\item Kopfgesteuerte Phrasenstrukturgrammatik (HPSG)
+\item Konstruktionsgrammatik (CxG)
+\item Baumadjunktionsgrammatik (TAG)
+\end{itemize}
+}
+
+
+
+\frame{
+\frametitle{Kategorialgrammatik}
+
+\begin{itemize}
+\item Kategorialgrammatik ist die älteste der hier besprochenen Theorien \citep{Ajdukiewicz35a-u}.
+\item Heute hauptsächlich in Edinburgh, Uetrecht und Amsterdam betrieben.
+\item Wichtige Artikel und Bücher von \citet{Steedman91a,Steedman2000a-u,SB2006a-u}
+\end{itemize}
+
+}
+
+\subsection{Allgemeines zum Repräsentationsformat}
+
+
+\frame{
+\frametitle{Motivation der Kategorialgrammatik}
+
+
+\begin{itemize}
+\item komplexe Kategorien ersetzen das \subcat"=Merkmal der GPSG
+
+\medskip
+\begin{tabular}[t]{@{}l@{\hspace{1cm}}l}
+Regel                              & Kategorie~im~Lexikon\\
+vp $\to$ v(ditrans) np~np          & (vp/np)/np  \\
+vp $\to$ v(np\_and\_pp) np~pp(to)  & (vp/pp)/np  \\
+\end{tabular}
+\medskip
+
+
+%
+\pause
+\item Es gibt nur noch sehr wenige, sehr abstrakte Regeln:
+
+\ea
+\blaubf{Multiplikationsregel}\\
+\emph{Regel1}: X/Y * Y = X 
+\z
+
+Diese Regel sagt: Kombiniere ein X, das ein Y sucht, mit dem Y,\\
+wenn es rechts von X/Y steht.
+\pause
+
+\item Valenz ist nur noch einmal kodiert, nämlich im Lexikon.
+
+Bisher Valenz in den Grammatikregeln und im \subcat-Merkmal des Lexikoneintrags.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Ein Beispiel}
+
+
+\ea
+\blaubf{Multiplikationsregel}\\
+\emph{Regel1}: X/Y * Y = X 
+\z
+
+Diese Regel sagt: Kombiniere ein X, das ein Y sucht, mit dem Y,\\
+wenn es rechts von X/Y steht.
+
+%% \begin{center}
+%%   \deriv{3}{
+%%      \ccggf{I}  & \ccggf{saw} & \ccggf{the~man} \\
+%%      \uline{1}  & \uline{1} & \uline{1}\\
+%%      \ccgcf{NP} & \ccgcf{(S\bs NP)/NP} & \ccgcf{NP}\\
+%%       &  \fapply{2}  \\
+%%        & \gccmc{2}{\ccgcf{S\bs NP}} \\
+%%        \bapply{3}  \\
+%%       \cgmc{3}{\ccgcf{S}}
+%%      }
+%% \end{center}
+
+\deriv{2}{
+%\begin{tabular}{@{}cc@{}}
+chased       & Mary\\
+%\uline{1}    & \uline{1} \\
+\hr & \hr\\
+vp/np   & np\\
+\multicolumn{2}{@{}c@{}}{\visible<2->{\forwardapp}} \\
+\multicolumn{2}{@{}c@{}}{\visible<2->{vp}}\\
+%\cgmc<2->{2}{vp}\\
+%\end{tabular}
+}
+
+
+\pause
+%\item für `/' meist Linksassoziativität \dh (vp/pp)/np = vp/pp/np
+
+\pause
+
+Kategorie v wird nicht mehr benötigt.
+
+}
+
+\frame{
+\frametitle{Kategorialgrammatik}
+
+\begin{itemize}
+\item vp kann auch eleminiert werden: vp = s$\backslash$np
+
+\ea
+\emph{Regel2}: Y * X$\backslash$Y = X 
+\z
+
+\pause
+\deriv{4}{
+the  & cat & chased         & Mary\\
+\hr  & \hr & \hr            & \hr\\
+np/n & n   & (s\bs np)/np   & np\\
+\multicolumn{2}{@{}c}{\visible<3->{\forwardapp}} & \multicolumn{2}{c@{}}{\visible<4->{\forwardapp}}\\
+\multicolumn{2}{c}{\visible<3->{np}}             & \multicolumn{2}{c@{}}{\visible<4->{s\bs np}}\\
+\multicolumn{4}{@{}c@{}}{\visible<5->{\backwardapp}}\\
+\multicolumn{4}{c@{}}{\visible<5->{s}}\\
+}
+
+\pause\pause\pause
+\pause
+\item kein expliziter Unterschied zwischen Phrasen und Wörtern:
+\begin{itemize}
+\item intransitives Verb = Verbphrase = $(s \backslash np)$
+\item genauso Eigennamen = Nominalphrasen = np
+\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{Modifikation}
+
+\begin{itemize}
+\item optionale Modifikatoren:
+
+vp $\to$ vp~pp \\
+noun $\to$ noun~pp
+
+beliebig viele PPen nach einer VP bzw.\ einem Nomen
+\pause
+\item Modifikatoren allgemein haben Form: $X \backslash X$ bzw.\ $X / X$
+\pause
+\item Prämodifikator für Nomina:
+
+noun $\to$ adj~noun\\
+
+Adjektive = $n/n$
+\pause
+\item Postmodifier für Nomina: $n \backslash n$
+\pause
+\item vp-Modifikator $\to$  X = $s \backslash np$
+\pause
+\item vp-Modifikator: $(s \backslash np) \backslash (s \backslash np)$. 
+
+\end{itemize}
+}
+
+\frame{
+\frametitle{Ableitung mit einer Kategorialgrammatik}
+\vfill
+% Eine typische Kategorialgrammatik benutzt nur s, np und n als Hauptkategorien. Manchmal werden noch pps als
+% Komplementpräpositionalphrasen zugelassen.
+
+% Eine Ableitung in der CG ist im wesentlichen ein binär verzweigender Baum, wird aber meistens wie folgt repräsentiert:
+% Ein Pfeil unter einem Paar von Kategorien zeigt an, daß diese mit einer Kombinationsregel kombiniert werden.
+% Die Richtung des Pfeils gibt die Richtung der Kombination an. Das Ergebnis wird unter den Pfeil geschrieben.
+% Ein Beispiel zeigt Abbildung \ref{abb-cg}.
+
+\oneline{%
+\deriv{9}{
+The  & small & cat & chased       & Mary & quickly                & round                     & the & garden\\
+\hr  & \hr   & \hr & \hr          & \hr  & \hr                    & \hr                       & \hr & \hr\\
+np/n & n/n   & n   & (s\bs np)/np & np   & (s\bs np)\bs (s\bs np) & (s\bs np)\bs (s\bs np)/np & np/n & n\\
+     & \multicolumn{2}{c}{\forwardapp} & \multicolumn{2}{c@{}}{\forwardapp}\\
+     & \multicolumn{2}{c}{n}           & \multicolumn{2}{c@{}}{s\bs np}\\
+\multicolumn{3}{@{}c}{\forwardapp}        & \multicolumn{3}{c@{}}{\backwardapp}\\
+\multicolumn{3}{@{}c}{np}                 & \multicolumn{3}{c@{}}{s\bs np}\\
+&&&&&&&\multicolumn{2}{c@{}}{\forwardapp}\\
+&&&&&&&\multicolumn{2}{c@{}}{np}\\
+&&&&&&\multicolumn{3}{c@{}}{\forwardapp}\\
+&&&&&&\multicolumn{3}{c@{}}{(s\bs np)\bs (s\bs np)}\\
+&&&\multicolumn{6}{c@{}}{\backwardapp}\\
+&&&\multicolumn{6}{c@{}}{s\bs np}\\
+\multicolumn{9}{@{}c@{}}{\backwardapp}\\
+\multicolumn{9}{@{}c@{}}{s}\\
+}}
+% Eine Kategorialgrammatik mit den beiden Multiplikationsregeln, die oben angegeben wurden, ist schwach äquivalent
+% zu einer kontextfreien Grammatik. Solche Grammatiken wurden zuerst von Ajdukiewicz diskutiert. Die Äquivalenz
+% zu den CFG wurde von Bar-Hillel bewiesen. Deshalb wird ein solches System auch AB genannt. 
+
+% Obwohl AB schwach äquivalent zu kontextfreien Grammatiken ist, ermöglicht das System die Beschreibung
+% verschiedener linguistischer Phänomene auf elegante Weise. In der CFG müßte man für entsprechende
+% Beschreibungen Merkmale benutzen.
+\vfill
+}
+
+
+\subsection{Verbstellung}
+
+\subsubsection{Variable Verzweigung}
+
+\frame{
+\frametitle{Verbstellung}
+
+\begin{itemize}
+\item \citet[S.\,159]{Steedman2000a-u} für das Niederländische:
+
+\eal
+\ex gaf (`geben') mit Verbletztstellung: (S\sub{+SUB}$\backslash$NP)$\backslash$NP
+\ex gaf (`geben') mit Verberststellung: (S\sub{$-$SUB}/NP)/NP
+\zl
+
+Das eine \emph{geben} verlangt Argumente rechts und das andere links von sich.
+
+\pause
+\item Die beiden Lexikoneinträge werden über Lexikonregeln zueinander in Beziehung gesetzt.
+
+\end{itemize}
+
+
+}
+\frame{
+\frametitle{Anmerkung zu dieser Analyse der Verbstellung}
+
+Man beachte: Die NPen müssen in verschiedenen Reihenfolgen mit dem Verb kombiniert werden. Die
+  Normalstellung entspricht:
+
+\eal
+\ex mit Verbletztstellung: (S\sub{+SUB}$\backslash$NP[nom])$\backslash$NP[acc]
+\ex mit Verberststellung: (S\sub{$-$SUB}/NP[acc])/NP[nom]
+\zl
+
+Zur Kritik an solchen Analysen mit variabler Verzweigung siehe \citew{Mueller2005c}.
+
+
+}
+
+
+\subsubsection{Verbstellung mit Spur}
+
+\frame{
+\frametitle{Verbstellung mit Spur}
+
+\citet{Jacobs91a} schlägt eine Spur in Verbletztstellung vor,\\
+die die Argumente des Verbs und das Verb in Erststellung selbst als Argument verlangt.
+
+
+}
+
+
+\subsection{Konstituentenstellung}
+
+\frame{
+\frametitle{Konstituentenstellung}
+
+
+\begin{itemize}
+\item Bisher haben wir Kombination nach links und Kombination nach rechts gesehen.
+      Die Abbindung der Argumente erfolgte immer in einer festen Reihenfolge (von außen nach
+      innen).
+
+\pause
+\item \citet{SB2006a-u} unterscheiden: 
+      \begin{itemize}
+      \item Sprachen, in denen die Reihenfolge der Abbindung egal ist
+\pause
+      \item Sprachen, in denen die Richtung der Kombination egal ist
+      \end{itemize}
+
+\pause
+\vfill
+\begin{tabular}{@{}lll@{}}
+Englisch   & (S$\backslash$NP)/NP     & S(VO)\\
+Latein     & S\{$|$NP[nom], $|$NP[acc] \} & freie Stellung\\
+Tagalog    & S\{/NP[nom], /NP[acc] \} & freie Stellung, verbinitial\\
+Japanisch  & S\{$\backslash$NP[nom], $\backslash$NP[acc] \} & freie Stellung, verbfinal\\
+\end{tabular}
+
+\vfill
+Elemente in Klammern in beliebiger Reihenfolge abbindbar
+
+Steht `$|$' statt `$\backslash$' oder `/', dann ist die Abbindungsrichtung egal.
+
+\end{itemize}
+
+}
+
+\subsection{Passiv}
+
+\frame{
+\frametitle{Passiv}
+
+Lexikonregel:
+\eal
+\ex lieben: S\sub{+SUB} \{ $\backslash$NP[nom]$_i$, $\backslash$NP[acc]$_j$ \}
+\ex geliebt: S\sub{pas} \{ $\backslash$NP[nom]$_j$, $\backslash$PP[von]$_i$ \}
+\zl
+
+}
+
+
+\subsection{Fernabhängigkeiten}
+
+
+\frame{
+\frametitle{Fernabhängigkeiten}
+
+\citet[S.\,614]{SB2006a-u}:
+\ea
+the man that Manny says Anna married
+\z
+\pause
+
+Lexikoneintrag für Relativpronomen:
+\ea
+(N$\backslash$N)/(S/NP)
+\z
+Wenn ich rechts von mir einen Satz finde, dem noch eine NP fehlt,\\
+dann kann ich mit dem zusammen einen N-Modifikator (N$\backslash$N) bilden. 
+
+Das Relativpronomen ist in dieser Analyse der Kopf (Funktor).
+
+
+
+}
+
+
+\subsubsection{Type Raising}
+
+\frame{
+\frametitle{Type Raising}
+
+
+
+Die Kategorie np kann durch {\em type raising} in die Kategorie $(s/(s\backslash np))$
+umgewandelt werden. Kombiniert man diese Kategorie mit $(s\backslash np)$ erhält man dasselbe Ergebnis
+wie bei einer Kombination von np und $(s\backslash np)$ mit Regel 2.
+\eal
+\ex np * s $\backslash$ np $\to$ s 
+\ex s / (s $\backslash$ np) * s $\backslash$ np $\to$ s
+\zl
+
+\pause
+
+Man dreht durch Type Raising die Selektionsrichtung um.
+
+In (\mex{0}a) selegiert ein Verb (bzw.\,s) links von sich eine NP,\\
+in (\mex{0}b) selegiert ein Nomen rechts von sich ein Verb (s),\\
+das links von sich eine NP erwartet.
+
+Das Ergebnis der Kombination ist in beiden Fällen ein Satz.
+
+
+
+
+}
+
+
+\subsubsection{Vorwärts- und Rückwärtskomposition}
+
+\frame{
+\frametitle{Vorwärts- und Rückwärtskomposition}
+
+\ea
+\begin{tabular}[t]{@{}l@{\hspace{1cm}}l}
+X/Y * Y/Z = X/Z & Vorwärtskomposition~(fc) \\
+Y$\backslash$Z * X$\backslash$Y = X$\backslash$Z & Rückwärtskomposition~(bc)
+\end{tabular}
+\z 
+
+Beispiel Vorwärtskomposition:
+
+Wenn ich Y finde, bin ich ein vollständiges X.
+
+Ich habe ein Y, dem aber noch ein Z fehlt.
+
+Wenn ich dieses Element mit X/Y verbinde, bekomme ich etwas,\\
+das ein X ist, wenn es noch mit einem Z verbunden wird.
+
+%% \begin{tabular}{@{}llll@{}}
+%% Fido                & chased  & Mary\\
+%% S/(S$\backslash$NP) & (s$\backslash$np)/np   & np\\
+%% \multicolumn{2}{c}{\visible<3->{np}}        & \multicolumn{2}{c}{\visible<4->{s$\backslash$np}}\\
+%% \multicolumn{4}{c}{\visible<5->{s}}\\
+%% \end{tabular}
+
+%% \pause\pause\pause
+%% \pause
+}
+
+
+\subsubsection{Relativsätze mit Fernabhängigkeiten}
+
+
+\frame{
+\frametitle{Relativsätze mit Fernabhängigkeiten}
+
+
+\deriv{5}{
+that                                & Manny                                                   & says                              & Anna                 & married\\
+\hr                                 & \forwardt                                               & \hr                               & \forwardt            & \hr \\
+%
+%
+(N\bs N)/\braun<5->{(S/NP)} & S/\rot<2->{(S\bs NP)}                           & \rot<2->{(S\bs NP)}/S     & S/\gruen<3->{(S\bs NP)} & \gruen<3->{(S\bs NP)}/NP\\
+                                    & \multicolumn{2}{c}{\visible<2->{\forwardc}} & \multicolumn{2}{c@{}}{\visible<3->{\forwardc}}\\
+%
+%
+                                    & \multicolumn{2}{c@{}}{\visible<2->{S/\blau<4->{S}}}                    & \multicolumn{2}{c@{}}{\visible<3->{\blau<4->{S}/NP}}\\
+                                    & \multicolumn{4}{c@{}}{\visible<4->{\forwardc}}\\
+                                    & \multicolumn{4}{c@{}}{\visible<4->{\braun<5->{S/NP}}}\\
+\multicolumn{5}{@{}c@{}}{\visible<5->{\forwardapp}}\\
+\multicolumn{5}{@{}c@{}}{\visible<5->{N\bs N}}\\
+}
+
+
+
+}
+
+
+\frame{
+\frametitle{Anmerkung zu dieser Relativsatzanalyse}
+
+
+Die Annahme, dass das Relativpronomen der Kopf ist, ist problematisch, da Rattenfängerkonstruktionen
+wie (\mex{1}) nicht einfach erklärt werden können \citep{Pollard88a}.
+
+
+\eal
+\ex Here's the minister [[in [the middle [of [whose sermon]]]] the dog barked].\footnote{
+\citet[S.\,212]{ps2}
+}
+\ex Reports [the height of the lettering on the covers of which] the government prescribes should be
+abolished.\footnote{
+\citet[S.\,109]{Ross67}\nocite{Ross86a-u}
+}
+\zl
+
+Zu Analysen siehe \citep{Morrill95a,Steedman97a}.
+
+}
+
+\subsection{Übungsaufgabe}
+
+\frame{
+\frametitle{Übungsaufgabe}
+
+
+Analysieren Sie den Satz:
+\ea
+Die Kinder im Zimmer lachen laut.
+\z
+
+
+
+
+
+}

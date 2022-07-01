@@ -1,0 +1,67 @@
+\documentclass[a4paper]{article}
+
+\usepackage{mathptmx}
+\usepackage[margin=2cm]{geometry}
+\usepackage{ngerman}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\usepackage[a4paper,pdftex]{hyperref}
+\usepackage{boxedminipage}
+
+\pagestyle{empty}
+
+\begin{document}
+%
+\doublespacing
+%
+\begin{Form}
+%
+% HEADER
+%
+\begin{tabular}{p{100mm}p{20mm}p{50mm}}
+	\noindent\TextField[name=bearbeiter,width=8cm,height=5mm]{\ }
+			&		Berlin, den 
+			&		\TextField[name=datum,width=3cm,height=5mm]{\ }\\
+	(Name und Bearbeiterzeichen\\-- möglichst in Druckschrift)
+			&		App.:
+			&		\TextField[name=app,width=3cm,height=5mm]{\ }\\
+\end{tabular}
+
+\bigskip
+%
+% BODY
+%
+\begin{center}
+{\Large \textbf{Urlaubsantrag}}\\
+	(mindestens 2 Tage vor Urlaubsbeginn einzureichen)
+\end{center}
+
+\noindent Von dem mir im Urlaubsjahr \ChoiceMenu[combo,name=jahr,height=5mm,default=2008]{ }{2008,2009,2010} zustehenden Erholungsurlaub beabsichtige ich in der Zeit\\
+	vom \TextField[name=von,width=2.25cm,height=5mm]{\ } bis \TextField[name=bis,width=2.25cm,height=5mm]{\ }=\TextField[name=tage,width=0.5cm,height=5mm]{\ } Arbeitstag(e) zu nehmen.\\
+%
+
+\bigskip
+\hspace*{-5mm}\begin{boxedminipage}{75mm}
+	Einverstanden: \\
+
+		\rule{6cm}{0.01cm}\\
+		(Dienststelle)\\
+		In der Urlaubsliste notiert:\\
+
+		\rule{6cm}{0.01cm}\\
+\end{boxedminipage}
+\hspace{10mm}
+\begin{minipage}{75mm}
+	\rule{6cm}{0.01cm}\\
+	 	(Unterschrift des Antragstellers)\\
+	 	Mein Vertreter ist: \TextField[name=vertreter,width=4cm,height=5mm]{\ }\\
+	 	Kenntnis genommen:\\
+	 	
+	 	\rule{6cm}{0.01cm}\\
+	 	(Unterschrift des Vertreters)
+\end{minipage}
+%
+\end{Form}
+%
+\end{document}

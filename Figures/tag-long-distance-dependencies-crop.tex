@@ -1,0 +1,86 @@
+%% -*- coding:utf-8 -*-
+    \documentclass{article}
+
+
+%\usepackage[linguistics]{forest}
+
+\usepackage{langsci-forest-setup,oneline}
+
+\usepackage{amssymb}
+
+%\usetikzlibrary{tikzmark}
+
+\renewcommand\tikzmark[2][]{%
+\tikz[remember picture with id=#2] #1;}
+
+\newcommand{\sub}[1]{\(_{\mbox{\scriptsize\textrm{#1}}}\)}
+
+    \begin{document}
+\thispagestyle{empty}
+
+         %S\sub{OA},name=soa
+%S,name=s%
+
+\oneline{%
+\begin{forest}
+tag
+[S
+	[WH$_i$
+		[who]]
+	[\tikzmark{soa}{S\sub{OA}}
+		[COMP
+			[that]]
+		[S
+			[NP
+				[Bill]]
+			[VP
+				[V
+					[likes]]
+				[NP
+					[\noexpand\_$_i$]]]]]]
+\end{forest}
+%}
+%\hspace{0.5cm}
+\qquad
+%\scalebox{.5}{%
+\begin{forest}
+tag
+[\tikzmark{s}{S}
+	[INFL
+		[did]]
+	[NP
+		[John]]
+	[VP
+		[V
+			[tell]]
+		[NP
+			[Sam]]
+		[S*]]]
+\end{forest}
+%}
+\qquad \raisebox{2cm}{$\rightsquigarrow$} \qquad
+%\scalebox{.5}{%
+\begin{forest}
+tag
+[S
+	[WH$_i$
+		[who]]
+	[S
+		[INFL
+			[did]]
+		[NP
+			[John]]
+		[VP
+			[V
+				[tell]]
+			[NP
+				[Sam]]
+			[S
+				[that Bill likes \noexpand\_$_i$, roof]]]]]
+\end{forest}
+\begin{tikzpicture}[overlay,remember picture]
+\draw[->, dashed, bend angle=45, bend right] ($(pic cs:s)+(-0.25,0.2)$) to($(pic cs:soa)+(0.8,.2)$);
+\end{tikzpicture}
+}
+
+    \end{document}

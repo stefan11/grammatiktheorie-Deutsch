@@ -1,0 +1,853 @@
+\section{HPSG}
+
+\outline{
+
+\begin{itemize}
+\item Begriffe
+\item Phrasenstrukturgrammatiken
+\item Government \& Binding (GB)
+\item Generalisierte Phrasenstrukturgrammatik (GPSG)
+\item Lexikalisch-Funktionale Grammatik (LFG)
+%\item Lexical Mapping Theory (LMT)
+%\item PATR
+\item Kategorialgrammatik (CG)
+\item \blau{Kopfgesteuerte Phrasenstrukturgrammatik (HPSG)}
+\item Konstruktionsgrammatik (CxG)
+\item Baumadjunktionsgrammatik (TAG)
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Head-Driven Phrase Structure Grammar (HPSG)}
+
+
+\begin{itemize}[<+->]
+\item Von Carl Pollard und Ivan Sag Mitte der 80er Jahre entwickelt\\
+      \citep{ps,ps2}
+\item HPSG gehört wie LFG zur West-Coast-Linguistik.
+\item Lehrmaterial und Überblicksartikel:\\
+      \citew{MuellerLehrbuch3,MuellerArten,LM2006a,MuellerCurrentApproaches}\nocite{Mueller99a,Mueller2002b}
+\item Handbuch mit Einführung und Überblickskapiteln zu diversen Phänomenen und Theorievergleich: \citet*{HPSGHandbook}
+\item Ivan Sag war einer derjenigen, die GPSG entwickelt haben.
+\end{itemize}
+
+
+
+
+}
+
+
+\subsection{Allgemeines zum Repräsentationsformat}
+
+\frame{
+
+\frametitle{Grundlegendes zur HPSG}
+\small
+\begin{itemize}
+\item lexikalisiert (head-driven/kopfgesteuert)
+\pause
+\item zeichenbasiert \citep{Saussure16a-de}
+\pause
+%\item unifikationsbasiert
+\item getypte Merkmalstrukturen (Lexikoneinträge, Phrasen, Prinzipien)
+\pause
+\item Mehrfachvererbung
+\pause
+\item monostratale Theorie\\~\\
+\begin{minipage}[t]{2.5cm}
+~\\[-20mm]
+\begin{itemize}
+\item \blau<6>{Phonologie}\rnode{1}{}
+\item \blau<7>{Syntax}\rnode{2}{}
+\item \blau<8>{Semantik}\rnode{3}{}
+\end{itemize}
+\end{minipage}%
+\parbox[t]{3cm}{
+\resizebox{5cm}{!}{
+\(
+\ms[word]{
+\rnode{4}{phon}   & \blau<6>{\phonliste{ Grammatik }} \\[1mm]
+synsem$|$loc & \ms[loc]{ \rnode{5}{cat}  & \blau<7>{\ms[cat]{ head & \ms[noun]{ case & \ibox{1}\\
+                                                       }\\[6mm]
+                                       spr & \liste{ DET[{\sc case}~\ibox{1}] } \\
+                                     }} \\[6mm]
+              \rnode{6}{cont} & \blau<8>{\ldots \ms[grammatik]{ inst & X \\
+                                   }}\\
+            }\\
+}
+\)
+}
+}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Einflüsse}
+
+\begin{itemize}[<+->]
+\item Kategorialgramamtik\\
+      (Funktor-Argument-Strukturen, Valenz, Argumentkomposition)
+\item GPSG\\
+      (ID/LP-Format, Slash-Mechanismus für Fernabhängigkeiten)
+\item Government \& Binding\\
+      (u.a.\,Analyse der Verbstellung im Deutschen)
+\end{itemize}
+
+
+
+}
+
+
+\frame{
+\frametitle{Valenz und Grammatikregeln: PSG}
+
+
+\begin{itemize}
+\item große Anzahl von Regeln:\\
+      \begin{tabular}[t]{l@{~$\to$~}l@{\hspace{6em}}l}
+      S &  NP, V               & {\em X schläft\/}\\
+      S &  NP, NP, V           & {\em X Y liebt\/}\\
+      S &  NP, PP[{\it über\/}], V           & {\em X über Y spricht\/}\\
+      S &  NP, NP, NP, V       & {\em X Y Z gibt\/}\\
+      S &  NP, NP, PP[{\it mit\/}], V       & {\em X Y mit Z dient\/}\\
+      \end{tabular}
+\pause
+\item Verben müssen mit passender Regel verwendet werden.
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Valenz und Grammatikregeln: HPSG}
+
+\begin{itemize}
+\item Argumente als komplexe Kategorien in der lexikalischen Repräsentation
+      eines Kopfes repräsentiert\\
+      (wie Kategorialgrammatik)
+\pause
+\item \begin{tabular}[t]{@{}lll}
+      Verb             & \comps\\
+      {\em schlafen\/} & \sliste{ NP }\\
+      {\em lieben\/}   & \sliste{ NP, NP }\\
+      {\em sprechen\/} & \sliste{ NP, PP[{\it über\/}] }\\
+      {\em geben\/}    & \sliste{ NP, NP, NP }\\
+      {\em dienen\/}   & \sliste{ NP, NP, PP[{\it mit\/}] }\\  
+      \end{tabular}
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Beispielstruktur mit Valenzinformation (I)}
+
+\vfill
+\hfill
+\begin{forest}
+sm edges
+[V{[\comps \eliste]}
+	[{\ibox{1} NP[\type{nom}]}
+		[Peter]]
+	[V{[\comps \sliste{ \ibox{1} }]}
+		[schläft]]]
+\end{forest}
+\hfill\hfill\mbox{}
+\vfill
+V[\comps \sliste{ }] entspricht hierbei einer vollständigen Phrase\\
+(VP oder auch S)
+\vfill
+}
+
+\frame{
+\frametitle{Beispielstruktur mit Valenzinformation (II)}
+
+\vfill
+\hfill
+\begin{forest}
+sm edges
+[V{[\comps \eliste]}
+	[{\ibox{1} NP[\type{nom}]}
+		[Peter]]
+	[V{[\comps \sliste{ \ibox{1} }]}
+		[{\ibox{2} NP[\type{acc}]}
+			[Maria]]
+		[V{[\comps \sliste{ \iboxsp{1}, \ibox{2} }]}
+			[erwartet]]]]
+\end{forest}\hfill\hfill\mbox{}
+\vfill
+
+}
+
+
+
+\frame{
+\frametitle{SOV vs.\ SVO: Repräsentation von Subjekten}
+
+\begin{itemize}
+\item Wissenschaftler*innen, die zum Deutschen arbeiten, nehmen an, dass das Subjekt finiter Verben
+  sich wie andere Argumente verhält. (\citealp{Pollard90a-Eng}; \citealp[\page 376]{Eisenberg94b})
+
+HPSG: Subjekte und Komplemente werden auf derselben Valenzliste repräsentiert (\comps).
+
+\pause
+\item English: Subjekte sind anders.
+\pause
+\item \argst ist die zugrundeliegende Repräsentation, die alle Argumente enthält. \citep{DKW2021a}
+\pause
+\item Sprachabhängige Verteilung auf die Valenzmerkmale \spr und \comps.
+
+\medskip
+\oneline{%
+\begin{tabular}[t]{@{}llll}
+      verb          & \spr                      & \comps                                     & \argst\\
+      \emph{sleep}  & \sliste{ NP[\type{nom}] } & \sliste{}                                  & \sliste{ NP[\type{nom}] }\\
+      \emph{expect} & \sliste{ NP[\type{nom}] } & \sliste{ NP[\type{acc}] }                  & \sliste{ NP[\type{nom}], NP[\type{acc}] }\\
+      \emph{speak}  & \sliste{ NP[\type{nom}] } & \sliste{ PP[\type{about}] }                & \sliste{ NP[\type{nom}], PP[\type{about}] }\\
+      \emph{give}   & \sliste{ NP[\type{nom}] } & \sliste{ NP[\type{acc}], NP[\type{acc}] }  & \sliste{ NP[\type{nom}], NP[\type{acc}], NP[\type{acc}] }\\
+      \emph{serve}  & \sliste{ NP[\type{nom}] } & \sliste{ NP[\type{acc}], PP[\type{with}] } & \sliste{ NP[\type{nom}], NP[\type{acc}], PP[\type{with}] }\\  
+      \end{tabular}}
+
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Beispielanalyse mit \spr und \comps}
+
+\centerline{%
+\scalebox{.8}{%
+\begin{forest}
+sm edges
+[V{\feattab{\spr \eliste,\\
+            \comps \eliste}}
+  [\ibox{1} NP [Kim]]
+  [V{\feattab{\spr \sliste{ \ibox{1} },\\
+              \comps \eliste}}
+    [V{\feattab{\spr \sliste{ \ibox{1} },\\
+                \comps \sliste{ \ibox{2} }}}
+      [talks]]
+    [\ibox{2} P{\feattab{\spr \sliste{ },\\
+                \comps \sliste{ }}}
+      [P{\feattab{\spr \sliste{ },\\
+                \comps \sliste{ \ibox{3} }}} [about]]
+      [\ibox{3} N{\feattab{\spr \sliste{ },\\
+                     \comps \sliste{ }}}
+        [\ibox{4} Det [the]]
+        [N{\feattab{\spr \sliste{ \ibox{4} },\\
+                     \comps \sliste{ }}} [summer] ]]]]]
+\end{forest}}}
+
+}
+
+
+\subsubsection{Repräsentation der Konstituentenstruktur}
+
+\frame{
+\frametitle{Repräsentation der Konstituentenstruktur}
+
+\centerline{%
+\begin{forest}
+sm edges
+[NP
+	[Det
+		[dem;the]]
+	[N
+		[Mann;man]]]
+\end{forest}
+}
+
+Der Baum kann mit Merkmalsbeschreibungen repräsentiert werden:
+
+\ea
+\ms{ 
+  phon     & \phonliste{ dem Mann }\\[1mm]
+  head-dtr & \onems{ phon \phonliste{ Mann }
+                 }\\
+  non-head-dtrs & \sliste{ \onems{ phon \phonliste{ dem }
+                            }}
+}
+\z
+
+}
+
+\subsubsection{Feature geometry}
+
+\frame{
+\frametitle{Komplette Merkmalsgeometrie}
+
+\ea
+\label{LE-Grammatik}
+\scalebox{.7}{%
+\ms[word]{
+phon   & \phonliste{ Grammatik } \\[1mm]
+synsem & \ms{ loc & \ms[local]{ cat  & \ms[category]{ head & \ms[noun]{ case & \ibox{1}
+                                                                      }\\[3mm]
+                                                     spr & \sliste{ Det[\textsc{case}~\ibox{1}] }\\
+                                                     comps & \eliste\\[1pt]
+                                                    } \\[6mm]
+                                cont & \ms[mrs]{
+                                       ind & \ibox{2} \ms{ per & third\\
+                                                           num & sg\\
+                                                           gen & fem\\
+                                                         }\\
+                                       rels & \sliste{ \ms[grammatik]{ inst & \ibox{2} 
+                                                                    } }
+                                        }
+                              }\\
+               nonloc & \ms{ inher$|$slash   & \eliste{}\\
+                             to-bind$|$slash & \eliste{}\\
+                           }
+            }
+}}
+\z
+
+Information, die für Strukturteilung gebraucht wird, wird zusammen gruppiert.
+
+
+}
+
+\subsubsection{ID-Schemata}
+
+\frame{
+\frametitle{Das Kopf-Komplement-Schema (vorläufig)}
+
+
+\type{head-complement-phrase}\istype{head"=complement"=phrase} \impl\\
+\onems{
+      synsem$|$loc$|$cat$|$comps \ibox{1} \\
+      head-dtr$|$synsem$|$loc$|$cat$|$comps \ibox{1} $\oplus$ \sliste{ \ibox{2} } \\
+      non-head-dtrs \sliste{ [ \synsem \ibox{2} ] }
+      }
+
+\pause
+
+\ea
+\onems[head-complement-phrase]{
+phon \phonliste{ Peter schläft }\\
+synsem$|$loc$|$cat$|$comps \eliste\\
+head-dtr \onems{ phon \phonliste{ schläft }\\
+                 synsem$|$loc$|$cat$|$comps \sliste{ \ibox{1} NP[\type{nom}] }
+               }\\
+non-head-dtrs \sliste{ \onems{ phon \phonliste{ Peter }\\
+                               \synsem \ibox{1}
+                             } }
+}
+\z
+
+
+}
+
+\subsubsection{LP-Regeln}
+
+\frame{
+\frametitle{Linearisierungsregeln}
+
+\eal
+\ex\label{lp-ini-arg} 
+Head[\initial$+$] $<$ Complement
+\ex 
+Complement $<$ Head[\initial --]
+\zl
+
+\pause
+Präpositionen haben \initialw `$+$' und müssen deshalb ihren Argumenten vorangehen.
+\eal
+\ex[]{
+{}[in [den Schrank]]
+}
+\ex[*]{
+{}[[den Schrank] in]
+}
+\zl
+\pause
+Verben in Letztstellung haben den Wert `$-$' und müssen ihren Argumenten folgen.
+\eal
+\ex[]{
+{}dass [er [ihn umfüllt]]
+}
+\ex[*]{
+{}dass [er [umfüllt ihn]]
+}
+\zl
+
+
+}
+
+
+\subsubsection{Kopfmerkmale}
+
+\frame{
+\frametitle{Kopfmerkmale}
+
+\begin{itemize}
+\item Information über die Verbform muss am obersten Knoten der Projektion verfügbar sein:
+\eal
+\label{bsp-projektion-v-merkmale}
+\ex[]{
+{}[Dem Mann helfen] will er nicht.
+}
+\ex[]{
+{}[Dem Mann geholfen] hat er nicht.
+}
+\ex[*]{
+{}[Dem Mann geholfen] will er nicht.
+}
+\ex[*]{
+{}[Dem Mann helfen] hat er nicht.
+}
+\zl
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Projektion von Merkmalen entlang des Kopfpfades}
+
+\settowidth{\offset}{V[\type{fi}}
+\settowidth{\offsetup}{V[\type{fin}}
+\centerline{
+\begin{forest}
+sm edges, for tree={l+=\baselineskip}
+[\gruen{V}{[\gruen{\type{fin}}, \comps \eliste]}, name=fin1
+	[\ibox{1} NP{[\type{nom}]}
+		[jemand]]
+	[\gruen{V}{[\gruen{\type{fin}}, \comps \sliste{ \ibox{1} }]}, name=fin2
+		[\ibox{2} NP{[\textit{dat}]}
+			[dem Kind,roof]]
+		[\gruen{V}{[\gruen{\type{fin}}, \comps \sliste{ \ibox{1}, \ibox{2} }]}, name=fin3
+			[\ibox{3} NP{[\textit{acc}]}
+				[das Buch,roof]]
+			[\gruen{V}{[\gruen{\type{fin}}, \comps \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]}, name=fin4
+				[gibt]]]]]	
+tikz={\draw[<->] ($(fin1.south west)+(\offsetup,0)$) to ($(fin2.north west)+(\offset,0)$);
+      \draw[<->] ($(fin2.south west)+(\offsetup,0)$) to ($(fin3.north west)+(\offset,0)$);
+      \draw[<->] ($(fin3.south west)+(\offsetup,0)$) to ($(fin4.north west)+(\offset,0)$);}
+\end{forest}
+}
+
+}
+
+\frame{
+\frametitle{Strukturteilung der \head-Werte}
+
+\centerline{
+\scalebox{.8}{%
+\begin{forest}
+sm edges
+[\ms{head & \gruen{\ibox{1}}\\
+     comps & \sliste{ }
+     }
+	[{\ibox{2} NP{[\type{nom}]}}
+		[jemand]]
+	[\ms{
+             head & \gruen{\ibox{1}}\\
+             comps & \sliste{ \ibox{2} }
+             }
+		[\ibox{3} NP{[\textit{dat}]}
+			[dem Kind, roof]]
+		[\ms{
+                                                                                   head & \gruen{\ibox{1}}\\
+                                                                                   comps & \sliste{ \ibox{2}, \ibox{3} }
+                                                                                    }
+			[\ibox{4} NP{[\textit{acc}]}
+				[das Buch, roof]]
+			[\ms{
+                                                                                   head & \gruen{\ibox{1} \ms[verb]{
+                                                                                                  vform & fin
+                                                                                                  }}\\
+                                                                                   comps & \sliste{ \ibox{2}, \ibox{3}, \ibox{4} }
+                                                                                    }
+				[gibt]]]]]	
+\end{forest}}}
+}
+
+
+\subsubsection{Typhierarchien und Vererbung}
+
+
+\frame{
+\frametitle{Typhierarchien und Vererbung}
+
+
+\centerline{%
+\begin{forest}
+type hierarchy
+[sign
+  [word]
+  [phrase 
+    [non-headed-phrase]
+    [headed-phrase [head-complement-phrase]]]]
+\end{forest}}
+
+\begin{itemize}
+\item Alle Merkmalstrukutren sind in der HPSG getypt.
+\pause
+\item Typen werden in Hierarchien geordnet.
+\pause
+\item Subtypen erben Beschränkungen von Obertypen.
+
+\pause
+
+\item Beispiel: \type{headed-phrase}
+\ea
+\type{headed"=phrase}\istype{headed"=phrase} \impl
+\ms{ 
+synsem$|$loc$|$cat$|$head \ibox{1}\\
+head-dtr$|$synsem$|$loc$|$cat$|$head \ibox{1}\\
+} 
+\z
+
+
+\end{itemize}
+
+
+}
+
+
+\frame{
+\frametitle{Vererbung von Beschränkungen}
+
+\begin{itemize}
+\item
+\ea
+\label{head-arg-schema-hfp}
+Head-Complement Schema + Head Feature Principle:\\
+\onems[head-complement-phrase~]{
+synsem$|$loc$|$cat  \ms{ \visible<2->{\gruen{head}   & \gruen{\ibox{1}}} \\
+                          comps & \ibox{2}
+                        }\\
+head-dtr$|$synsem$|$loc$|$cat \ms{ \visible<2->{\gruen{head}   & \gruen{\ibox{1}}} \\
+                                   comps & \ibox{2} $\oplus$ \sliste{ \ibox{3} }
+                                 } \\
+non-head-dtrs   \sliste{ [ synsem \ibox{3} ] }
+}
+\z
+\medskip
+
+Beschränkungen für \type{head-complement-phrase} \pause
+und von \type{headed-phrase} geerbte Beschränkungen
+\pause
+\item Vererbungshierarchien sind wichtig, um Generalisierungen zu erfassen.\\
+Sie werden im Bereich des Lexikons seit \citew*{FPW85a} benutzt.
+\end{itemize}
+
+
+}
+
+
+
+
+
+
+\subsection{Passiv}
+
+\frame{
+\frametitle{Passiv}
+
+\begin{itemize}[<+->]
+\item HPSG folgt Bresnans Argumentation, dass das Passiv im Lexikon behandelt werden sollte.
+
+\item Eine Lexikonregel nimmt den Verbstamm als Eingabe und lizenziert die Partizipform, wobei das
+prominenteste Argument (das sogenannte designierte Argument) unterdrückt wird.
+
+\item Da grammatische Funktionen in der HPSG keine Bestandteile der Theorie sind,
+      braucht man auch keine Mapping-Prinzipien,\\
+      die Objekte auf Subjekte mappen.
+
+\item Allerdings muss die Kasusänderung bei Passivierung erklärt werden.
+\end{itemize}
+
+
+
+}
+
+\subsubsection{Struktureller Kasus}
+
+\frame{
+\frametitle{Struktureller und lexikalischer Kasus}
+
+\begin{itemize}
+\item Wenn Kasus von Argumenten von der syntaktischen Umgebung abhängt,
+      spricht man von \blau{strukturellem Kasus}. \\
+      Ansonsten haben die Argumente \blau{lexikalischen Kasus}.
+\pause
+\item Beispiele für strukturellen Kasus sind:
+\eal
+\ex \blau{Der Installateur} kommt.
+\pause
+\ex Der Mann läßt \blau{den Installateur} kommen.
+\pause
+\ex das Kommen \blau{des Installateurs}
+\zl
+
+\pause
+\item In (\mex{0}) handelt es sich um Subjektskasus, in (\mex{1}) um Objektskasus:
+\eal
+\ex Karl schlägt \blau{den Hund}.
+\ex \blau{Der Hund} wird geschlagen.
+\zl
+\end{itemize}
+}
+
+\subsubsection{Lexikalischer Kasus}
+
+
+\frame{
+\frametitle{Lexikalische Kasus}
+
+\begin{itemize}
+\item Vom Verb abhängiger Genitiv ist lexikalischer Kasus:\\
+      Bei Passivierung ändert sich der Kasus eines Genitivobjekts nicht.
+\eal
+\ex[]{
+Wir gedenken \blau{der Opfer}.
+}
+\ex[]{
+\blau{Der Opfer} wird gedacht.
+}
+\ex[*]{
+\blau{Die Opfer} wird/werden gedacht.
+}
+\zl
+\pause
+(\mex{0}b) = unpersönliches Passiv, es gibt kein Subjekt.
+
+\pause
+\item Den Dativ zähle ich zu den lexikalischen Kasus (umstritten).
+\pause
+\item Zur Diskussion und weiteren Fällen von lexikalischem Kasus siehe \citew{MuellerLehrbuch3}.
+\end{itemize}
+
+}
+
+
+\subsubsection{Valenzinformation und das Kasusprinzip}
+
+
+\frame{
+\frametitle{Valenzinformation und das Kasusprinzip}
+
+
+
+
+
+\begin{prinzip-break}[\hypertarget{case-p}{Kasusprinzip (vereinfacht)}]
+\label{case-p}
+\begin{itemize}
+\item In einer Liste, die sowohl das Subjekt als auch die Komplemente eines verbalen Kopfes
+      enthält, bekommt das erste Element mit strukturellem Kasus 
+      Nominativ.
+\item Alle anderen Elemente der Liste, die strukturellen Kasus tragen, bekommen Akkusativ.
+\end{itemize}
+\end{prinzip-break}
+
+
+}
+
+\subsubsubsection{Aktiv}
+
+\frame{
+\frametitle{Aktiv}
+
+prototypische Valenzlisten:
+\ea
+\begin{tabular}[t]{@{}l@{~}l@{~}l}
+a. & \emph{schläft}:     & \comps \sliste{ NP[\type{str}]$_j$ }\\
+b. & \emph{unterstützt}: & \comps \sliste{ NP[\type{str}]$_j$, NP[\type{str}]$_k$ }\\
+c. & \emph{hilft}:       & \comps \sliste{ NP[\type{str}]$_j$, NP[\type{ldat}]$_k$ }\\
+d. & \emph{schenkt}:     & \comps \sliste{ NP[\type{str}]$_j$, NP[\type{str}]$_k$, NP[\type{ldat}]$_l$ }\\
+\end{tabular}
+\z
+\emph{str} steht für \emph{strukturell}, \emph{ldat} für lexikalischen Dativ.
+
+\pause
+Das erste Element in der \compsl bekommt Nominativ.\\
+Alle anderen mit strukturellem Kasus bekommen Akkusativ.
+
+}
+
+\subsubsubsection{Kasusvergabe im Passiv}
+
+\frame[shrink]{
+\frametitle{Passiv}
+
+\ea
+\begin{tabular}[t]{@{}l@{~}l@{~}l}
+a. & \emph{schläft}:     & \comps \sliste{ NP[\type{str}]$_j$ }\\
+b. & \emph{unterstützt}: & \comps \sliste{ NP[\type{str}]$_j$, NP[\type{str}]$_k$ }\\
+c. & \emph{hilft}:       & \comps \sliste{ NP[\type{str}]$_j$, NP[\type{ldat}]$_k$ }\\
+d. & \emph{schenkt}:     & \comps \sliste{ NP[\type{str}]$_j$, NP[\type{str}]$_k$, NP[\type{ldat}]$_l$ }\\
+\end{tabular}
+\z
+
+Bei Passivierung der Verben ergeben sich die folgenden \comps"=Listen:
+\ea
+\begin{tabular}[t]{@{}l@{~}l@{~}l}
+a. & \emph{geschlafen wird}:  & \comps \sliste{ }\\
+b. & \emph{unterstützt wird}: & \comps \sliste{ NP[\type{str}]$_k$ }\\
+c. & \emph{geholfen wird}:    & \comps \sliste{ NP[\type{ldat}]$_k$ }\\
+d. & \emph{geschenkt wird}:   & \comps \sliste{ NP[\type{str}]$_k$, NP[\type{ldat}]$_l$ }\\
+\end{tabular}
+\z
+In (\mex{0}) steht jetzt eine andere NP an erster Stelle.\\
+Wenn diese NP strukturellen Kasus hat, bekommt sie Nominativ,\\
+wenn das wie in (\mex{0}c) nicht der Fall ist, bleibt der Kasus, wie er ist,\\
+nämlich lexikalisch spezifiziert.
+}
+
+\subsection{Verbstellung}
+
+\frame[shrink=5]{
+\frametitle{\large Repräsentationen und Lexikonregeln: Verbbewegung}
+
+~
+\vfill
+\hfill%
+%\scalebox{0.85}{%
+\begin{forest}
+sm edges
+[VP
+	[V \sliste{ VP//V }, name=vini
+	   [V,name=vlast [kennt$_j$]]]
+	[VP//V, name=vp
+	   [NP [jeder]]
+	   [V$'$//V, name=vbar
+	     [NP [diesen Roman, roof]]
+		[V//V,name=vtrace [ \trace$_j$]]]]]
+%\draw[<->] (vone) to (vtwo);
+%%\draw (-2,-5) to[grid with coordinates] (4,0.5);
+%% \draw[<-] (3,-3.4) .. controls (3.2,-3.6) .. (3.5,-3.4)
+%%                    .. controls ()         .. (;
+\draw[<->] ($(vtrace.south)+(-.25,.1)$)    to [bend right=45]  ($(vtrace.south)+(.25,.1)$);
+\draw[<->] (vtrace)                        to [out=45, in=0]  (vbar);
+\draw[<->] ($(vbar.north east)+(-0.2,0)$)  to [out=80, in=0]  (vp);
+\draw[<->] ($(vp.north east)+(-0.25,-.1)$)  to [out=145,in=35] ($(vini.north east)+(-.5,-.1)$);
+\draw[<->] ($(vini.south east)+(-.45,.1)$) to [bend left=30] ($(vlast.north east)+(-.1,-.1)$);
+\end{forest}
+%}
+\hfill\hfill\mbox{}
+\vfill
+
+\begin{itemize}[<+->]
+\item In Verberstsätzen steht in der Verbletztposition eine Spur.
+\item In Verberststellung steht eine besondere Form des Verbs,\\
+      die eine Projektion der Verbspur selegiert.
+\item Dieser spezielle Lexikoneintrag ist durch eine Lexikonregel lizenziert.
+\item Verbindung Verb/Spur durch Informationsweitergabe im Baum
+\end{itemize}
+
+}
+
+
+\subsection{Lokale Umstellung}
+
+\frame{
+\frametitle{Lokale Umstellung}
+
+Mehrere Möglichkeiten (zu Überblick siehe \citealt{MuellerOrder}):
+\begin{itemize}
+\item ganz flache Strukturen. Umordnung wie bei GPSG
+\pause
+\item binär verzweigende Strukturen,\\
+      Abbindung der Argumente in beliebiger Reihenfolge
+\pause
+\item Lexikonregeln mit Umordnung der Elemente in Valenzlisten
+
+\end{itemize}
+
+}
+
+\subsubsection{Binär verzweigende Strukturen}
+
+\frame{
+\frametitle{Beispiel: Normalabfolge}
+\eal
+\ex weil jeder diesen Roman kennt
+\ex weil diesen Roman jeder kennt
+\zl
+
+\centerline{%
+\begin{forest}
+sm edges
+[V{[\comps \sliste{}]}
+	[\ibox{1} NP{[\type{nom}]}
+		[jeder]]
+	[V{[\comps \sliste{ \ibox{1} }]}
+		[\ibox{2} NP{[\type{acc}]}
+			[diesen Roman, roof]]
+		[V{[\comps \sliste{ \iboxsp{1}, \ibox{2} }]}
+			[kennt]]]]
+\end{forest}
+}%
+
+}
+
+\frame{
+\frametitle{Beispiel: Umstellung}
+
+
+\centerline{%
+\begin{forest}
+sm edges
+[V{[\comps \sliste{}]}
+	[\ibox{2} NP{[\type{acc}]}
+		[diesen Roman, roof]]
+	[V{[\comps \sliste{ \ibox{2} }]}
+        	[\ibox{1} NP{[\type{nom}]}
+	        	[jeder]]
+		[V{[\comps \sliste{ \iboxsp{1}, \ibox{2} }]}
+			[kennt]]]]
+\end{forest}
+}%
+
+\medskip
+Unterschied nur in Abbindungsreihenfolge der Elemente in \comps
+}
+
+
+
+\subsection{Fernabhängigkeiten}
+
+\frame{
+
+%\frametitle{Repräsentationen und Lexikonregeln: 
+\frametitle{Konstituentenbewegung}
+
+\vfill
+\hfill%
+\scalebox{0.7}{
+\begin{forest}
+sm edges
+[VP
+	[NP$_i$,name=np
+		[diesen Roman,roof]]
+	[VP/NP,name=vpnp2
+		[V
+			[V
+				[kennt$_j$]]]
+		[VP/NP,name=vpnp1
+			[NP/NP, name=npnp
+				[\trace$_i$]]
+			[V$'$
+				[NP
+					[jeder]]
+				[V
+				  [\trace$_j$]]]]]]
+\draw[<->] ($(npnp.east)$)  to [bend right=45] ($(vpnp1.south east)+(-.25,.1)$);
+\draw[<->] ($(vpnp1.north east)+(-.26,-.1)$)  to [bend right=45] ($(vpnp2.east)+(-0,0)$);
+\draw[<->] ($(vpnp2.north)+(.26,-0)$) parabola[parabola height=5mm] ($(np.north)+(-.15,0)$);
+\end{forest}
+}
+\hfill\hfill\mbox{}
+\vfill
+\begin{itemize}[<+->]
+\item Wie bei Verbbewegung: Spur an ursprünglicher "`normaler"' Position.
+\item Weiterreichen der Information im Baum
+\item Konstituentenbewegung ist nicht lokal, Verbbewegung ist lokal\\
+      mit zwei verschiedenen Merkmalen modelliert ({\sc slash} vs.\ {\sc dsl})
+\end{itemize}
+
+}

@@ -1,0 +1,1243 @@
+\subsection{Probleme phrasaler Ansätze}
+
+\outline{
+
+\begin{itemize}
+\item Resultativkonstruktionen
+\item Phrasale Analysen
+\item Interaktion mit anderen Phänomenen
+\item Eine lexikalische Analyse
+\item Zusammenfassung
+\end{itemize}
+
+}
+
+
+\subsubsection{Resultativkonstruktionen}
+
+\frame{
+
+\frametitle{Resultativkonstruktionen}
+
+Ein \rot{Verb} (meist einstellig) plus \gruen{Akkusativ} + \blau{Prädikat}.\\
+Akkusativ muss nicht vom Verb selegiert sein:
+%% \eal
+%% \ex Heute verzichten die Hooligans vor und beim Fußballspiel auf Alkohol und \rot{trinken} 
+%%       erst nach dem Spiel \gruen{ganze Kneipen} \blaubf{leer}\iw{leer}.\label{ex-hooligans-trinken-kneipen-leer}\footnote{
+%%         Mannheimer Morgen, 16.07.1998, Politik; Kanther sagt Hooligans den Kampf an
+%% %       M98/807.58811 Mannheimer Morgen, 16.07.1998, Politik; Kanther sagt Hooligans den Kampf an
+%% }
+%% \ex "`Als ich anfing, wollte ich mir eigentlich \gruen{den Hintern} nicht so \blaubf{platt}\rot{sitzen} 
+%% wie die älteren Grufties"', sagt Pape.\footnote{
+%%         taz-Bremen, 07.02.1997, S.\,21% Nr. 5267 Seite 21 vom 02.07.1997 
+%% }
+
+%% \zl
+
+\ea
+weil er \gruen{den Teich} \blau{leer} \rot{fischt}.
+\z
+
+\pause
+Konkurrierende Hypothesen: 
+\begin{enumerate}
+\item Die resultative Bedeutung ist in keinem der beteiligten Wörter oder Wortgruppen enthalten.\\
+      Sie wird vielmehr von der gesamten Konfiguration beigesteuert.\\
+\citep{Goldberg95a,Jackendoff97a,GJ2004a}\nocite{FKoC88a,KF99a}
+\pause
+\item Es gibt einen besonderen Lexikoneintrag für Verben in RKen.\\
+      Dieser kommt nur in den RKen vor und steuert die entsprechende Bedeutung bei.
+%\oneline{
+(\citealp{Verspoor97a,Wechsler97a};\\\citealp{WN2001a,Wunderlich92a-u-kopiert,Mueller2002b})
+%}
+\end{enumerate}
+
+}
+
+\subsubsection{Phrasale Analysen}
+
+%% \frame{
+%% \frametitle{Phrasale Analysen}
+
+%% \begin{itemize}
+%% \item Goldberg \& Jackendoff schlagen unabhängig und auch gemeinsam phrasale Analysen
+%%       vor.\\
+%%       Konsequenzen sind jedoch unterschiedlich, da beide in verschiedenen Frameworks arbeiten:\\
+%%       Goldberg: Konstruktionsgrammatik\\
+%%       Jackendoff: Government \& Binding 
+%% \pause
+%% \item Konstruktionsgrammatik:
+%%       \begin{itemize}
+%%       \item benutzt keine Transformationen \citep[S.\,7]{Goldberg95a},\\
+%%             ist monostratal \citep{KF99a}
+%% \pause
+%%       \item Generalisierungen werden in Typhierarchien erfaßt
+%%       \end{itemize}
+
+%% \pause
+%% \item Ich diskutiere im folgenden hauptsächlich Goldbergs Vorschlag.
+%% \end{itemize}
+
+
+%% }
+
+
+\frame{
+\frametitle{Phrasale Analysen: \citet{Goldberg95a}}
+
+
+\begin{itemize}
+\item Goldberg schlägt auf S.\,192 folgende Struktur für Resultativkonstruktionen vor: 
+\ea
+{}[\node{subj}{SUBJ} [\node{v}{V} \node{obj}{OBJ} \node{obl}{OBL}]]
+\z
+
+\ea
+\node{he}{He} \node{fishes}{fishes} \node{thepond}{the pond} \node{empty}{empty}.
+\z
+\visible<1>{%
+\anodeconnect[t]{he}[b]{subj}%
+\anodeconnect[t]{fishes}[b]{v}%
+\anodeconnect[t]{thepond}[b]{obj}%
+\anodeconnect[t]{empty}[b]{obl}%
+}
+
+\pause
+\item Braucht noch weitere \emph{Konstruktionen}, \zb für Passiv.
+\ea
+The pond was fished empty.
+\z
+\ea
+{}[SUBJ [V-pass V OBL]]
+\z
+
+\pause
+%% Goldberg spricht von "`Inheritance Links"' die Beziehung zwischen Konstruktionen (\zb Aktiv und Passiv)
+%% herstellen.
+
+%% Das entspricht aber wohl den Transformationen in der Transformationsgrammatik.
+
+Goldberg nimmt an, daß Aktiv- und Passivvarianten der RK in einer Typhierarchie
+beschrieben werden (\citealt{Kay2005a}; G \& J, 2004).
+
+\end{itemize}
+
+
+}
+
+\subsubsubsection{Typhierarchien}
+
+%\frame{
+%\frametitle{Typhierarchien}
+
+
+%\vfill
+%%\oneline{%
+%\hfill\begin{tabular}{cccc}
+%\multicolumn{4}{c}{\node{ed}{\it elektrisches Gerät}}\\[6ex]
+%\node{p}{\it druckendes Gerät} & & \node{sc}{\it scannendes Gerät} & \node{other}{\rule[-0.5ex]{0cm}{2.5ex}\ldots}\\[6ex]
+%\node{printer}{\it Drucker}   & \node{copy}{\it Kopierer}  & \node{scanner}{Scanner}\\[6ex]
+%\node{l-p}{\it Laserdrucker}  & \node{other-p}{\rule[-0.5ex]{0cm}{2.5ex}\ldots}  & \node{negscan}{\it Negativscanner} & \node{other-sc}{\rule[-0.5ex]{0cm}{2.5ex}\ldots}\\
+%\end{tabular}
+%\nodeconnect{ed}{p}\nodeconnect{ed}{sc}\nodeconnect{ed}{other}%
+%\nodeconnect{p}{copy}\nodeconnect{p}{printer}\nodeconnect{printer}{l-p}\nodeconnect{printer}{other-p}%
+%\nodeconnect{sc}{copy}%
+%\nodeconnect{sc}{scanner}\nodeconnect{scanner}{negscan}\nodeconnect{scanner}{other-sc}%
+%%}
+%\hfill\hfill\mbox{}
+%\vfill
+
+%}
+
+
+\frame{
+\frametitle{Typhierarchien}
+
+
+\vfill
+\oneline{%
+\hfill\begin{tabular}{cccc}
+\multicolumn{4}{c}{\node{c}{\it construction}}\\[6ex]
+\node{a}{\it active} & \node{p}{\it passive} & \node{m}{\it middle} & \node{r}{\it resultative}\\[6ex]
+&\node{ar}{\it active resultative}   & \node{pr}{\it passive resultative}  & \node{mr}{\it middle resultative}\\
+\end{tabular}
+\nodeconnect{c}{a}\nodeconnect{c}{p}\nodeconnect{c}{m}\nodeconnect{c}{r}%
+\nodeconnect{a}{ar}\nodeconnect{p}{pr}\nodeconnect{m}{mr}%
+\nodeconnect{r}{ar}\nodeconnect{r}{pr}\nodeconnect{r}{mr}%
+}
+\hfill\hfill\mbox{}
+\vfill
+\begin{itemize}
+\item Abbildung zeigt Ausschnitt aus einer möglichen Hierarchie
+\item weitere Typen für Aktiv-, Passiv- bzw.\ Medial-Konstruktionen:\\
+     \zb Heavy-NP-Shift im Aktiv/Passiv usw.
+\end{itemize}
+\vfill
+
+}
+
+\subsubsection{Interaktion mit anderen Phänomenen}
+
+\outline{
+
+\begin{itemize}
+\item Resultativkonstruktionen
+\item Phrasale Analysen
+\item \blau{Interaktion mit anderen Phänomenen}
+\item Eine lexikalische Analyse
+\item Zusammenfassung
+\end{itemize}
+
+}
+
+
+
+\frame{
+\frametitle{Goldbergs Analyse für das Deutsche}
+
+%\savespace
+
+\begin{itemize}
+\item Goldberg erwähnt nur Interaktionen mit Passiv und der Medialkonstruktion.
+\pause
+\item Es gibt aber viel mehr interagierende Phänomene.
+\pause
+\item Das soll im folgenden an Hand der Übertragung der Analyse\\
+      auf das Deutsche untersucht werden.
+\pause
+\item Für das Deutsche würde sie wohl folgende Konstruktion annehmen:
+\ea
+{}[SUB OBJ OBL V]
+\z
+\end{itemize}
+
+
+}
+
+
+\subsubsubsection{Umstellung von Konstituenten und Verbstellung}
+
+\frame{
+
+\frametitle{Umstellung von Konstituenten und Verbstellung}
+
+Das Argument von \emph{leer} kann vor Argumenten des Matrixverbs stehen:
+\eal
+\ex weil \blau{niemand} \gruenbf{den Teich} leer fischt.
+\ex weil \gruenbf{den Teich} \blau{niemand} leer fischt.
+\zl
+
+\pause
+Verb kann initial oder final stehen. Man braucht also:
+\ea
+\begin{tabular}[t]{@{~}l@{~}l@{\hspace{2em}}l@{~}l@{}}
+a. & [\blau{SUB} \gruen{OBJ} OBL V] & c. & [V \blau{SUB} \gruen{OBJ} OBL]\\
+b. & [\gruen{OBJ} \blau{SUB} OBL V] & d. & [V \gruen{OBJ} \blau{SUB} OBL]\\
+\end{tabular}
+\z
+
+%bochum
+%(Könnte man auch über Trennung von Dominanz und Präzedenz machen,
+%\hspaceThis{(}es gibt aber informationsstrukturelle Unterschiede,\\
+%\hspaceThis{(}weshalb wohl \Konstruktionen angenommen würden.)
+
+}
+
+\subsubsubsection{Fokusumstellung}
+
+\frame{
+
+\frametitle{Fokusumstellung}
+
+\citet{Neeleman94a} für das Niederländische:
+\eal
+\ex daß \gruenbf{so   grün} selbst Jan die Tür nicht streicht
+\ex daß \gruenbf{so grün} die Tür selbst Jan nicht streicht
+\ex daß Jan \gruenbf{so grün} selbst die Tür nicht streicht
+\ex daß eine solche Tür \gruenbf{so grün} niemand streicht
+\zl
+Siehe auch \citew{Luedeling2001a}.
+
+\pause
+Man braucht:
+\ea
+\begin{tabular}[t]{@{~}l@{~}l@{\hspace{2em}}l@{~}l@{}}
+a. & [OBL SUB OBJ V] & e. & [V OBL SUB OBJ]\\
+b. & [OBL OBJ SUB V] & f. & [V OBL OBJ SUB]\\
+c. & [SUB OBL OBJ V] & g. & [V SUB OBL OBJ]\\
+d. & [OBJ OBL SUB V] & h. & [V OBJ OBL SUB]\\
+\end{tabular}
+\z
+
+}
+
+\subsubsubsection{Voranstellung}
+
+\exewidth{(33))}
+
+\frame{
+\frametitle{Voranstellung}
+
+\eal
+\ex \blaubf{Er} fischt den Teich schnell leer. \hfill  (Subjekt)
+\pause
+\ex \blaubf{Den Teich} fischt er schnell leer. \hfill  (Objekt)
+\pause
+\ex \blaubf{Leer} fischt er den Teich nicht.   \hfill  (Resultativum = OBL)
+\pause
+\ex \blau{Schnell} fischt er den Teich leer. \hfill (Adjunkt)
+\zl
+\pause
+Voranstellungen haben andere Eigenschaften als lokale Umstellungen.\\
+Will man leere Elemente vermeiden,
+sind weitere Konstruktionen nötig.\nocite{Haugereid2004a}
+
+
+\pause
+Berücksichtigt man Umstellungen (inkl.\ Fokusumstellung) braucht man:
+\ea
+\begin{tabular}[t]{@{~}l@{~}l@{\hspace{1em}}l@{~}l@{}}
+a. & [V SUB OBL] (OBJ vorang.)   & d. & [V OBL SUB] (OBJ vorang.)\\
+b. & [V OBJ  OBL] (SUB vorang.)  & e. & [V OBL OBJ]  (SUB vorang.)\\
+c. & [V SUB OBJ] (OBL vorang.)   & f. & [V OBJ SUB] (OBL vorang.)\\
+\end{tabular}
+\z
+
+% bochum
+%\pause
+%Lexikalische Analysen der Extraktion wie die von \citet*{BMS2001a} sind
+%nicht mehr möglich, da Argumente auf der phrasalen Ebene eingeführt werden.
+
+}
+
+\subsubsubsection{Relativsätze und Interrogativsätze}
+
+\frame{
+\frametitle{Relativsätze und Interrogativsätze}
+
+
+Voranstellung von Relativ- bzw. Interrogativphrasen ähnelt\\
+der Voranstellung einer Wortgruppe vor das Finitum.
+
+\eal
+\ex der Mann, \blaubf{der} den Teich leer fischt
+\ex den Teich, \blaubf{den} Richard leer fischt
+\ex Er hat gefragt, \blaubf{wie platt} Max das Metall gehämmert hat.
+\zl
+
+Berücksichtigt man Umstellungen (inkl.\ Fokusumstellung) braucht man:
+\ea
+\small
+\begin{tabular}[t]{@{~}l@{~}l@{\hspace{1em}}l@{~}l@{}}
+a. & [SUB OBL V] (OBJ vorang.)  & d. & [OBL SUB V] (OBJ vorang.)\\
+b. & [OBJ  OBL V] (SUB vorang.) & e. & [OBL  OBJ V] (SUB vorang.)\\
+c. & [SUB OBJ V] (OBL vorang.)  & f. & [OBJ SUB V] (OBL vorang.)\\
+\end{tabular}
+\z
+
+}
+
+\subsubsubsection{Passiv und modale Infinitive}%, Medialkonstruktionen}
+
+\frame{
+\frametitle{Passiv und modale Infinitive}
+
+Argument von \emph{leer} kann zum Subjekt der gesamten Konstruktion werden:
+
+\eal
+\ex weil er \blaubf{den Teich} leer fischt. \hfill (Aktiv)
+\ex weil \blaubf{der Teich} leer gefischt wurde. \hfill (Passiv)
+%\pause
+%\ex weil der Teich leer gefischt ist. \hfill (Zustandspassiv)
+\pause
+\ex weil der Teich bis Montag leer zu fischen ist. \hfill (modaler Infinitiv)
+\zl
+
+%\mode<handout>{
+%\eal
+%\ex Stunden später sind meine Füße plattgelaufen,\footnote{taz, 02.01.1999, S.\,9}
+%\ex Erinnern Sie sich an A Fish Called Wanda, 
+%wo genußvoll ein Hündchen nach dem anderen plattgefahren wurde?\label{ex-huendchen-platt-fahren}\footnote{
+%        taz-Bremen, 03.03.1990, S.\,27% Nr. 3048 Seite 27 vom 03.03.1990
+%        }
+%\zl
+%}
+
+\pause
+Für Passiv braucht man:
+\ea
+\begin{tabular}[t]{@{~}l@{~}l@{\hspace{1em}}l@{~}l@{}}
+a. & [ SUB OBL V]              & e. & [ V SUB OBL ] \\
+b. & [ OBL SUB V] (Fokusumst.) & f. & [ V OBL SUB ] (Fokusu.)\\
+c. & [ OBL V ] (SUB vorang.)   & g. & [ V OBL ] (SUB vorang.)\\
+d. & [ SUB V ] (OBL vorang.)   & h. & [ V SUB ] (OBL vorang.)\\
+\end{tabular}
+\z
+\pause
+Zusätzlich weitere Konstruktionen für %Zustandspassiv, 
+modale Infinitive und 
+Medialkonstruktion.\nocite{Wunderlich97c,KR95a}
+
+
+}
+
+
+\subsubsubsection{usw.}
+
+\frame{
+\frametitle{usw.}
+
+\begin{itemize}
+\item Für bisher erwähnte Phänomene braucht man 50 Konstruktionen.
+\pause
+\item Freie Dative 
+      \ea
+      weil sie \blaubf{ihm} den Teich leer fischen.
+      \z
+\pause
+      \begin{itemize}
+      \item Umstellungen (2x3x4 x 2 = 48), 
+\pause
+      \item Voranstellungen (2x3x4 x 2 = 48), 
+\pause
+      \item Passiv + Passivvarianten (3x24 = 72)\\
+            bisherige Konstruktionen + Dativpassiv:
+            \ea
+            weil \blaubf{er} den Teich leer gefischt bekommt.
+            \z
+\item Insgesamt 218 \Konstruktionen
+      \end{itemize}
+% Vorgangspassiv
+% Permutation:   2x3 x 2 
+% Voranstellung: 2x3 x 2 
+% = 24
+%
+% Dativpassiv ist parallel, nur eben mit dem Dativargument
+% = 24
+%
+% modaler Infinitiv:
+% Permutation:   2x3 x 2 
+% Voranstellung: 2x3 x 2 + 2 für PVP
+%
+% 
+%
+% Medialkonstruktion:
+%
+% 
+
+\end{itemize}
+
+}
+
+\subsubsubsection{Offene Fragen: Syntax}
+
+%\subsubsubsubsection{Adjunkte}
+
+\frame{
+\frametitle{Adjunkte}
+
+\savespace
+\begin{itemize}
+\item Adjunkte können im Deutschen irgendwo im Mittelfeld stehen:
+\ea
+daß \visible<5->{(}\visible<2,5->{\blau<2>{schnell}}\visible<5->{)} jemand \visible<5->{(}\visible<3,5->{\blau<3>{schnell}}\visible<5->{)} den Teich \visible<5->{(}\visible<4->{\blau<4>{schnell}}\visible<5->{)} leer fischt.
+\z
+\pause\pause
+\pause\pause
+\item Adjunktanalysen in der Konstruktionsgrammatik:
+      \begin{itemize}
+      \item \citew{KF99a} \pause{}formal falsch (Mengenunifikation, \citew{Mueller2006d})
+\pause
+      \item \citew{Kay2005a}\pause{}, wenn man es repariert, entspricht es \citew{NB94}\\
+            = lexikalische Einführung von Adjunkten\\
+\pause
+            $\to$ Skopusproblem, da Resultativbedeutung nicht im Lexikon eingeführt wird
+      \end{itemize}
+\pause
+\item Es bleibt nur eine phrasale Adjunkt-Resultativkonstruktion anzunehmen.\\
+\pause
+      Reguläre Ausdrücke:\\
+      {}[\blau{Adjunct*} SUBJ \blau{Adjunct*} OBJ \blau{Adjunct*} OBL \blau{Adjunct*} V]
+
+\pause
+      Und die Semantik? Relationale Beschränkungen a la \citew{Kasper94a}?
+\end{itemize}
+
+}
+
+%\subsubsubsubsection{Prädikatskomplexe}
+
+\frame{
+\frametitle{Umstellungen im Zusammenhang mit Prädikatskomplexen}
+
+\savespace
+\begin{itemize}
+\item Soll man für (\mex{1}) eine AcI-Resultativkonstruktion annehmen?
+\ea
+weil    ihn       den Teich      \blaubf{niemand}      leer  fischen \blaubf{sah}.
+\z
+\pause
+(Und die Semantik?)
+\pause
+\item Annahme von diskontinuierlichen Konstruktionen \citep{Reape94a} führt zu Problemen
+      bei Subjekt-Verb-Kongruenz und Fernpassiv \citep{Kathol98b}.
+
+\bigskip
+\pause
+\item Schlußfolgerung:\\
+      Man braucht noch mehr Grundmuster und entsprechende Permutationen.
+\end{itemize}
+
+}
+
+\subsubsubsection{Automatische Hüllenberechnung}
+
+\frame{
+\frametitle{Automatische Hüllenberechnung}
+
+\vfill
+\oneline{%
+\hfill\begin{tabular}{cccc}
+\multicolumn{4}{c}{\node{c}{\it construction}}\\[6ex]
+\node{a}{\it active} & \node{p}{\it passive} & \node{m}{middle} & \node{r}{resultative}\\[6ex]
+&\visible<2>{\blau<2>{\node{ar}{\it active resultative}}}   & \visible<2>{\blau<2>{\node{pr}{\it passive resultative}}}  & \visible<2>{\blau<2>{\node{mr}{middle resultative}}}\\[6ex]
+\end{tabular}
+\nodeconnect{c}{a}\nodeconnect{c}{p}\nodeconnect{c}{m}\nodeconnect{c}{r}%
+\visible<2>{\blau<2>{%
+\mode<handout>{
+\dashlength 4pt%
+}
+\nodeconnect{a}{ar}\nodeconnect{p}{pr}\nodeconnect{m}{mr}%
+\nodeconnect{r}{ar}\nodeconnect{r}{pr}\nodeconnect{r}{mr}%
+}}}
+\hfill\hfill\mbox{}
+\vfill
+Idee: Nur die Kernkonstruktionen werden spezifiziert\pause{},\\
+die Interaktionen werden automatisch berechnet.
+\vfill
+
+}
+
+%\subsubsubsubsection{Kays Vorschlag}
+
+\frame[shrink=4]{
+
+\frametitle{Automatische Hüllenberechnung: Kays Vorschlag}
+
+
+Unlike LFG phrase structure rules and lexical items and unlike HPSG maximal
+types, distinct maximal constructions can span the same (piece of) FT [\emph{Feature Structure Tree}, St.\ Mü.]. 
+For example, the English VP construction, which provides for a lexical verb followed
+by an arbitrary number of constituents (subject to valence restrictions), can unify
+with a construction specifically licensing a VP displaying the `heavy NP shift'
+property. In order to specify an explicit recursive licensing procedure for sentences,
+we need some way to deal with this overlap of constructions. 
+We wish to reduce the set of constructions of a grammar to a set of construction"=like
+objects (let's call them CLOs) with the property that in licencing a given sentence,
+exactly one CLO licences each node. To obtain the set of CLOs from the set of constructions
+$C$: \blau{(1) form the power set of the set of constructions $\wp(C)$; (2) for each set of
+constructions in  $\wp(C)$, attempt to unify all the members, matching the root nodes;
+(3) throw away all the sets that don't unify; (4) the remainder is the set of CLOs}.
+%\citep[Subsubsection~7.1]{Kay2002a}%
+\citep{Kay2002a}
+
+~
+
+}
+
+\frame{
+
+\frametitle{Ergebnis der Anwendung des Algorithmus}
+
+\eal
+\ex C = \{ VP construction, Heavy NP Shift construction \}
+\ex $\wp(C)$ = \{ \begin{tabular}[t]{@{}l}
+                 \{\},\\
+                 \{ VP construction \},\\
+                 \{ Heavy NP Shift construction \},\\
+                 \{ VP construction, Heavy NP Shift construction \} \}\\
+                 \end{tabular}
+\pause
+\ex Erwünscht:\\
+    CLOs = \{ VP construction $\wedge$ Heavy NP Shift construction \}
+\pause
+\ex Ergebnis nach Kays Algorithmus:\\
+    CLOs = \{ \begin{tabular}[t]{@{}l}
+              \rot{VP construction},\\
+              \rot{Heavy NP Shift construction},\\
+              VP construction $\wedge$ Heavy NP Shift construction \}\\
+                 \end{tabular}
+\zl
+
+}
+
+%\subsubsubsubsection{Automatische Hüllenberechnung mit Subsumptionstest}
+
+\frame{
+\frametitle{Reparatur}
+
+\begin{itemize}
+\item Man müßte einen Subsumptionstest einbauen,\\
+      \dash alle die CLOs aus der Menge entfernen,\\
+      die allgemeiner sind als ein anderes CLO.
+
+\pause
+\bigskip
+\item Es entstehen Probleme mit Idiomen,\\
+      da diese immer spezieller sind als nicht-idiomatische  \Konstruktionen.
+%% \item Man müßte die Eigenschaft, daß \emph{kick the bucket} eine VP ist, also bewußt aus
+%%       der \Konstruktion ausklammern, damit sie dann bei der Hüllenberechnung nicht zu Problemen führt.
+\pause
+\item Alle \Konstruktionen, die idiomatische Unterkonstruktionen haben, müssen zusätzliche
+      nicht-idiomatische Unterkonstruktionen kriegen,\\
+      da sonst die Unifikationsergebnisse der Idiom-Konstruktionen mit den allgemeinen \Konstruktionen zur Eliminierung der allgemeinen
+      \Konstruktionen führen würde.
+
+\pause
+      \emph{kick the bucket} würde sonst dafür sorgen,\\
+      daß es keine reguläre transitive VP-Konstruktion gibt.
+\end{itemize}
+
+}
+
+%\subsubsubsubsection{Idioms und Hüllenberechnung mit Subsumptionstest}
+
+\frame{
+
+\frametitle{Idioms und Hüllenberechnung}
+
+\smallexamples
+\eal
+\ex C = \{ VP, Transitive, \emph{kick the bucket}  \}
+\ex $\wp(C)$ = \{ \begin{tabular}[t]{@{}l}
+                 \{\},\\
+                 \{ VP \},\\
+                 \{ Transitive \},\\
+                 \{ \emph{kick the bucket}  \},\\
+                 \{ VP, Transitive  \},\\
+                 \{ VP, \emph{kick the bucket}  \},\\
+                 \{ Transitive, \emph{kick the bucket}  \},\\
+                 \{ VP, Transitive, \emph{kick the bucket}  \} \}\\
+                 \end{tabular}
+\pause
+\ex Ergebnis bei Berücksichtigung von Subsumptionsverhältnissen:\\
+    CLOs = \{ \begin{tabular}[t]{@{}l}
+              VP $\wedge$ Transitive $\wedge$ \emph{kick the bucket} \}\\
+                 \end{tabular}
+\pause
+\ex Erwünscht:\\
+    CLOs = \{ \begin{tabular}[t]{@{}l}
+              VP $\wedge$ Transitive,\\
+              VP $\wedge$ Transitive $\wedge$ \emph{kick the bucket} \}\\
+                 \end{tabular}
+\zl
+
+}
+
+%\subsubsubsubsection{Idioms und Hüllenberechnung mit Hilfskonstruktionen}
+
+\frame[shrink=30]{
+
+\frametitle{Idioms und Hüllenberechnung mit Hilfskonstruktionen}
+
+
+\eal
+\ex C = \{ VP, Transitive \blau<1>{Idiomatic}, Transitive \blau<1>{Non-Idiomatic}, \emph{kick the bucket}  \}
+\pause
+\ex $\wp(C)$ = \{ \begin{tabular}[t]{@{}l@{}l@{}}
+                 \{\},\\[1ex]
+%
+                \blau<4-5>{\{ VP \}},                                            & \visible<beamer| 3-5>{\rot{Unifikationsfehler}}\\
+                \blau<4-5>{\{ Transitive Idiomatic  \}},                         & \visible<beamer| 4-5>{\blau{Subsumptionstest}}\\
+                \blau<4-5>{\{ Transitive Non-Idiomatic  \}},                     & \visible<beamer| 5-6>{\gruen{Rest}}\\
+                \blau<4-5>{\{ \emph{kick the bucket}    \}},\\[1ex]
+%
+                \blau<4-5>{\{ VP, Transitive Idiomatic  \}},\\
+                \gruen<5-6>{\{ VP, Transitive Non-Idiomatic  \}},\\
+                \blau<4-5>{\{ VP, \emph{kick the bucket}  \}},\\
+                 \{ \rot<3-5>{Transitive Idiomatic}, \rot<3-5>{Transitive Non-Idiomatic}  \},\\
+                \blau<4-5>{\{ Transitive Idiomatic, \emph{kick the bucket}  \}},\\
+                 \{ \rot<3-5>{Transitive Non-Idiomatic}, \rot<3-5>{\emph{kick the bucket}}  \},\\[1ex]
+%
+                 {\{ VP, \rot<3-5>{Transitive Idiomatic}, \rot<3-5>{Transitive Non-Idiomatic}  \},}\\
+                 {\gruen<5-6>{\{ VP, Transitive Idiomatic, \emph{kick the bucket}  \}},}\\
+                 {\{ VP, \rot<3-5>{Transitive Non-Idiomatic}, \rot<3-5>{\emph{kick the bucket}}  \},}\\
+                 {\{ \rot<3-5>{Transitive Idiomatic}, \rot<3-5>{Transitive Non-Idiomatic}, \emph{kick the bucket}  \},}\\[1ex]
+%
+                 \multicolumn{2}{@{}l@{}}{\{ VP, \rot<3-5>{Transitive Idiomatic}, \rot<3-5>{Transitive Non-Idiomatic}, \emph{kick the bucket}  \} \}}\\
+
+                 \end{tabular}
+\pause\pause\pause\pause
+\ex CLOs = \{ \begin{tabular}[t]{@{}l}
+              VP $\wedge$ Transitive Non-Idiomatic,\\
+              VP $\wedge$ Transitive Idiomatic $\wedge$ \emph{kick the bucket} \}\\
+                 \end{tabular}
+\zl
+
+}
+
+\frame{
+
+\frametitle{Fragen}
+
+\begin{itemize}[<+->]
+\item Zu welchen \Konstruktionen brauchen wir\\
+      die Idiomatic/Non-Idiomatic Unterkonstruktionen?\\
+      Zu allen \Konstruktionen,\\
+      die mit idiomatischen \Konstruktionen kompatibel sind.
+\item Das könnte man automatisch berechnen,\\
+      vorausgesetzt, die idiomatischen \Konstruktionen sind gekennzeichnet.
+\item Welchen theoretischen Status haben die neuen Konstruktionen?\\
+      Bisher wurden nur CLOs berechnet,\\
+      aber jetzt berechnen wir auch \Konstruktionen!
+\end{itemize}
+
+}
+
+
+\subsubsubsection{Offene Fragen: Morphologie}
+
+\frame{
+\frametitle{Morphologie}
+%\footnotesize
+\savespace
+
+%\eal
+%\ex \ungn:\\ 
+%\emph{Leerfischung}\footnote{
+%        taz, 20.06.1996, S.\,6.%
+%},
+%\emph{Kaputterschließung}\footnote{
+%        taz, 02.09.1987, S.\,8.%  % 02.09.1987, S.\,8     
+%      },
+%\emph{Kaputtmilitarisierung}\footnote{
+%        taz, 19.04.1990, S.\,5.% %19.04.1990, S.\,5
+%      },
+%\emph{Gelbfärbung}\footnote{
+%taz, 14.08.1995, S.\,3.% %TAZ Nr. 4695 Seite 3 vom 14.08.1995
+%}
+%%
+%\ex \emph{-er} nominalizations:\\
+%\emph{Totschläger}\footnote{
+%        taz, bremen, 24.05.1996, S.\,24 und taz, hamburg 21.07.1999, S.\,22%
+%},
+%\emph{SFB-Gesundbeter}\footnote{
+%        taz, 25.08.1989, S.\,20.% %TAZ Nr. 2893 Seite 20 vom 25.08.1989
+%        },
+%\emph{Ex"=Bierflaschenleertrinker}\footnote{
+%        taz, 13./14.01.2001, S.\,32.%
+%}
+%%
+%\ex  marginal auch \geen:\\
+%\emph{Totgeschlage}\footnote{
+%  \citew[S.\,208]{FB95a}.
+%}
+%\zl
+
+\eal
+\ex \ungn:\\ 
+\emph{Leerfischung} (taz, 20.06.96),
+\emph{Kaputterschließung} (taz, 02.09.87),
+\emph{Kaputtsanierung}, (FR, 24.10.98),\\
+\emph{Kaputtmilitarisierung} (taz, 19.04.90),
+\emph{Gelbfärbung} (MM, 27.05.88)
+%
+\pause
+\ex \ern:\\
+\emph{Totschläger} (FR, 08.01.98 und ZEIT, 03.10.86)\\ % (taz, bremen, 24.05.96 und taz, hamburg 21.07.99)
+\emph{SFB-Gesundbeter} (taz, 25.08.89),\\
+\emph{Ex"=Bierflaschenleertrinker} (taz, 13.01.01)
+%
+\pause
+\ex  marginal auch \geen:\\
+\emph{Totgeschlage} \citep[S.\,208]{FB95a}
+\zl
+
+\pause
+Eine übergeordnete Konstruktion,\\
+von der die phrasalen und die morphologischen Konstruktionen erben?
+
+
+}
+
+\frame{
+\frametitle{Derivationelle Morphologie mit einfacher Vererbung?}
+
+\savespace
+\eal
+\ex allgemeine Resultativkonstruktion:\\
+    \begin{tabular}[t]{|l|}\hline
+    syn val \{ NP$_{\#1}$, NP$_{\#2}$, Pred$_{\#3}$, V$_{\#4}$ \} \\
+    sem cause-become( \#1, \#2, \#3 ) by \#4\\\hline
+    \end{tabular}
+%\vspace{\itemsep}
+
+\pause
+~
+\ex Nominalisierungsresultativkonstruktion:\\
+    \begin{tabular}[t]{|l|}\hline
+    syn val \{ Det, NP$_{\#2}$, Pred$_{\#3}$, V$_{\#4}$ \} \\
+    sem \rot<3>{nominal-semantics(}cause-become( \#1, \#2, \#3 ) by \#4\rot<3>{)}\\\hline
+    \end{tabular}
+
+~
+\zl
+
+\pause
+
+Mit normaler Vererbung kann ein Objekt nicht sowohl vom Typ (\mex{0}a)
+als auch vom Typ (\mex{0}b) sein, da die {\sc sem}-Werte verschieden sind.
+
+Das ginge nur mit zusätzlichen Merkmalen und "`Umkopieren"'. \nocite{Koenig99a,MuellerLehrbuch3}
+
+
+}
+
+
+\frame{
+
+\frametitle{Derivationelle Morphologie und Vererbung}
+
+
+%\begin{itemize}
+%\item 
+Derivationelle Morphologie nicht über Vererbungshierarchien modellierbar:
+\begin{itemize}
+\item Rekursion ist nicht erfaßbar \citep{KN93a}:
+\ea
+Vorvorvorvorvorversion\footnote{
+\url{http://forum.geizhals.at/t393036,3147329.html}. 10.07.2007.
+}
+\z
+\pause
+\item Vererbung ist nicht asymmetrisch:
+\eal
+\ex {}[un- [do -able]]  \jambox{(nicht machbar)}
+\ex {}[[un- do] -able]  \jambox{(kann rückgängig gemacht werden)} 
+\zl
+\end{itemize}
+
+%Siehe auch \citew{Riehemann:93}.
+%
+
+
+}
+
+\frame{
+\frametitle{Derivationelle Morphologie mit Einbettung}
+
+\ea
+einbettende \emph{-ung}-\emph{Nominalisierungskonstruktion}:\\
+\begin{tabular}{@{}l@{\hspace{5ex}}l@{}}
+\begin{tabular}[t]{|l|}\hline
+syn N\\
+sem nominal-semantics(\#1)\\
+phon \#2 $\oplus$ \phonliste{ ung }\\\\
+\hspace{6em}%\colorbox{blue!30}{
+\node{da}{\begin{tabular}{|l|}\hline
+syn V\\
+sem \#1\\
+phon \#2\\\hline
+\end{tabular}}%}
+\\[-1ex]
+\\\hline
+\end{tabular} & \visible<3->{\begin{tabular}[t]{@{}l@{}}
+\\\\
+                Resultativkonstruktion\\
+                muss \node{hier}{hier} rein\\
+                \end{tabular}
+\anodeconnect{hier}[tr]{da}}%
+\end{tabular}
+\z
+
+\pause
+Bei der Vererbung sagt man etwas über die äußere Box,\\
+nicht über die innere.
+
+}
+
+\begin{vortrag}
+
+\frame{
+\frametitle{Und Defaults?}
+
+\savespace
+\begin{itemize}
+\item \citet{MR2001a}: \emph{be-}Verben über Default-Vererbung
+\pause
+\item Die Details der Formalisierung bleiben im Dunkeln.
+\pause
+\item Man kann mit Defaults Listen verlängern. \citep{Villavicencio2000a-u}\\
+\pause
+      $\to$ Mit Default-Zeigern und Pfadungleichungen ist es möglich,
+      \begin{itemize}
+      \item eine Liste phonologischer Information zu verlängern,
+\pause
+      \item die syntaktische Kategorie zu verändern,
+\pause
+      \item semantische Einbettung zu modellieren,\\
+            wenn die Repräsentation listenbasiert ist, wie \zb bei MRS.\nocite{CFPS2005a}
+      \end{itemize}
+\pause
+\item \emph{undoable} und \emph{Vorvorversion} kann analysiert werden, wenn man
+\pause
+      \begin{itemize}
+      \item diverse Hilfsmerkmale verwendet (für Phonologie, syn.\ Kategorie, Semantik)
+\pause
+      \item Relationale-Beschränkungen hat, die aus der Liste der phonologischen
+            Repräsentationen den \phonw ausrechnet.
+\pause
+      \item unendlich viele Affixe bzw.\ reguläre Ausdrücke in Merkmalstrukturen hat.
+      \end{itemize}
+\pause
+\item Das ist unglaublich häßlich! Details siehe \citew{Mueller2005g}.
+\end{itemize}
+
+%\begin{bochum}
+%\pause
+%\item Manche Sachen kann man mit Erweiterungen des Formalismus\\
+%um reguläre Ausdrücke mit Hilfe von Default-Vererbung\\
+%auf eine sehr, sehr technische Weise machen \citep{Mueller2005g}.
+%\end{bochum}
+%\end{itemize}
+
+}
+
+\end{vortrag}
+
+
+\subsubsection{Eine lexikalische Analyse}
+
+\outline{
+
+\begin{itemize}
+\item Resultativkonstruktionen
+\item Phrasale Analysen
+\item Interaktion mit anderen Phänomenen
+\item \blau{Eine lexikalische Analyse}
+\item Zusammenfassung
+\end{itemize}
+
+}
+
+
+
+
+%\frame{
+%\frametitle{Eine lexikalische Analyse}
+
+%Beispiel: Analyse im Rahmen der HPSG
+%      \begin{itemize}
+%      \item Argumente eines Kopfes werden in einer Liste repräsentiert.
+%\pause
+%      \item Lexikoneinträge können zu anderen über Lexikonregeln in Beziehung gesetzt werden.
+%\pause
+%      \item Prädikatskomplexe können über Argumentkomposition analysiert werden.
+%      \end{itemize}
+
+
+%}
+
+\subsubsubsection{Einige Eigenschaften der Resultativkonstruktion}
+
+\frame{
+\frametitle{RKen im Vergleich zur restlichen deutschen Syntax}
+
+
+RK gleichen Kopulakonstruktionen, \emph{gut finden}-Prädikationen, Verbalkomplexen,
+und Partikelverben in folgender Hinsicht:
+\begin{itemize}[<+->]
+\item Permutation von Argumenten beteiligter Köpfe
+\item Voranstellung unvollständiger Teilphrasen,\\
+      die einen linken Präfix des Prädikatskomplexes bilden,\\
+      möglicherweise mit Argumenten und Adjunkten
+\item Keine Voranstellung aus der Mitte des Prädikatskomplexes
+\item Skopus von Adjunkten über alle Bestandteile des Komplexes möglich
+\end{itemize}
+
+}
+
+
+\subsubsubsection{Grundannahmen}
+
+\frame{
+
+\frametitle{Grundannahmen: Konstituentenstellung und Valenz}
+
+\vfill
+\hfill%
+%\resizebox{!}{0.8\textheight}{
+%\small
+\psset{xunit=1cm,yunit=5.4mm}%
+%
+% node labels for moving elements will be typeset by the \tmove command
+% here we have to provide invisible boxes to get the line drawing right.
+\begin{pspicture}(4.8,1)(14.4,7.6)
+
+%\rput[B](1,1){\rnode{speccp}{\visible<1->{diesen Mann$_i$}}}
+\rput[B](5,1){\rnode{jeder}{niemand}}
+\rput[B](7,1){\rnode{ihnmf}{ihn}}
+\rput[B](9,1){\rnode{kennt}{kennt}}
+
+\rput[B](7,3){\rnode{np1}{NP[\textit{acc}]}}
+\rput[B](9,3){\rnode{v}{V}}\nput[labelsep=2pt]{0}{v}{\only<2->{\nliste{NP[\textit{nom}], NP[\textit{acc}]}}}
+
+\rput[B](5,5){\rnode{np2}{NP[\textit{nom}]}}
+\rput[B](8,5){\rnode{vs1}{V'}}\nput[labelsep=2pt]{0}{vs1}{\only<3->{\nliste{NP[\textit{nom}]}}}
+
+\rput[B](6.5,7){\rnode{vp}{VP}}\nput[labelsep=2pt]{0}{vp}{\only<3->{\nliste{ }}}
+
+
+
+\psset{angleA=-90,angleB=90,arm=0pt}
+
+\ncdiag{v}{kennt}
+\ncdiag{vs1}{np1}\ncdiag{vs1}{v}
+\ncdiag{vs2}{np2}\ncdiag{vs2}{vs1}
+\ncdiag{vp}{vs2}
+
+%\ncdiag{np3}{t1}
+
+\ncdiag{i}{t2}
+\ncdiag{is}{i}\ncdiag{is}{vp}
+\ncdiag{vp}{np2}\ncdiag{ip}{is}
+
+\ncdiag{np2}{jeder}
+\ncdiag{np1}{ihnmf}
+\ncdiag{vp}{vs1}
+
+%\psgrid
+
+\end{pspicture}%
+\hfill\hfill\mbox{}
+\vfill
+\pause
+\begin{itemize}
+\item Valenzanforderung ist in einer Liste repräsentiert
+\pause
+\item Ein beliebiges Element der Liste kann mit Kopf kombiniert werden.\\
+      $\to$ auch Abfolge Acc $<$ Nom analysierbar.\\
+      Liste mit restlichen Elementen wird nach oben gegeben.
+\end{itemize}
+
+}
+
+
+%% \subsubsubsubsection{Der Verbalkomplex}
+
+
+%% \frame[t]{
+%% \frametitle{Der Verbalkomplex}
+
+%% \hfill\scalebox{0.85}{%
+%% \psset{xunit=1cm,yunit=5.4mm}%
+%% %
+%% % node labels for moving elements will be typeset by the \tmove command
+%% % here we have to provide invisible boxes to get the line drawing right.
+%% \begin{pspicture}(2.25,1)(15.8,9.6)
+%% %\psgrid
+
+%% \rput[B](3,1){\rnode{er}{niemand}}
+%% \rput[B](5,1){\rnode{ihn}{ihn}}
+%% \rput[B](7,1){\rnode{zu reparieren}{zu reparieren}}
+%% \rput[B](11.5,1){\rnode{versucht}{versucht}}
+
+%% %% \rput[B](7,0){leer}
+%% %% \rput[B](11.5,0){fischt}
+
+%% %% \rput[B](7,-1){an}
+%% %% \rput[B](11.5,-1){lacht}
+
+%% \rput[B](7,3){\rnode{vzu reparieren}{\blau<3>{V}}}\nput[labelsep=2pt]{0}{vzu reparieren}{\only<2->{\rnode{sczu reparieren}{\nliste{ NP[\textit{nom}], \blau<2>{NP[\textit{acc}] }}}}}
+%% \rput[B](11.5,3){\rnode{vversucht}{V}}\nput[labelsep=2pt]{0}{vversucht}{\only<2->{\nliste{ NP[\textit{nom}],\blau<2>{ NP[\textit{acc}]}, \blau<3>{V} }}}
+
+
+%% \rput[B](5,5){\rnode{np2}{NP[\textit{acc}]}}
+%% \rput[B](8,5){\rnode{vzu reparierenversucht}{V}}\nput[labelsep=2pt]{0}{vzu reparierenversucht}{\only<4->{\nliste{ NP[\textit{nom}], NP[\textit{acc}] }}}
+
+%% \rput[B](6.5,7){\rnode{vs}{V'}}\nput[labelsep=2pt]{0}{vs}{\only<5->{\nliste{ NP[\textit{nom}] }}}
+
+
+
+%% \rput[B](3,7){\rnode{np1}{NP[\textit{nom}]}}
+
+%% \rput[B](4.75,9){\rnode{vp}{VP}}\nput[labelsep=2pt]{0}{vp}{\only<5->{\nliste{  }}}
+
+
+
+
+%% \psset{angleA=-90,angleB=90,arm=0pt}
+
+%% \ncdiag{vversucht}{versucht}
+%% \ncdiag{vzu reparieren}{zu reparieren}
+%% \ncdiag{vzu reparierenversucht}{vversucht}\ncdiag{vzu reparierenversucht}{vzu reparieren}
+%% \ncdiag{vs}{np2}\ncdiag{vs}{vzu reparierenversucht}
+%% \ncdiag{vp}{vs}\ncdiag{vp}{np1}
+
+%% \ncdiag{np2}{ihn}
+%% \ncdiag{np1}{er}
+
+
+
+
+%% \end{pspicture}
+%% }
+%% \hfill\hfill\mbox{}%
+
+%% \begin{itemize}
+%% \item Verben bilden einen Komplex
+%% \pause
+%% \item Argumente des eingebetteten Verbs werden angezogen\\\citep{HN89a,HN94a,Kiss95a}
+%% \pause
+%% \pause
+%% \item Argumente in Liste werden nacheinander abgearbeitet
+%% %\pause
+%% %\item Kasus ist im Lexikon unterspezifiziert (Kasusprinzipien)
+%% \end{itemize}
+
+%% }
+
+\subsubsubsection{Resultativkonstruktionen}
+
+
+
+
+\frame[t]{
+\frametitle{Resultativkonstruktionen}
+
+\savespace
+
+\hfill\scalebox{0.85}{%
+\psset{xunit=1cm,yunit=5.4mm}%
+%
+% node labels for moving elements will be typeset by the \tmove command
+% here we have to provide invisible boxes to get the line drawing right.
+\begin{pspicture}(2.25,1)(15.8,9.6)
+%\psgrid
+
+\rput[B](3,1){\rnode{er}{niemand}}
+\rput[B](5,1){\rnode{ihn}{ihn}}
+%\rput[B](7,1){\rnode{zu reparieren}{zu reparieren}}
+%\rput[B](11.5,1){\rnode{versucht}{versucht}}
+
+\rput[B](7,1){\rnode{zu reparieren}{leer}}
+\rput[B](11.5,1){\rnode{versucht}{fischt}}
+
+%% \rput[B](7,-1){an}
+%% \rput[B](11.5,-1){lacht}
+
+\rput[B](7,3){\rnode{vzu reparieren}{Adj}}\nput[labelsep=2pt]{0}{vzu reparieren}{\only<1->{\rnode{sczu reparieren}{\nliste{ \blau<2>{NP[\textit{acc}] }}}}}
+\rput[B](11.5,3){\rnode{vversucht}{\blau<1>{V}}}\nput[labelsep=2pt]{0}{vversucht}{\only<1->{\blau<1>{\nliste{ NP[\textit{nom}],\blau<2>{ NP[\textit{acc}]}, Adj }}}}
+
+
+\rput[B](5,5){\rnode{np2}{NP[\textit{acc}]}}
+\rput[B](8,5){\rnode{vzu reparierenversucht}{V}}\nput[labelsep=2pt]{0}{vzu reparierenversucht}{\only<1->{\nliste{ NP[\textit{nom}], NP[\textit{acc}] }}}
+
+\rput[B](6.5,7){\rnode{vs}{V'}}\nput[labelsep=2pt]{0}{vs}{\only<1->{\nliste{ NP[\textit{nom}] }}}
+
+
+
+\rput[B](3,7){\rnode{np1}{NP[\textit{nom}]}}
+
+\rput[B](4.75,9){\rnode{vp}{VP}}\nput[labelsep=2pt]{0}{vp}{\only<1->{\nliste{  }}}
+
+
+
+
+\psset{angleA=-90,angleB=90,arm=0pt}
+
+\ncdiag{vversucht}{versucht}
+\ncdiag{vzu reparieren}{zu reparieren}
+\ncdiag{vzu reparierenversucht}{vversucht}\ncdiag{vzu reparierenversucht}{vzu reparieren}
+\ncdiag{vs}{np2}\ncdiag{vs}{vzu reparierenversucht}
+\ncdiag{vp}{vs}\ncdiag{vp}{np1}
+
+\ncdiag{np2}{ihn}
+\ncdiag{np1}{er}
+
+
+
+
+\end{pspicture}
+}
+\hfill\hfill\mbox{}%
+
+\begin{itemize}
+\item Lexikoneintrag für Verb in RK über Lexikonregel lizenziert\\
+      Diese Lexikonregel steuert auch die Kausativbedeutung bei.
+\pause
+\item Subjekt des eingebetteten Adj wird zum Objekt des Verbs
+\pause
+\item Analyse der Resultativkonstruktion ist parallel zu der von Verbalkomplexen \citep{HN89a,HN94a,Kiss95a}
+\end{itemize}
+
+
+}
+
+
+
+\mode<beamer>{\beamertemplatebackfindforwardnavigationsymbolshorizontal}
+
+\subsubsection{Zusammenfassung}
+
+\frame[label=lastframe]{
+\frametitle{Zusammenfassung: Vorteile der lexikalischen Analyse}
+
+%\savespace
+~\vspace{-\baselineskip}
+\begin{itemize}
+\item Passiv, modale Infinitive und Medialkonstruktionen sind von der RK unabhängig.
+%
+\pause
+\item Konstituentenstellung ist von der RK unabhängig.
+%
+\pause
+\item Adjunktsyntax, freie Dative und Interaktionen sind von der RK unabhängig.
+%
+\pause
+\item Parallelität zw.\ Verbalkomplexbildung \citep{HN89a},
+Partikelverbsyntax \citep{Hoehle82b,Mueller2003a} und RK %\citep{Mueller2002b}
+ist erfaßt.
+%
+\pause
+\vspace{1ex}
+%\bigskip
+\item Morphologische Prozesse nehmen Lexikoneinträge von Verben für RK als Eingabe.
+%
+\pause
+\vspace{1ex}
+%\bigskip
+\item Sprachübergreifende Gemeinsamkeiten werden erfaßt.\\
+      Unterschiede folgen aus Unterschieden in der jeweiligen Syntax.
+
+%% \pause
+%% \vspace{1ex}
+%% \item Aufsatz unter \url{http://www.cl.uni-bremen.de/~stefan/Pub/phrasal.html}
+\end{itemize}
+
+
+
+}
+
+\subsection{Grammatiktheoretische Einordnung}
+
+\frame{
+\frametitle{Grammatiktheoretische Einordnung}
+
+\begin{itemize}
+\item Mittels Typhierarchien kann man phrasale Muster kategorisieren.
+\item Das ist jedoch nicht genug.\\
+      Man braucht Regeln, die komplexe Einheiten kombinieren.
+\item Nicht alle argumentstrukturverändernden Prozesse lassen sich über Vererbung erfassen.
+\item Wenn man keine Transformationen annehmen will und von lexikalischer Integrität ausgeht, muss man alle Phänomene, die mit
+derivationeller Morphologie und argumentstrukturverändernden Prozessen interagieren, lexikalisch
+behandeln. (\citealp[S.\,412]{Dowty78a}; \citealp[S.\,21]{Bresnan82a}; \citealp{Mueller2006d,Mueller2007d})
+\item Die skizzierte lexikalische Analyse ist mit GPSG, LFG, HPSG und auch CxG kompatibel.\\
+(siehe \citew{Simpson83a} für eine lexikalische Analyse in LFG.)
+\end{itemize}
+
+
+
+
+
+}

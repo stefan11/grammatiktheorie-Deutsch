@@ -1,0 +1,650 @@
+%% -*- coding:utf-8 -*-
+
+\section{Generalized Phrase Structure Grammar (GPSG)}
+
+\outline{
+
+\begin{itemize}
+\item Begriffe
+\item Phrasenstrukturgrammatiken
+\item Government \& Binding (GB)
+\item \blau{Generalisierte Phrasenstrukturgrammatik (GPSG)}
+\item Lexikalisch-Funktionale Grammatik (LFG)
+%\item Lexical Mapping Theory (LMT)
+%\item PATR
+\item Kategorialgrammatik (CG)
+\item Kopfgesteuerte Phrasenstrukturgrammatik (HPSG)
+\item Konstruktionsgrammatik (CxG)
+\item Baumadjunktionsgrammatik (TAG)
+\end{itemize}
+}
+
+\frame{
+\frametitle{Generalized Phrase Structure Grammar (GPSG)}
+
+\begin{itemize}
+\item Die GPSG wurde als Antwort auf die Transformationsgrammatik Ende der 70er Jahre entwickelt.
+\pause
+\item Hauptpublikation: das Buch von \citet*{GKPS85a}.
+\pause
+\item Eine GPSG für das Deutsche wurde von \citet{Uszkoreit87a} entwickelt.
+\pause
+\item Chomsky hat gezeigt, dass Phrasenstrukturgrammatiken inadäquat sind.\\
+      GPSG erweitert PSG so, dass für Chomskys Punkte eine adäquate Behandlung möglich wird:
+\begin{itemize}
+\item keine Beschränkung auf atomare Kategorien \citep{Harman63a}
+\pause
+\item andere Behandlung der lokalen Umstellung
+\pause
+\item Passiv als Meta-Regel
+\pause
+\item Fernabhängigkeiten als Folge lokaler Abhängigkeiten
+\end{itemize}
+\pause
+\item Wir gucken diese Erweiterungen im folgenden an.
+\end{itemize}
+
+
+}
+
+\subsection{Allgemeines zum Repräsentationsformat}
+
+\frame[shrink=0]{
+\frametitle{Allgemeines zum Repräsentationsformat}
+
+\begin{itemize}
+\item Kategorien sind Mengen von Merkmal-Wert-Paaren
+\pause
+\item Lexikoneinträge haben ein Merkmal namens \subcat. Der Wert ist eine Zahl.
+      Diese Zahl sagt etwas darüber aus, in welcher Grammatikregel das Wort verwendet werden kann.
+\pause
+\item Beispiele nach \citew{Uszkoreit87a}:
+
+\begin{tabular}{@{}l@{~$\to$~}ll@{}}
+V2  & H[5]                              & (kommen, schlafen)\\
+V2  & H[6], N2[Case Acc]                & (kennen, suchen)\\
+V2  & H[7], N2[Case Dat]                & (helfen, vertrauen)\\
+V2  & H[8], N2[Case Dat], N2[Case Acc]  & (geben, zeigen)\\
+V2  & H[9], V3[+dass]                   & (wissen, glauben)\\
+\end{tabular}
+
+Diese Regeln lizenzieren VPen, \dash die Kombination eines Verbs mit seinen Komplementen, aber nicht
+mit dem Subjekt.
+
+\pause
+\item Die Zahlen nach den Kategoriesymbolen (V bzw.\ N) geben die \xbar-Stufe an.\\
+      Das Maximum ist bei Uszkoreit drei, nicht wie oft angenommen zwei.
+\pause
+\item H steht für Head.
+
+\end{itemize}
+
+}
+
+\subsection{Prinzipien: Das Kopf-Merkmalsprinzip}
+
+\frame{
+\frametitle{Prinzipien: Das Kopf-Merkmalsprinzip}
+
+Head Feature Convention:\\
+Mutterknoten und Head-Tochter müssen in allen Head-Merkmalen übereinstimmen,\\
+außer wenn die Merkmale mit explizitem Wert vorgegeben sind.
+
+
+
+}
+
+\subsection{Lokale Umstellung}
+
+\frame{
+\frametitle{Lokale Umstellung}
+
+
+\begin{itemize}
+\item Im \mf können Argumente in nahezu beliebiger Abfolge angeordnet werden.
+\eal
+\ex {}[weil] \rot{der Mann} \gruen{der Frau} \blau{das Buch} gibt
+\ex {}[weil] \rot{der Mann} \blau{das Buch} \gruen{der Frau} gibt
+\ex {}[weil] \blau{das Buch} \rot{der Mann} \gruen{der Frau} gibt
+\ex {}[weil] \blau{das Buch} \gruen{der Frau} \rot{der Mann} gibt
+\ex {}[weil] \gruen{der Frau} \rot{der Mann} \blau{das Buch} gibt
+\ex {}[weil] \gruen{der Frau} \blau{das Buch} \rot{der Mann} gibt
+\zl
+\pause
+\item In (\mex{0}b--f) muß man die Konstituenten anders betonen
+und die Menge der Kontexte, in denen der Satz mit der jeweiligen Abfolge
+geäußert werden kann, ist gegenüber (\mex{0}a) eingeschränkt \citep{Hoehle82a}. 
+
+Abfolge in (\mex{0}a) = \blau{Normalabfolge} bzw.\ die \blau{unmarkierte Abfolge}.
+\end{itemize}
+}
+
+
+
+\frame{
+\frametitle{Motivation für Linearisierungsregeln (I)}
+
+%\smallframe
+\savespace
+Motivation: Permutation mit Phrasenstrukturregeln $\to$\\
+braucht für ditransitive Verben sechs Phrasenstrukturregeln für Verbletztstellung:
+\ea
+\begin{tabular}[t]{@{}l@{ }l@{ }l@{ }l@{ }l@{ }}
+S  & $\to$ NP[nom]& NP[acc] & NP[dat] & V\\
+S  & $\to$ NP[nom]& NP[dat] & NP[acc] & V\\
+S  & $\to$ NP[acc]& NP[nom] & NP[dat] & V\\
+S  & $\to$ NP[acc]& NP[dat] & NP[nom] & V\\
+S  & $\to$ NP[dat]& NP[nom] & NP[acc] & V\\
+S  & $\to$ NP[dat]& NP[acc] & NP[nom] & V\\
+\end{tabular}
+\z
+}
+
+\frame{
+\frametitle{Motivation für Linearisierungsregeln (II)}
+
+Plus sechs Regeln für Verberststellung:
+
+\ea
+\begin{tabular}[t]{@{}l@{ }l@{ }l@{ }l@{ }l}
+S  & $\to$ V NP[nom]& NP[acc] & NP[dat]\\
+S  & $\to$ V NP[nom]& NP[dat] & NP[acc]\\
+S  & $\to$ V NP[acc]& NP[nom] & NP[dat]\\
+S  & $\to$ V NP[acc]& NP[dat] & NP[nom]\\
+S  & $\to$ V NP[dat]& NP[nom] & NP[acc]\\
+S  & $\to$ V NP[dat]& NP[acc] & NP[nom]\\
+\end{tabular}
+\z
+
+Die Regeln erfassen eine Generalisierung nicht.
+
+Genauso für transitive Verben und entsprechende andere Valenzrahmen.
+
+}
+
+\frame{
+\frametitle{Abstraktion von linearer Abfolge: Dominanz}
+
+\begin{itemize}
+\item \citet*{GKPS85a}:\\
+      Trennung von unmittelbarer Dominanz (\emph{immediate dominance} = ID) und
+      linearer Abfolge (\emph{linear precedence} = LP)
+\pause
+\item Dominanzregeln sagen nichts über die Reihenfolge der Töchter.
+\ea
+\begin{tabular}[t]{@{}l@{ }l}
+S  & $\to$ V, NP[nom], NP[acc], NP[dat]\\
+\end{tabular}
+\z
+
+Regel in (\mex{0}) sagt nur, dass S die anderen Knoten dominiert:
+\medskip
+\centerline{%
+\begin{forest}
+sm edges
+[S
+  [V]
+  [{NP[nom]}]
+  [{NP[acc]}]
+  [{NP[dat]}] ]
+\end{forest}}
+\medskip
+
+\pause
+\item wegen Aufhebung der Anordnungsrestriktion für die rechte Regelseite:\\
+      statt zwölf Regeln nur noch eine 
+
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Abstraktion von linearer Abfolge: Lineare Abfolge}
+
+\begin{itemize}
+\item LP"=Beschränkungen über lokale Bäume, \dash Bäume der Tiefe eins:
+
+
+\begin{table}[H]
+\centerline{%
+\begin{forest}
+sm edges
+[S
+  [V]
+  [{NP[nom]}]
+  [{NP[acc]}]
+  [{NP[dat]}] ]
+\end{forest}}
+\end{table}
+
+~\medskip
+
+      $\to$ Können etwas über die Abfolge von V, NP[nom], NP[acc] und NP[dat] sagen.
+
+
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Erneute Formulierung von Restriktionen}
+
+
+\begin{itemize}
+\item ohne Restriktionen für die rechte Regelseite gibt es zu viel Freiheit
+
+\medskip
+\begin{tabular}[t]{@{}l@{ }l}
+S  & $\to$ V, NP[nom], NP[acc], NP[dat]\\
+\end{tabular}
+
+\medskip
+Die Regel läßt Abfolgen mit dem Verb zwischen NPen zu:
+\ea[*]{
+Der Frau der Mann gibt ein Buch.
+}
+\z
+\pause
+\item Linearisierungsregeln schließen solche Anordnungen dann aus.
+
+\ea
+\begin{tabular}[t]{@{}l@{~$<$~}l@{}}
+V[+MC]  & X\\
+X       & V[$-$MC]\\
+\end{tabular}
+\z
+{\sc mc} steht hierbei für \emph{main clause}. 
+
+Die LP-Regeln stellen sicher, dass das Verb in Hauptsätzen (+{\sc mc}) vor allen anderen
+Konstituenten steht und in Nebensätzen ($-${\sc mc}) nach allen anderen.
+
+\end{itemize}
+}
+
+\subsection{Meta-Regeln}
+
+\frame[shrink=10]{
+\frametitle{Einführung des Subjekts über eine Meta-Regel}
+
+Bisher sehen unsere Regeln aber so aus:
+
+\ea
+\begin{tabular}[t]{@{}l@{~$\to$~}ll@{}}
+V2  & H[7], N2[Case Dat]                & (helfen, vertrauen)\\
+V2  & H[8], N2[Case Dat], N2[Case Acc]  & (geben, zeigen)\\
+\end{tabular}
+\z
+
+\pause
+
+Mit (\mex{0}) können wir nur VPen, aber keine Sätze mit Subjekt analysieren.
+
+\pause
+
+Verwenden Meta-Regel, die sagt: Wenn es in der Grammatik eine Regel der Form "`V2 besteht aus irgendwas"' gibt,
+dann muß es auch eine Regel\\ "`V3 besteht aus dem, woraus V2 besteht + einer NP im Nominativ"' geben.
+
+\pause
+
+Formal:
+\ea
+V2  $\to$ W $\mapsto$\\
+V3  $\to$ W, N2[Case Nom]
+\z
+
+W steht dabei für eine beliebige Anzahl von Kategorien.
+
+}
+
+\frame{
+\frametitle{Einführung des Subjekts über eine Meta-Regel}
+
+
+
+\ea
+V2  $\to$ W $\mapsto$\\
+V3  $\to$ W, N2[Case Nom]
+\z
+
+
+
+\pause
+
+Diese Meta-Regel erzeugt aus den Regeln in (\mex{1}) die Regeln in (\mex{2}):
+\ea
+\begin{tabular}[t]{@{}l@{~$\to$~}ll@{}}
+V2  & H[7], N2[Case Dat]                & (helfen, vertrauen)\\
+V2  & H[8], N2[Case Dat], N2[Case Acc]  & (geben, zeigen)\\
+\end{tabular}
+\z
+
+\ea
+\begin{tabular}[t]{@{}l@{~$\to$~}l@{}}
+V3  & H[7], N2[Case Dat], N2[Case Nom]                \\
+V3  & H[8], N2[Case Dat], N2[Case Acc], N2[Case Nom]  \\
+\end{tabular}
+\z
+
+\pause
+
+Damit stehen Subjekt und andere Argumente gemeinsam auf der rechten Seite der Regel und können also
+beliebig angeordnet werden,\\
+so lange die LP-Regeln nicht verletzt sind.
+
+}
+
+
+
+
+
+
+
+
+
+
+\subsection{Passiv als Meta-Regel}
+
+\frame[shrink=15]{
+\frametitle{Passiv als Meta-Regel}
+\savespace\smallexamples
+
+Beim Passiv passiert folgendes:
+\begin{itemize}
+\item Das Subjekt wird unterdrückt.
+\item Wenn es ein Akkusativobjekt gibt, wird dieses zum Subjekt.
+\end{itemize}
+
+Das gilt für alle Verbklassen, die ein Passiv bilden können. Dabei ist es egal,
+ob die Verben einstellig, zweistellig oder dreistellig sind:
+\eal
+\ex weil er noch gearbeitet hat
+\ex weil noch gearbeitet wurde
+\zl
+\eal
+\ex weil er an Maria gedacht hat
+\ex weil an Maria gedacht wurde
+\zl
+\eal
+\ex weil sie ihn geschlagen hat
+\ex weil er geschlagen wurde
+\zl
+\eal
+\ex weil er ihm den Aufsatz gegeben hat
+\ex weil ihm der Aufsatz gegeben wurde
+\zl
+
+}
+
+\frame[shrink=5]{
+\frametitle{Passiv als Meta-Regel}
+
+\begin{itemize}
+\item In der PSG müßte man für jedes Satzpaar jeweils zwei Regeln aufschreiben.
+\pause
+\item In GPSG gibt es Meta-Regeln für das Passiv.
+
+\pause
+\item Zu jeder Aktiv-Regel mit Subjekt und Akkusativobjekt wird eine Passiv-Regel mit unterdrücktem
+  Subjekt lizenziert. Der Zusammenhang ist also erfaßt.
+\pause
+\item Unterschied zu Transformationsgrammatik/GB:\\
+      Es gibt nicht zwei Bäume, die in Beziehung zueinander gesetzt werden,\\
+      sondern jeweils Aktiv-Regeln werden zu Passiv-Regeln in Beziehung gesetzt. 
+
+      Mit den Aktiv- bzw. Passiv-Regeln kann man dann zwei unabhängige Strukturen ableiten, \dash
+      (\mex{1}b) ist nicht auf (\mex{1}a) bezogen.
+
+\eal
+\ex weil sie ihn geschlagen hat
+\ex weil er geschlagen wurde
+\zl
+
+
+      Die Generalisierung in bezug auf Aktiv/Passiv ist aber dennoch erfaßt.
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Passiv im Englischen}
+
+\citet*{GKPS85a} schlagen folgende Meta-Regel vor:
+\ea
+VP  $\to$ W, NP $\mapsto$\\
+VP[PAS]  $\to$ W, (PP[\emph{by}])
+\z
+Diese Regel besagt, dass Verben, die ein Objekt verlangen, in einer Passiv-VP auch ohne dieses Objekt
+auftreten können. 
+
+Bei den Passiv-VPen kann eine \emph{by}-PP angeschlossen werden.
+
+(VP entspricht V2)
+
+}
+
+\frame{
+\frametitle{Probleme der VP-bezogenen Passivmetaregel}
+
+\begin{enumerate}
+\item Regel nimmt nicht auf Verb bezug (nicht alle Verben erlauben Passivierung).
+\pause
+% \item Es ist unklar, wie die Semantik parallel zur Syntax aufgebaut werden soll:
+%       Die Regel in (\mex{0}) unterdrückt ein NP-Argument in der VP. 
+%       Dieses Argument ist aber ein Objekt. Rein syntaktisch stellt das System der GPSG-Metaregeln
+%       die richtige Menge von ID-Regeln zur Verfügung, in der Semantik muss man aber sicherstellen,
+%       dass das durch eine Metaregel eingeführte Subjekt mit dem unterdrückten Objekt übereinstimmt.
+% \pause
+\item Unpersönliches Passiv kann nicht durch Unterdrückung eines Objekts abgeleitet werden.
+      Eine uneinheitliche Behandlung des Passivs scheint unumgänglich zu sein, wenn man (\mex{0})
+      aufrechterhalten will.
+\end{enumerate}
+
+
+}
+
+
+\subsection{Fernabhängigkeiten als Folge lokaler Abhängigkeiten}
+
+
+\frame{
+\frametitle{Fernabhängigkeiten als Folge lokaler Abhängigkeiten}
+
+\begin{itemize}
+\item Bisher können wir nur Verberst- und Verbletztstellung erklären.
+\eal
+\ex {}[dass] der Mann der Frau das Buch gibt
+\ex Gibt der Mann der Frau das Buch?
+\zl
+\item Was ist mit Verbzweitstellung?
+\eal
+\ex Der Mann gibt der Frau das Buch.
+\ex Der Frau gibt der Mann das Buch.
+\zl
+\item Verbzweitstellung wird als Fernabhängigkeit mittels einer Folge lokaler Abhängigkeiten
+ analysiert.
+
+ Eine der großen Leistungen bei der
+  Entwicklung der GPSG besteht in der Entwicklung einer Alternative zu Transformationen für die
+  Analyse von Fernabhängigkeiten. (siehe aber auch schon \citew{Harman63a})
+\end{itemize}
+
+}
+
+\subsubsection{Meta-Regel zur Einführung von Fernabhängigkeiten}
+
+
+\frame{
+\frametitle{Meta-Regel zur Einführung von Fernabhängigkeiten}
+
+Nehmen beliebige Kategorie X aus der Menge der Kategorien auf der rechten Regelseite und
+repräsentieren sie auf der linken Seite mit Slash (`/'):
+\ea
+V3  $\to$ W, X $\mapsto$\\
+V3/X  $\to$ W
+\z
+\pause
+
+Diese Regel erzeugt aus (\mex{1}) die Regeln in (\mex{2}):
+\ea
+\begin{tabular}[t]{@{}l@{~$\to$~}l@{}}
+V3  & H[8], N2[Case Dat], N2[Case Acc], N2[Case Nom] 
+\end{tabular}
+\z
+\ea
+\begin{tabular}[t]{@{}l@{~$\to$~}l@{}}
+V3/N2[Case Nom] &  H[8], N2[Case Dat], N2[Case Acc]\\
+V3/N2[Case Dat] &  H[8], N2[Case Acc], N2[Case Nom]\\
+V3/N2[Case Acc] &  H[8], N2[Case Dat], N2[Case Nom]\\
+\end{tabular}
+\z
+
+}
+
+\subsubsection{Regel zur Abbindung von Fernabhängigkeiten}
+
+\frame{
+\frametitle{Regel zur Abbindung von Fernabhängigkeiten}
+
+
+\ea
+V3[+Fin] $\to$ X[+Top], V3[+MC]/X
+\z
+X steht dabei für eine beliebige Kategorie,\\
+die per `/' in V3 als fehlend markiert wurde.
+
+\pause
+Die für unsere Beispiele interessanten Fälle zeigt (\mex{1}):
+\ea
+\begin{tabular}[t]{@{}l@{~$\to$~}l@{~}l@{}}
+V3[+Fin] & N2[+Top, Case Nom], & V3[+MC]/N2[Case Nom]\\
+V3[+Fin] & N2[+Top, Case Dat], & V3[+MC]/N2[Case Dat]\\
+V3[+Fin] & N2[+Top, Case Acc], & V3[+MC]/N2[Case Acc]\\
+\end{tabular}
+\z
+
+\pause
+Linearisierungsregel sorgt dafür, dass X vor dem restlichen Satz steht:
+\ea
+{}[+Top] $<$ X
+\z
+
+
+}
+
+
+\subsubsection{Eine Beispielanalyse}
+
+\frame{
+\frametitle{Eine Beispielanalyse}
+
+
+\centerline{%
+\scalebox{0.85}{
+\begin{forest}
+sm edges
+[{V3[+\textsc{fin}, $+$\textsc{mc}]}
+  [{N2[dat,+\textsc{top}]} [dem Mann,roof] ]
+  [{V3[+\textsc{mc}]/N2[dat]}
+    [{V[8,+\textsc{mc}]} [gibt] ]
+    [{N2[nom]} [er] ] 
+    [{N2[acc]} [das Buch, roof] ] ] ]
+\end{forest}
+}}
+
+\begin{itemize}
+\item Metaregel lizenziert Regel, die Dativobjekt in Slash einführt.
+\item Diese wird angewendet und lizenziert den Teilbaum für \emph{gibt er das Buch}.
+\item Lineariesierungsregel ordnet Verb ganz links an (V[+MC] $<$ X).
+\item Im nächsten Schritt wird die Konstituente hinter dem Slash abgebunden.
+\end{itemize}
+
+}
+
+\subsubsection{Ein Beispiel mit Fernabhängigkeit}
+
+\frame{
+\frametitle{Ein Beispiel mit Fernabhängigkeit (I)}
+
+In (\mex{1}) hängen alle NPen vom selben Verb ab:
+\ea
+Dem Mann gibt er das Buch.
+\z
+Man könnte sich ein kompliziertes System von Linearisierungsregeln einfallen
+lassen, das es dann erlaubt, (\mex{0}) mit einer ganz flachen Struktur zu analysieren.
+\pause
+
+Allerdings braucht man dann immer noch eine Analyse für:
+
+\eal
+\ex Wen glaubst du, dass ich getroffen habe?
+\ex Gegen ihn falle es den Republikanern hingegen schwerer,\\
+    Angriffe zu lancieren.\footnote{
+  taz, 08.02.2008, S.\,9
+}
+\zl
+
+(\mex{0}) kann man nicht über lokale Umstellung erklären, denn \emph{wen} hängt nicht von
+\emph{glaubst} sondern von \emph{getroffen} ab und \emph{getroffen} befindet sich in einem anderen Teilbaum.
+
+}
+
+\frame{
+\frametitle{Ein Beispiel mit Fernabhängigkeit (II)}
+
+\begin{itemize}
+\item Die Analyse von (\mex{1}) besteht aus mehreren Schritten: Einführung, Weitergabe und Abbindung
+  der Information über die Fernabhängigkeit. 
+\ea
+Wen glaubst du, dass ich getroffen habe?
+\z
+
+\pause
+
+\item \emph{ich getroffen habe} ist V3/NP[acc]\\
+(durch Metaregel lizenzierte Grammatikregel)
+
+
+\item \emph{dass ich getroffen habe} ist V3/NP[acc]\\
+      (Weitergabe der \slasch"=Information)
+
+\pause
+\item \emph{glaubst du, dass ich getroffen habe} ist V3/NP[acc]\\
+      (Weitergabe der \slasch"=Information)
+
+\pause
+\item \emph{Wen glaubst du, dass ich getroffen habe} ist V3\\
+      (Abbindung der \slasch"=Information in Grammatikregel)
+
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Ein Beispiel mit Fernabhängigkeit (III)}
+
+
+\vfill
+\centerline{%
+\scalebox{0.75}{%
+\begin{forest}
+sm edges,empty nodes
+[{V3[+\textsc{fin},+\textsc{mc}]}
+  [{N2[acc,+\textsc{top}]} [wen] ]
+  [{V3[+\textsc{mc}]/N2[acc]}
+    [{V[9,+\textsc{mc}]} [glaubst] ]
+    [{N2[nom]} [du] ] 
+    [{V3[+dass,$-$\textsc{mc}]/N2[acc]} 
+      [{}[dass] ]
+      [{V3[$-$dass,$-$\textsc{mc}]/N2[acc]} 
+         [{N2[nom]} [ich] ]
+         [{V[6,$-$\textsc{mc}]} [gesehen habe,roof] ] ] ] ] ]
+\end{forest}
+}
+}
+
+\vfill
+Hierbei habe ich vereinfachend angenommen,\\
+dass \emph{getroffen habe} sich wie ein einfaches transitives Verb verhält.
+\vfill
+
+}
